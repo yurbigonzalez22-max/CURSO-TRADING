@@ -1,0 +1,2698 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Master en Gestión de Riesgo Avanzada - YURBI GONZALEZ LOPEZ</title>
+    <script>
+        // Protección contra copia y plagio
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            alert('📚 Contenido protegido por derechos de autor de YURBI GONZALEZ LOPEZ. Prohibida su reproducción sin autorización.');
+            return false;
+        });
+
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert('© YURBI GONZALEZ LOPEZ - Todos los derechos reservados.');
+            return false;
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'v' || e.key === 'V' || e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+                alert('📚 Contenido protegido por YURBI GONZALEZ LOPEZ.');
+                return false;
+            }
+            if (e.key === 'F12') {
+                e.preventDefault();
+                alert('🔒 Herramientas de desarrollador desactivadas.');
+                return false;
+            }
+        });
+
+        console.log('%c═══════════════════════════════════════════', 'color: #ffd700; font-size: 16px;');
+        console.log('%c🛡️ MASTER EN GESTIÓN DE RIESGO AVANZADA', 'color: #ffd700; font-size: 20px; font-weight: bold;');
+        console.log('%c✍️  Creado por: YURBI GONZALEZ LOPEZ', 'color: #00c853; font-size: 16px;');
+        console.log('%c© Todos los derechos reservados 2026', 'color: #ff5252; font-size: 14px;');
+        console.log('%c═══════════════════════════════════════════', 'color: #ffd700; font-size: 16px;');
+    </script>
+    <style>
+        /* ========================================
+               ESTILOS COMPLETOS
+            ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            background: #0f0e1a;
+            color: #f0f0f0;
+            line-height: 1.9;
+            font-size: 20px;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        body::before {
+            content: "© YURBI GONZALEZ LOPEZ";
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 11px;
+            color: rgba(255, 215, 0, 0.08);
+            pointer-events: none;
+            z-index: 9999;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        #app {
+            max-width: 1200px;
+            width: 100%;
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border-radius: 32px;
+            padding: 40px 35px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            border: 2px solid #2a2a4a;
+            margin: 10px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #app::after {
+            content: "© YURBI GONZALEZ LOPEZ";
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 60px;
+            color: rgba(255, 215, 0, 0.03);
+            transform: rotate(-15deg);
+            pointer-events: none;
+            font-weight: bold;
+            letter-spacing: 5px;
+            white-space: nowrap;
+        }
+
+        /* ========================================
+               TIPOGRAFÍA
+            ======================================== */
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #ffd700;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 25px 0 15px 0;
+            border-left: 6px solid #ffd700;
+            padding-left: 18px;
+        }
+
+        h3 {
+            font-size: 30px;
+            font-weight: 500;
+            color: #e0e0ff;
+            margin: 20px 0 12px 0;
+        }
+
+        h4 {
+            font-size: 26px;
+            font-weight: 500;
+            color: #ffd700;
+            margin: 15px 0 10px 0;
+        }
+
+        p,
+        li,
+        .texto {
+            font-size: 22px;
+            line-height: 2.0;
+            color: #e8e8f0;
+            margin-bottom: 14px;
+        }
+
+        .mentor-dice {
+            background: rgba(255, 215, 0, 0.12);
+            border-left: 6px solid #ffd700;
+            padding: 20px 28px;
+            border-radius: 12px;
+            margin: 20px 0;
+            font-style: italic;
+            font-size: 24px;
+            color: #fff5d6;
+        }
+
+        .mentor-dice::before {
+            content: "🎯 ";
+            font-style: normal;
+        }
+
+        .ejemplo-box {
+            background: rgba(0, 200, 83, 0.08);
+            border: 2px solid #00c853;
+            border-radius: 16px;
+            padding: 20px 26px;
+            margin: 15px 0;
+        }
+
+        .ejemplo-box::before {
+            content: "💡 EJEMPLO: ";
+            font-weight: 700;
+            color: #00c853;
+        }
+
+        .ejemplo-box-bajista {
+            background: rgba(255, 82, 82, 0.08);
+            border: 2px solid #ff5252;
+            border-radius: 16px;
+            padding: 20px 26px;
+            margin: 15px 0;
+        }
+
+        .ejemplo-box-bajista::before {
+            content: "💡 EJEMPLO: ";
+            font-weight: 700;
+            color: #ff5252;
+        }
+
+        .concepto-clave {
+            background: rgba(255, 215, 0, 0.06);
+            border: 2px solid #ffd700;
+            border-radius: 16px;
+            padding: 18px 24px;
+            margin: 15px 0;
+        }
+
+        .concepto-clave strong {
+            color: #ffd700;
+        }
+
+        .formula-box {
+            background: rgba(33, 150, 243, 0.06);
+            border: 2px solid #2196f3;
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .formula-box .formula {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffd700;
+        }
+
+        .formula-box .descripcion {
+            font-size: 18px;
+            color: #b0b0d0;
+            margin-top: 6px;
+        }
+
+        .ventajas-box {
+            background: rgba(33, 150, 243, 0.06);
+            border: 2px solid #2196f3;
+            border-radius: 16px;
+            padding: 18px 24px;
+            margin: 15px 0;
+        }
+
+        .ventajas-box .titulo {
+            font-weight: 700;
+            color: #2196f3;
+            font-size: 20px;
+        }
+
+        .desventajas-box {
+            background: rgba(255, 82, 82, 0.06);
+            border: 2px solid #ff5252;
+            border-radius: 16px;
+            padding: 18px 24px;
+            margin: 15px 0;
+        }
+
+        .desventajas-box .titulo {
+            font-weight: 700;
+            color: #ff5252;
+            font-size: 20px;
+        }
+
+        /* ========================================
+               TARJETAS DE RIESGO
+            ======================================== */
+        .riesgo-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid #2a2a5a;
+            border-radius: 24px;
+            padding: 30px 32px;
+            margin: 30px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: stretch;
+            transition: all 0.3s ease;
+        }
+
+        .riesgo-card:hover {
+            border-color: #ffd700;
+            background: rgba(255, 215, 0, 0.06);
+        }
+
+        .riesgo-imagen {
+            flex: 0 0 320px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+            padding: 25px 20px;
+            border: 2px solid #3a3a6a;
+            min-height: 350px;
+            transition: all 0.3s ease;
+        }
+
+        .riesgo-imagen svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .riesgo-imagen .etiqueta {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffd700;
+            margin-top: 16px;
+            text-align: center;
+            background: rgba(255, 215, 0, 0.15);
+            padding: 8px 28px;
+            border-radius: 30px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .riesgo-imagen .descripcion-imagen {
+            font-size: 18px;
+            color: #b0b0d0;
+            margin-top: 10px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .riesgo-contenido {
+            flex: 1;
+            min-width: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .riesgo-contenido h3 {
+            color: #ffd700;
+            font-size: 30px;
+            margin-top: 0;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+            padding-bottom: 10px;
+        }
+
+        .riesgo-contenido p {
+            font-size: 21px;
+            line-height: 1.9;
+        }
+
+        .riesgo-basico {
+            border-color: #2196f3;
+        }
+        .riesgo-basico:hover {
+            border-color: #2196f3;
+            background: rgba(33, 150, 243, 0.06);
+        }
+
+        .riesgo-avanzado {
+            border-color: #9c27b0;
+        }
+        .riesgo-avanzado:hover {
+            border-color: #9c27b0;
+            background: rgba(156, 39, 176, 0.06);
+        }
+
+        .riesgo-critico {
+            border-color: #ff5252;
+        }
+        .riesgo-critico:hover {
+            border-color: #ff5252;
+            background: rgba(255, 82, 82, 0.06);
+        }
+
+        .riesgo-diversificacion {
+            border-color: #00c853;
+        }
+        .riesgo-diversificacion:hover {
+            border-color: #00c853;
+            background: rgba(0, 200, 83, 0.06);
+        }
+
+        /* ========================================
+               PRÁCTICA INTERACTIVA
+            ======================================== */
+        .practica-container {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid #2a2a5a;
+        }
+
+        .practica-container .contexto {
+            font-size: 18px;
+            color: #b0b0d0;
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+        }
+
+        .practica-container .pista {
+            font-size: 16px;
+            color: #888;
+            margin: 8px 0;
+            padding: 8px 12px;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid #ffd700;
+        }
+
+        .input-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 15px 0;
+            align-items: end;
+        }
+
+        .input-group .campo {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .input-group .campo label {
+            display: block;
+            font-size: 16px;
+            color: #b0b0d0;
+            margin-bottom: 4px;
+        }
+
+        .input-group .campo input {
+            width: 100%;
+            padding: 10px 14px;
+            font-size: 18px;
+            border: 2px solid #3a3a6a;
+            border-radius: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            color: #f0f0f0;
+            transition: all 0.3s ease;
+        }
+
+        .input-group .campo input:focus {
+            border-color: #ffd700;
+            outline: none;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.05);
+        }
+
+        .input-group .campo input.correcto {
+            border-color: #00c853;
+            background: rgba(0, 200, 83, 0.1);
+        }
+
+        .input-group .campo input.incorrecto {
+            border-color: #ff5252;
+            background: rgba(255, 82, 82, 0.1);
+        }
+
+        .input-group .campo input:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .input-group .campo .precio-ayuda {
+            font-size: 13px;
+            color: #888;
+            margin-top: 2px;
+        }
+
+        .btn-verificar {
+            background: #ffd700 !important;
+            color: #0f0e1a !important;
+            border-color: #ffd700 !important;
+            font-weight: 700 !important;
+            padding: 10px 24px !important;
+            font-size: 18px !important;
+            min-height: 48px !important;
+            min-width: 120px !important;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-verificar:hover {
+            background: #ffe44d !important;
+        }
+
+        .btn-verificar:disabled {
+            opacity: 0.4 !important;
+            cursor: not-allowed !important;
+        }
+
+        .practica-container .feedback-practica {
+            margin-top: 15px;
+            padding: 15px 20px;
+            border-radius: 12px;
+            font-size: 18px;
+            display: none;
+        }
+
+        .practica-container .feedback-practica.mostrar {
+            display: block;
+        }
+
+        .practica-container .feedback-practica.acierto {
+            background: rgba(0, 200, 83, 0.1);
+            border: 1px solid #00c853;
+            color: #b9f6ca;
+        }
+
+        .practica-container .feedback-practica.fallo {
+            background: rgba(255, 82, 82, 0.1);
+            border: 1px solid #ff5252;
+            color: #ffcdd2;
+        }
+
+        .practica-container .feedback-practica .explicacion {
+            margin-top: 8px;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        .resultado-box {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin: 10px 0;
+            border: 1px solid #3a3a6a;
+        }
+
+        .resultado-box .fila {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 5px 0;
+        }
+
+        .resultado-box .fila .label {
+            color: #b0b0d0;
+            font-size: 16px;
+        }
+
+        .resultado-box .fila .valor {
+            color: #ffd700;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .resultado-box .fila .valor.verde {
+            color: #00c853;
+        }
+
+        .resultado-box .fila .valor.rojo {
+            color: #ff5252;
+        }
+
+        .resultado-box .barra-progreso {
+            margin-top: 8px;
+            background: #2a2a4a;
+            border-radius: 8px;
+            height: 8px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .resultado-box .barra-progreso .relleno {
+            height: 100%;
+            border-radius: 8px;
+            transition: width 0.5s ease;
+        }
+
+        .resultado-box .barra-progreso .relleno.verde {
+            background: #00c853;
+        }
+
+        .resultado-box .barra-progreso .relleno.rojo {
+            background: #ff5252;
+        }
+
+        .resultado-box .barra-progreso .relleno.amarillo {
+            background: #ffd700;
+        }
+
+        /* ========================================
+               BOTONES GENERALES
+            ======================================== */
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            font-size: 24px;
+            font-weight: 600;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            min-height: 70px;
+            min-width: 180px;
+            text-align: center;
+            margin: 8px 12px 8px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.5px;
+            touch-action: manipulation;
+        }
+
+        .btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        .btn-primary {
+            background: #ffd700;
+            color: #0f0e1a;
+        }
+
+        .btn-secondary {
+            background: #4a4a7a;
+            color: #ffffff;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 3px solid #ffd700;
+            color: #ffd700;
+        }
+
+        .btn-outline:hover {
+            background: #ffd700;
+            color: #0f0e1a;
+        }
+
+        .btn-voice {
+            background: #2196f3;
+            color: #ffffff;
+            font-size: 26px;
+            padding: 18px 40px;
+            position: relative;
+            min-height: 70px;
+        }
+
+        .btn-voice.playing {
+            background: #f44336;
+            animation: pulse-voice 1s infinite;
+        }
+
+        @keyframes pulse-voice {
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(244, 67, 54, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 0 20px rgba(244, 67, 54, 0);
+            }
+        }
+
+        .btn-voice .badge-voice {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ffd700;
+            color: #0f0e1a;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0;
+            justify-content: center;
+        }
+
+        /* ========================================
+               NAVEGACIÓN
+            ======================================== */
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 18px 0;
+            border-bottom: 2px solid #2a2a4a;
+            margin-bottom: 25px;
+            position: sticky;
+            top: 0;
+            background: #1a1a2e;
+            z-index: 100;
+            border-radius: 0 0 16px 16px;
+        }
+
+        .nav-bar .nivel-info {
+            font-size: 24px;
+            font-weight: 600;
+            color: #b0b0d0;
+        }
+
+        .nav-bar .nivel-info span {
+            color: #ffd700;
+        }
+
+        .progress-container {
+            width: 100%;
+            background: #2a2a4a;
+            border-radius: 60px;
+            height: 20px;
+            margin: 10px 0;
+            overflow: hidden;
+            border: 1px solid #3a3a5a;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ffd700, #ffb300);
+            border-radius: 60px;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========================================
+               QUIZ
+            ======================================== */
+        .quiz-container {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 24px;
+            padding: 30px;
+            margin: 25px 0;
+            border: 2px solid #3a3a6a;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .quiz-options .btn {
+            min-width: 140px;
+            flex: 1 1 auto;
+            font-size: 20px;
+            padding: 14px 24px;
+            min-height: 55px;
+        }
+
+        .feedback {
+            padding: 20px 28px;
+            border-radius: 16px;
+            font-size: 22px;
+            font-weight: 600;
+            margin: 18px 0;
+            display: none;
+            border: 3px solid transparent;
+        }
+
+        .feedback.correct {
+            display: block;
+            background: rgba(0, 200, 83, 0.15);
+            border-color: #00c853;
+            color: #b9f6ca;
+        }
+
+        .feedback.incorrect {
+            display: block;
+            background: rgba(211, 47, 47, 0.15);
+            border-color: #d32f2f;
+            color: #ffcdd2;
+        }
+
+        .feedback .explanation {
+            font-weight: 400;
+            font-size: 20px;
+            margin-top: 10px;
+            line-height: 1.7;
+        }
+
+        .progreso-quiz {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px 0;
+            border-top: 2px solid #2a2a4a;
+            margin-top: 20px;
+        }
+
+        .contador-preguntas {
+            font-size: 20px;
+            color: #b0b0d0;
+        }
+
+        .contador-preguntas span {
+            color: #ffd700;
+            font-weight: 700;
+        }
+
+        .lista-simple {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .lista-simple li {
+            padding: 14px 20px;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 14px;
+            border-left: 5px solid #ffd700;
+            font-size: 21px;
+        }
+
+        .lista-simple li strong {
+            color: #ffd700;
+        }
+
+        .footer-legal {
+            margin-top: 40px;
+            padding: 25px 30px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 24px;
+            border: 2px solid #2a2a4a;
+            text-align: center;
+        }
+
+        .footer-legal h3 {
+            color: #ffd700;
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .footer-legal p {
+            font-size: 20px;
+            color: #b0b0d0;
+            margin-bottom: 4px;
+        }
+
+        .footer-legal .copyright {
+            color: #ffd700;
+            font-weight: 600;
+        }
+
+        .badge-proteccion {
+            display: inline-block;
+            background: #d32f2f;
+            color: #ffffff;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 700;
+            margin: 4px 0;
+            letter-spacing: 1px;
+        }
+
+        /* ========================================
+               RESPONSIVE
+            ======================================== */
+        @media (max-width: 900px) {
+            .riesgo-imagen {
+                flex: 0 0 100%;
+                min-height: 250px;
+                max-width: 380px;
+                margin: 0 auto;
+            }
+
+            .riesgo-card {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+
+            .riesgo-contenido {
+                min-width: 100%;
+            }
+
+            .nav-bar {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+                position: relative;
+            }
+
+            .input-group {
+                flex-direction: column;
+            }
+
+            .input-group .campo {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+                font-size: 18px;
+            }
+
+            #app {
+                padding: 20px 16px;
+                border-radius: 24px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+            h2 {
+                font-size: 26px;
+            }
+            h3 {
+                font-size: 24px;
+            }
+            h4 {
+                font-size: 22px;
+            }
+            p,
+            li {
+                font-size: 20px;
+            }
+
+            .riesgo-imagen {
+                max-width: 300px;
+                min-height: 220px;
+                padding: 15px;
+            }
+
+            .riesgo-contenido h3 {
+                font-size: 26px;
+            }
+            .riesgo-contenido p {
+                font-size: 19px;
+            }
+
+            .btn {
+                font-size: 20px;
+                padding: 14px 24px;
+                min-height: 55px;
+                min-width: 130px;
+                margin: 5px 6px;
+            }
+
+            .btn-voice {
+                font-size: 22px;
+                padding: 16px 28px;
+                min-height: 55px;
+            }
+
+            .quiz-options .btn {
+                min-width: 100px;
+                font-size: 18px;
+                padding: 12px 18px;
+                min-height: 48px;
+            }
+
+            .nav-bar .nivel-info {
+                font-size: 20px;
+            }
+
+            .mentor-dice {
+                font-size: 20px;
+                padding: 14px 18px;
+            }
+
+            .footer-legal {
+                padding: 18px 16px;
+            }
+
+            .footer-legal h3 {
+                font-size: 22px;
+            }
+            .footer-legal p {
+                font-size: 18px;
+            }
+
+            .input-group .campo input {
+                font-size: 16px;
+                padding: 8px 12px;
+            }
+
+            .btn-verificar {
+                font-size: 16px !important;
+                padding: 8px 18px !important;
+                min-height: 44px !important;
+                min-width: 100px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #app {
+                padding: 14px 10px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+            h2 {
+                font-size: 22px;
+                padding-left: 12px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+            p,
+            li {
+                font-size: 17px;
+            }
+
+            .btn {
+                font-size: 18px;
+                padding: 12px 18px;
+                min-height: 48px;
+                min-width: 100px;
+            }
+
+            .btn-voice {
+                font-size: 19px;
+                padding: 14px 22px;
+                min-height: 48px;
+            }
+
+            .riesgo-imagen {
+                max-width: 240px;
+                min-height: 180px;
+                padding: 12px;
+            }
+
+            .riesgo-imagen svg {
+                max-height: 140px;
+            }
+
+            .riesgo-contenido h3 {
+                font-size: 22px;
+            }
+
+            .riesgo-contenido p {
+                font-size: 17px;
+            }
+
+            .feedback {
+                font-size: 18px;
+                padding: 14px 18px;
+            }
+
+            .feedback .explanation {
+                font-size: 16px;
+            }
+
+            .mentor-dice {
+                font-size: 18px;
+                padding: 12px 14px;
+            }
+
+            .badge-proteccion {
+                font-size: 14px;
+                padding: 4px 14px;
+            }
+
+            .input-group .campo input {
+                font-size: 14px;
+                padding: 6px 10px;
+            }
+
+            .btn-verificar {
+                font-size: 14px !important;
+                padding: 6px 14px !important;
+                min-height: 38px !important;
+                min-width: 80px !important;
+            }
+
+            .resultado-box .fila .label {
+                font-size: 14px;
+            }
+
+            .resultado-box .fila .valor {
+                font-size: 15px;
+            }
+        }
+
+        .text-center {
+            text-align: center;
+        }
+        .mt-20 {
+            margin-top: 20px;
+        }
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+        .highlight {
+            color: #ffd700;
+            font-weight: 600;
+        }
+        .separator {
+            border: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #2a2a5a, transparent);
+            margin: 30px 0;
+        }
+
+        *:focus-visible {
+            outline: 4px solid #ffd700;
+            outline-offset: 4px;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <!-- ==========================================
+        HEADER / NAVEGACIÓN
+        ========================================== -->
+        <div class="nav-bar">
+            <div>
+                <h1>🛡️ Master en Gestión de Riesgo Avanzada</h1>
+                <div class="nivel-info">
+                    Nivel <span id="nivelActualDisplay">1</span> de <span id="totalNiveles">9</span>
+                    &nbsp;|&nbsp; <span id="seccionNombre">Introducción</span>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-voice" id="btnVoice" aria-label="Escuchar lección en voz alta">
+                    🔊 Escuchar Lección
+                    <span class="badge-voice">🎙️</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Barra de progreso -->
+        <div class="progress-container" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" id="progressBar" style="width: 0%;"></div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 0: INTRODUCCIÓN - LA REGLA DE ORO
+        ========================================== -->
+        <div class="section active" id="section0" data-nivel="0" data-nombre="Introducción">
+            <h2>🛡️ La Regla de Oro del Trading</h2>
+
+            <div class="riesgo-card" style="border-color:#ffd700;">
+                <div class="riesgo-imagen">
+                    <svg width="260" height="260" viewBox="0 0 260 260">
+                        <rect x="10" y="10" width="240" height="240" rx="25" fill="#1a1a2e" stroke="#ffd700" stroke-width="3"/>
+                        <!-- Escudo -->
+                        <path d="M130,40 L180,65 L180,120 Q180,160 130,190 Q80,160 80,120 L80,65 Z" fill="none" stroke="#ffd700" stroke-width="4"/>
+                        <text x="130" y="120" text-anchor="middle" font-size="50" fill="#ffd700">🛡️</text>
+                        <text x="130" y="175" text-anchor="middle" font-size="14" fill="#ffd700" font-weight="bold">PROTEGE TU CAPITAL</text>
+                        <text x="130" y="200" text-anchor="middle" font-size="12" fill="#b0b0d0">La regla de oro</text>
+                        <text x="130" y="230" text-anchor="middle" font-size="14" fill="#ffd700">⚠️ SIN RIESGO NO HAY TRADING</text>
+                    </svg>
+                    <span class="etiqueta">🛡️ Regla de Oro</span>
+                    <span class="descripcion-imagen">Protege tu capital siempre</span>
+                </div>
+                <div class="riesgo-contenido">
+                    <h3>La Regla de Oro del Trading</h3>
+                    <p>
+                        La <strong>GESTIÓN DE RIESGO</strong> es <span class="highlight">más importante que ganar dinero</span>.
+                        <strong>Sin riesgo controlado, no hay trading posible.</strong>
+                    </p>
+
+                    <div class="concepto-clave">
+                        <p style="font-size:24px; text-align:center; color:#ffd700;">
+                            <strong>🎯 ¡PROTEGE TU CAPITAL!</strong>
+                        </p>
+                        <p style="text-align:center;">
+                            La gestión de riesgo es la <span class="highlight">clave de la supervivencia</span> en el trading.
+                            <br>
+                            <strong>Un trader sin gestión de riesgo es un apostador.</strong>
+                        </p>
+                    </div>
+
+                    <div class="ejemplo-box">
+                        <strong>EJEMPLO DE LA IMPORTANCIA DEL RIESGO:</strong>
+                        <br><br>
+                        💰 Dos traders con <strong>$10,000</strong> cada uno:
+                        <br><br>
+                        <strong>Trader A (Sin gestión de riesgo):</strong>
+                        <br>
+                        Arriesga <strong>50%</strong> en cada operación.
+                        <br>
+                        📉 Pierde 2 operaciones seguidas → <strong>¡Se queda sin capital!</strong>
+                        <br><br>
+                        <strong>Trader B (Con gestión de riesgo):</strong>
+                        <br>
+                        Arriesga <strong>2%</strong> en cada operación.
+                        <br>
+                        📉 Pierde 10 operaciones seguidas → <strong>¡Aún tiene el 80% de su capital!</strong>
+                        <br><br>
+                        <strong>✅ El Trader B sobrevive y sigue en el juego.</strong>
+                    </div>
+
+                    <h4>📌 Los Pilares de la Gestión de Riesgo:</h4>
+                    <ul class="lista-simple">
+                        <li><strong>🛡️ Tamaño de Posición:</strong> Cuánto invertir en cada operación</li>
+                        <li><strong>📊 Riesgo por Operación:</strong> 1%-2% del capital</li>
+                        <li><strong>📈 Drawdown:</strong> Controlar las pérdidas acumuladas</li>
+                        <li><strong>📋 Diversificación:</strong> No poner todos los huevos en la misma cesta</li>
+                        <li><strong>⚡ Apalancamiento:</strong> Usarlo con responsabilidad</li>
+                    </ul>
+
+                    <div class="mentor-dice">
+                        "La gestión de riesgo es la <strong>clave de la supervivencia</strong>.
+                        <br><br>
+                        <strong>Recuerda:</strong> No importa cuánto ganes en una operación.
+                        <strong>Importa cuánto puedes perder</strong> y seguir en el juego."
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-primary" onclick="irANivel(1)">📊 Tamaño de Posición →</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 1: CÁLCULO DEL TAMAÑO DE POSICIÓN
+        ========================================== -->
+        <div class="section" id="section1" data-nivel="1" data-nombre="Tamaño de Posición">
+            <h2>📊 Nivel 1: Cálculo del Tamaño de Posición</h2>
+
+            <div class="riesgo-card riesgo-basico">
+                <div class="riesgo-imagen">
+                    <svg width="260" height="260" viewBox="0 0 260 260">
+                        <rect x="10" y="10" width="240" height="240" rx="25" fill="#1a1a2e" stroke="#2196f3" stroke-width="3"/>
+                        <!-- Balanza -->
+                        <line x1="130" y1="40" x2="130" y2="160" stroke="#2196f3" stroke-width="3"/>
+                        <line x1="70" y1="160" x2="190" y2="160" stroke="#2196f3" stroke-width="2"/>
+                        <!-- Pesas -->
+                        <circle cx="80" cy="160" r="15" fill="none" stroke="#ffd700" stroke-width="2"/>
+                        <text x="80" y="165" text-anchor="middle" font-size="12" fill="#ffd700">$</text>
+                        <circle cx="180" cy="160" r="15" fill="none" stroke="#ffd700" stroke-width="2"/>
+                        <text x="180" y="165" text-anchor="middle" font-size="12" fill="#ffd700">%</text>
+                        <text x="130" y="200" text-anchor="middle" font-size="14" fill="#2196f3" font-weight="bold">📊 TAMAÑO</text>
+                        <text x="130" y="225" text-anchor="middle" font-size="12" fill="#b0b0d0">¿Cuánto comprar/vender?</text>
+                    </svg>
+                    <span class="etiqueta">📊 Tamaño</span>
+                    <span class="descripcion-imagen">¿Cuánto comprar o vender?</span>
+                </div>
+                <div class="riesgo-contenido">
+                    <h3>📊 Cálculo del Tamaño de Posición</h3>
+
+                    <h4>¿Qué es?</h4>
+                    <p>
+                        El <strong>TAMAÑO DE POSICIÓN</strong> es <span class="highlight">cuánto compras o vendes</span>
+                        en cada operación. <strong>No es lo mismo arriesgar $100 que $1,000</strong>.
+                    </p>
+
+                    <div class="concepto-clave">
+                        <p><strong>🎯 IDEA CLAVE:</strong> <span class="highlight">El tamaño de posición determina tu riesgo real.</span>
+                        No importa cuánto dinero tengas, <strong>siempre debes calcular cuánto arriesgas</strong>.</p>
+                    </div>
+
+                    <div class="formula-box">
+                        <div class="formula">Tamaño = (Capital × %Riesgo) / (Entrada - Stop-Loss)</div>
+                        <div class="descripcion">Donde: Capital = tu dinero total, %Riesgo = 1% o 2%</div>
+                    </div>
+
+                    <div class="ejemplo-box">
+                        <strong>📊 EJEMPLO PRÁCTICO:</strong>
+                        <br><br>
+                        💰 Capital: <strong>$10,000</strong>
+                        <br>
+                        📊 Riesgo: <strong>2%</strong> = $200
+                        <br>
+                        📈 Entrada: <strong>$50,000</strong>
+                        <br>
+                        🔴 Stop-Loss: <strong>$49,000</strong>
+                        <br>
+                        📐 Distancia: $50,000 - $49,000 = <strong>$1,000</strong>
+                        <br><br>
+                        📊 <strong>Tamaño = $200 / $1,000 = 0.2 BTC</strong>
+                        <br>
+                        💰 Inviertes <strong>0.2 BTC</strong> (≈ $10,000)
+                        <br>
+                        ✅ Si el precio baja a $49,000, <strong>pierdes exactamente $200 (2%)</strong>.
+                    </div>
+
+                    <div class="ventajas-box">
+                        <div class="titulo">✅ Beneficios del Tamaño de Posición:</div>
+                        <ul class="lista-simple">
+                            <li>🎯 <strong>Controlas exactamente</strong> cuánto arriesgas</li>
+                            <li>📊 <strong>Estandarizas</strong> tu riesgo por operación</li>
+                            <li>😌 <strong>Te da tranquilidad</strong> saber cuánto pierdes si la operación falla</li>
+                        </ul>
+                    </div>
+
+                    <div class="desventajas-box">
+                        <div class="titulo">⚠️ Error Común:</div>
+                        <ul class="lista-simple">
+                            <li>❌ <strong>Comprar siempre la misma cantidad</strong> sin importar el stop-loss</li>
+                            <li>❌ <strong>No ajustar el tamaño</strong> cuando el mercado es más volátil</li>
+                            <li>❌ <strong>Arriesgar más del 2%</strong> en una sola operación</li>
+                        </ul>
+                    </div>
+
+                    <div class="mentor-dice">
+                        "El tamaño de posición es tu <strong>control de volumen</strong>.
+                        <br><br>
+                        <strong>Regla de oro:</strong> <span class="highlight">Calcula siempre el tamaño antes de entrar.</span>
+                        <br>
+                        <strong>Nunca</strong> compres sin saber cuánto arriesgas."
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-secondary" onclick="irANivel(0)">⬅️</button>
+                <button class="btn btn-primary" onclick="irANivel(2)">📊 Riesgo por Operación →</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 2: RIESGO POR OPERACIÓN
+        ========================================== -->
+        <div class="section" id="section2" data-nivel="2" data-nombre="Riesgo por Operación">
+            <h2>📊 Nivel 2: Riesgo por Operación - 1%-2%</h2>
+
+            <div class="riesgo-card riesgo-critico">
+                <div class="riesgo-imagen">
+                    <svg width="260" height="260" viewBox="0 0 260 260">
+                        <rect x="10" y="10" width="240" height="240" rx="25" fill="#1a1a2e" stroke="#ff5252" stroke-width="3"/>
+                        <!-- Gráfico de riesgo -->
+                        <rect x="60" y="160" width="20" height="40" fill="#ff5252" opacity="0.3"/>
+                        <text x="70" y="155" text-anchor="middle" font-size="10" fill="#ff5252">5%</text>
+                        <rect x="100" y="140" width="20" height="60" fill="#ff5252" opacity="0.5"/>
+                        <text x="110" y="135" text-anchor="middle" font-size="10" fill="#ff5252">10%</text>
+                        <rect x="140" y="120" width="20" height="80" fill="#ffd700" opacity="0.7"/>
+                        <text x="150" y="115" text-anchor="middle" font-size="10" fill="#ffd700">2%</text>
+                        <rect x="180" y="130" width="20" height="70" fill="#00c853" opacity="0.5"/>
+                        <text x="190" y="125" text-anchor="middle" font-size="10" fill="#00c853">1%</text>
+                        <text x="130" y="200" text-anchor="middle" font-size="14" fill="#ff5252" font-weight="bold">📊 1%-2%</text>
+                        <text x="130" y="225" text-anchor="middle" font-size="12" fill="#b0b0d0">Riesgo recomendado</text>
+                    </svg>
+                    <span class="etiqueta">📊 1%-2%</span>
+                    <span class="descripcion-imagen">Riesgo recomendado por operación</span>
+                </div>
+                <div class="riesgo-contenido">
+                    <h3>📊 Riesgo por Operación</h3>
+
+                    <h4>¿Qué es?</h4>
+                    <p>
+                        El <strong>RIESGO POR OPERACIÓN</strong> es el <span class="highlight">porcentaje de tu capital</span>
+                        que estás dispuesto a perder en una sola operación.
+                        <strong>Lo recomendado es 1% - 2%</strong>.
+                    </p>
+
+                    <div class="concepto-clave">
+                        <p><strong>🎯 IDEA CLAVE:</strong> <span class="highlight">Nunca arriesgues más del 2%</span> de tu capital en una operación.
+                        Así puedes tener <strong>hasta 10 pérdidas seguidas</strong> y seguir en el juego.</p>
+                    </div>
+
+                    <div class="ejemplo-box">
+                        <strong>📊 EJEMPLO PRÁCTICO:</strong>
+                        <br><br>
+                        💰 Capital: <strong>$10,000</strong>
+                        <br><br>
+                        <strong>Opción 1: Arriesgar 1%</strong> = <strong>$100</strong> por operación
+                        <br>
+                        📉 Puedes perder <strong>10 operaciones seguidas</strong> y perder solo $1,000 (10%).
+                        <br><br>
+                        <strong>Opción 2: Arriesgar 2%</strong> = <strong>$200</strong> por operación
+                        <br>
+                        📉 Puedes perder <strong>10 operaciones seguidas</strong> y perder $2,000 (20%).
+                        <br><br>
+                        <strong>Opción 3: Arriesgar 10%</strong> = <strong>$1,000</strong> por operación
+                        <br>
+                        💔 Pierdes <strong>2 operaciones seguidas</strong> y pierdes $2,000 (20%).
+                        <br>
+                        💔 Pierdes <strong>5 operaciones seguidas</strong> y pierdes <strong>¡50% de tu capital!</strong>
+                        <br><br>
+                        <strong>✅ Con 1%-2%, sobrevives a las rachas de pérdidas.</strong>
+                    </div>
+
+                    <div class="ventajas-box">
+                        <div class="titulo">✅ Beneficios de arriesgar 1%-2%:</div>
+                        <ul class="lista-simple">
+                            <li>🛡️ <strong>Protege tu capital</strong> de grandes pérdidas</li>
+                            <li>😌 <strong>Te da tranquilidad</strong> psicológica</li>
+                            <li>📊 <strong>Permite sobrevivir</strong> a rachas de pérdidas</li>
+                            <li>🎯 <strong>Te permite operar con disciplina</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="desventajas-box">
+                        <div class="titulo">⚠️ Error Común:</div>
+                        <ul class="lista-simple">
+                            <li>❌ <strong>Arriesgar más cuando se pierde</strong> para recuperar rápido</li>
+                            <li>❌ <strong>No ajustar el riesgo</strong> al tamaño de la cuenta</li>
+                            <li>❌ <strong>Pensar que 2% es muy poco</strong> (¡no lo es!)</li>
+                        </ul>
+                    </div>
+
+                    <div class="mentor-dice">
+                        "El 1%-2% no es una sugerencia, es <strong>la regla de oro</strong>.
+                        <br><br>
+                        <strong>Recuerda:</strong> Los traders que sobreviven <strong>arriesgan poco</strong>.
+                        Los que desaparecen <strong>arriesgan demasiado</strong>."
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-secondary" onclick="irANivel(1)">⬅️</button>
+                <button class="btn btn-primary" onclick="irANivel(3)">📈 Drawdown →</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 3: DRAWDOWN Y RECUPERACIÓN
+        ========================================== -->
+        <div class="section" id="section3" data-nivel="3" data-nombre="Drawdown y Recuperación">
+            <h2>📈 Nivel 3: Drawdown y Recuperación</h2>
+
+            <div class="riesgo-card riesgo-critico">
+                <div class="riesgo-imagen">
+                    <svg width="260" height="260" viewBox="0 0 260 260">
+                        <rect x="10" y="10" width="240" height="240" rx="25" fill="#1a1a2e" stroke="#ff5252" stroke-width="3"/>
+                        <!-- Gráfico de drawdown -->
+                        <polyline points="50,80 90,60 130,90 170,70 210,120" fill="none" stroke="#ffd700" stroke-width="3"/>
+                        <polyline points="50,120 90,100 130,130 170,110 210,160" fill="none" stroke="#ff5252" stroke-width="3"/>
+                        <text x="130" y="40" text-anchor="middle" font-size="14" fill="#ff5252" font-weight="bold">📈 DRAWDOWN</text>
+                        <text x="130" y="180" text-anchor="middle" font-size="12" fill="#b0b0d0">Pérdida desde el máximo</text>
+                        <text x="130" y="200" text-anchor="middle" font-size="14" fill="#ff5252">⚠️</text>
+                    </svg>
+                    <span class="etiqueta">📈 Drawdown</span>
+                    <span class="descripcion-imagen">Pérdida desde el máximo</span>
+                </div>
+                <div class="riesgo-contenido">
+                    <h3>📈 Drawdown y Recuperación</h3>
+
+                    <h4>¿Qué es el Drawdown?</h4>
+                    <p>
+                        El <strong>DRAWDOWN</strong> es la <span class="highlight">pérdida desde el punto más alto</span>
+                        de tu cuenta hasta el punto más bajo. Es la <strong>caída máxima</strong> que has sufrido.
+                    </p>
+
+                    <div class="concepto-clave">
+                        <p><strong>🎯 IDEA CLAVE:</strong> <span class="highlight">El drawdown mide cuánto has perdido</span> desde tu mejor momento. <strong>Todos los traders tienen drawdowns</strong>, lo importante es controlarlos.</p>
+                    </div>
+
+                    <div class="ejemplo-box">
+                        <strong>📊 EJEMPLO DE DRAWDOWN:</strong>
+                        <br><br>
+                        💰 Tu cuenta llega a <strong>$12,000</strong> (máximo histórico).
+                        <br>
+                        📉 Pierdes hasta <strong>$9,000</strong> (mínimo).
+                        <br>
+                        📊 <strong>Drawdown = $12,000 - $9,000 = $3,000</strong>
+                        <br>
+                        📊 <strong>Drawdown % = ($3,000 / $12,000) × 100 = 25%</strong>
+                        <br><br>
+                        <strong>✅ Has sufrido un drawdown del 25%.</strong>
+                    </div>
+
+                    <h4>📌 Recuperación del Drawdown:</h4>
+                    <ul class="lista-simple">
+                        <li><strong>📊</strong> Si pierdes <strong>10%</strong>, necesitas ganar <strong>11.1%</strong> para recuperar</li>
+                        <li><strong>📊</strong> Si pierdes <strong>20%</strong>, necesitas ganar <strong>25%</strong> para recuperar</li>
+                        <li><strong>📊</strong> Si pierdes <strong>30%</strong>, necesitas ganar <strong>42.9%</strong> para recuperar</li>
+                        <li><strong>📊</strong> Si pierdes <strong>50%</strong>, necesitas ganar <strong>100%</strong> para recuperar</li>
+                    </ul>
+
+                    <div class="ejemplo-box-bajista">
+                        <strong>⚠️ EL PELIGRO DEL DRAWDOWN GRANDE:</strong>
+                        <br><br>
+                        💰 Tienes <strong>$10,000</strong>.
+                        <br>
+                        📉 Pierdes <strong>50%</strong> → te quedan <strong>$5,000</strong>.
+                        <br>
+                        📈 Para volver a $10,000 necesitas ganar <strong>100%</strong> (el doble).
+                        <br>
+                        💔 Es mucho más difícil recuperar una gran pérdida.
+                        <br><br>
+                        <strong>✅ Por eso es importante <span class="highlight">limitar el drawdown</span> con una buena gestión de riesgo.</strong>
+                    </div>
+
+                    <div class="ventajas-box">
+                        <div class="titulo">✅ Cómo controlar el Drawdown:</div>
+                        <ul class="lista-simple">
+                            <li>🛡️ <strong>Arriesga solo 1%-2%</strong> por operación</li>
+                            <li>📊 <strong>Usa Stop-Loss</strong> en todas las operaciones</li>
+                            <li>⏰ <strong>Si tienes 3 pérdidas seguidas</strong>, para y revisa tu estrategia</li>
+                            <li>📋 <strong>Mantén un diario</strong> para identificar patrones de pérdida</li>
+                        </ul>
+                    </div>
+
+                    <div class="mentor-dice">
+                        "El drawdown es <strong>parte del juego</strong>.
+                        <br><br>
+                        <strong>Regla de oro:</strong> <span class="highlight">Controla el drawdown antes de que te controle a ti.</span>
+                        <br>
+                        <strong>Recuerda:</strong> Es más fácil <strong>prevenir</strong> una gran pérdida que <strong>recuperarla</strong>."
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-secondary" onclick="irANivel(2)">⬅️</button>
+                <button class="btn btn-primary" onclick="irANivel(4)">📋 Diversificación →</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 4: DIVERSIFICACIÓN
+        ========================================== -->
+        <div class="section" id="section4" data-nivel="4" data-nombre="Diversificación">
+            <h2>📋 Nivel 4: Diversificación</h2>
+
+            <div class="riesgo-card riesgo-diversificacion">
+                <div class="riesgo-imagen">
+                    <svg width="260" height="260" viewBox="0 0 260 260">
+                        <rect x="10" y="10" width="240" height="240" rx="25" fill="#1a1a2e" stroke="#00c853" stroke-width="3"/>
+                        <!-- Cestas con huevos -->
+                        <circle cx="80" cy="120" r="30" fill="none" stroke="#ffd700" stroke-width="2"/>
+                        <circle cx="80" cy="115" r="6" fill="#ffd700" opacity="0.7"/>
+                        <circle cx="75" cy="125" r="6" fill="#ffd700" opacity="0.7"/>
+                        <circle cx="85" cy="125" r="6" fill="#ffd700" opacity="0.7"/>
+                        <text x="80" y="165" text-anchor="middle" font-size="10" fill="#888">BTC</text>
+
+                        <circle cx="130" cy="120" r="30" fill="none" stroke="#ffd700" stroke-width="2"/>
+                        <circle cx="130" cy="115" r="6" fill="#ffd700" opacity="0.7"/>
+                        <circle cx="125" cy="125" r="6" fill="#ffd700" opacity="0.7"/>
+                        <circle cx="135" cy="125" r="6" fill="#ffd700" opacity="0.7"/>
+                        <text x="130" y="165" text-anchor="middle" font-size="10" fill="#888">ETH</text>
+
+                        <circle cx="180" cy="120" r="30" fill="none" stroke="#ffd700" stroke-width="2"/>
+                        <circle cx="180" cy="115" r="6" fill="#ffd700" opacity="0.7"/>
+                        <circle cx="175" cy="125" r="6" fill="#ffd700" opacity="0.7"/>
+                        <circle cx="185" cy="125" r="6" fill="#ffd700" opacity="0.7"/>
+                        <text x="180" y="165" text-anchor="middle" font-size="10" fill="#888">SOL</text>
+
+                        <text x="130" y="200" text-anchor="middle" font-size="14" fill="#00c853" font-weight="bold">📋 DIVERSIFICACIÓN</text>
+                        <text x="130" y="225" text-anchor="middle" font-size="12" fill="#b0b0d0">No pongas todos los huevos en la misma cesta</text>
+                    </svg>
+                    <span class="etiqueta">📋 Diversificación</span>
+                    <span class="descripcion-imagen">No pongas todos los huevos en la misma cesta</span>
+                </div>
+                <div class="riesgo-contenido">
+                    <h3>📋 Diversificación</h3>
+
+                    <h4>¿Qué es?</h4>
+                    <p>
+                        La <strong>DIVERSIFICACIÓN</strong> es <span class="highlight">repartir tu capital</span> entre diferentes activos.
+                        <strong>No pongas todos los huevos en la misma cesta</strong>.
+                    </p>
+
+                    <div class="concepto-clave">
+                        <p><strong>🎯 IDEA CLAVE:</strong> <span class="highlight">Si un activo baja, otro puede subir.</span>
+                        La diversificación <strong>reduce el riesgo total</strong> de tu cartera.</p>
+                    </div>
+
+                    <div class="ejemplo-box">
+                        <strong>📊 EJEMPLO DE DIVERSIFICACIÓN:</strong>
+                        <br><br>
+                        <strong>Sin diversificar:</strong>
+                        <br>
+                        💰 Inviertes <strong>$10,000</strong> todo en <strong>BTC</strong>.
+                        <br>
+                        📉 BTC baja un <strong>20%</strong> → Pierdes <strong>$2,000</strong>.
+                        <br><br>
+                        <strong>Con diversificación:</strong>
+                        <br>
+                        💰 Inviertes <strong>$5,000</strong> en BTC, <strong>$3,000</strong> en ETH, <strong>$2,000</strong> en SOL.
+                        <br>
+                        📉 BTC baja 20% → Pierdes $1,000
+                        <br>
+                        📈 ETH sube 10% → Ganas $300
+                        <br>
+                        📉 SOL baja 5% → Pierdes $100
+                        <br>
+                        💰 <strong>Pérdida total: $800</strong> (en lugar de $2,000)
+                        <br><br>
+                        <strong>✅ La diversificación redujo tu pérdida.</strong>
+                    </div>
+
+                    <h4>📌 Consejos para Diversificar:</h4>
+                    <ul class="lista-simple">
+                        <li>📊 <strong>Diferentes criptomonedas:</strong> BTC, ETH, SOL, ADA, etc.</li>
+                        <li>📈 <strong>Diferentes sectores:</strong> DeFi, Gaming, Layer 1, etc.</li>
+                        <li>⏰ <strong>Diferentes timeframes:</strong> Largo plazo y corto plazo</li>
+                        <li>🌍 <strong>Diferentes estrategias:</strong> Trading, inversión, staking</li>
+                    </ul>
+
+                    <div class="ventajas-box">
+                        <div class="titulo">✅ Beneficios de la Diversificación:</div>
+                        <ul class="lista-simple">
+                            <li>🛡️ <strong>Reduce el riesgo</strong> de una pérdida total</li>
+                            <li>📊 <strong>Equilibra</strong> las ganancias y pérdidas</li>
+                            <li>😌 <strong>Da tranquilidad</strong> al tener diferentes activos</li>
+                        </ul>
+                    </div>
+
+                    <div class="desventajas-box">
+                        <div class="titulo">⚠️ Error Común:</div>
+                        <ul class="lista-simple">
+                            <li>❌ <strong>Diversificar demasiado</strong> (más de 10 activos) → difícil de gestionar</li>
+                            <li>❌ <strong>Diversificar en activos correlacionados</strong> (todos bajan juntos)</li>
+                            <li>❌ <strong>No revisar la cartera</strong> regularmente</li>
+                        </ul>
+                    </div>
+
+                    <div class="mentor-dice">
+                        "La diversificación es tu <strong>red de seguridad</strong>.
+                        <br><br>
+                        <strong>Regla de oro:</strong> <span class="highlight">3-5 activos diferentes</span> es suficiente.
+                        <br>
+                        <strong>Recuerda:</strong> No diversifiques por diversificar, <strong>hazlo con criterio</strong>."
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-secondary" onclick="irANivel(3)">⬅️</button>
+                <button class="btn btn-primary" onclick="irANivel(5)">⚡ Apalancamiento Profesional →</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 5: APALANCAMIENTO PROFESIONAL
+        ========================================== -->
+        <div class="section" id="section5" data-nivel="5" data-nombre="Apalancamiento Profesional">
+            <h2>⚡ Nivel 5: Apalancamiento Profesional</h2>
+
+            <div class="riesgo-card riesgo-avanzado">
+                <div class="riesgo-imagen">
+                    <svg width="260" height="260" viewBox="0 0 260 260">
+                        <rect x="10" y="10" width="240" height="240" rx="25" fill="#1a1a2e" stroke="#9c27b0" stroke-width="3"/>
+                        <!-- Palanca profesional -->
+                        <line x1="80" y1="190" x2="180" y2="60" stroke="#9c27b0" stroke-width="4"/>
+                        <circle cx="130" cy="125" r="10" fill="#ffd700"/>
+                        <text x="130" y="130" text-anchor="middle" font-size="12" fill="#0f0e1a">⚡</text>
+                        <text x="130" y="165" text-anchor="middle" font-size="16" fill="#9c27b0">2x-5x</text>
+                        <text x="130" y="190" text-anchor="middle" font-size="12" fill="#b0b0d0">Apalancamiento profesional</text>
+                        <text x="130" y="220" text-anchor="middle" font-size="14" fill="#9c27b0" font-weight="bold">⚡ APALANCAMIENTO</text>
+                        <text x="130" y="245" text-anchor="middle" font-size="12" fill="#b0b0d0">Usado con responsabilidad</text>
+                    </svg>
+                    <span class="etiqueta">⚡ Apalancamiento</span>
+                    <span class="descripcion-imagen">Usado con responsabilidad</span>
+                </div>
+                <div class="riesgo-contenido">
+                    <h3>⚡ Apalancamiento Profesional</h3>
+
+                    <h4>¿Qué es?</h4>
+                    <p>
+                        El <strong>APALANCAMIENTO</strong> te permite <span class="highlight">operar con más dinero del que tienes</span>.
+                        <strong>Los profesionales lo usan</strong>, pero con <strong>disciplina y control</strong>.
+                    </p>
+
+                    <div class="concepto-clave">
+                        <p><strong>🎯 IDEA CLAVE:</strong> <span class="highlight">El apalancamiento es una herramienta</span>, no un juego.
+                        Los profesionales lo usan para <strong>optimizar su capital</strong>, no para apostar.</p>
+                    </div>
+
+                    <h4>📌 Apalancamiento Recomendado por Nivel:</h4>
+                    <ul class="lista-simple">
+                        <li><strong>⭐ Principiantes:</strong> <span class="highlight">2x - 3x</span> (máximo)</li>
+                        <li><strong>📊 Intermedios:</strong> 3x - 5x con Stop-Loss ajustado</li>
+                        <li><strong>🎯 Avanzados:</strong> 5x - 10x con gestión profesional</li>
+                        <li><strong>⚠️ Expertos:</strong> 10x - 20x solo en situaciones específicas</li>
+                    </ul>
+
+                    <div class="ejemplo-box">
+                        <strong>📊 EJEMPLO DE APALANCAMIENTO PROFESIONAL:</strong>
+                        <br><br>
+                        💰 Capital: <strong>$10,000</strong>
+                        <br>
+                        ⚡ Apalancamiento: <strong>3x</strong>
+                        <br>
+                        📊 Operas con <strong>$30,000</strong>
+                        <br>
+                        📈 BTC sube <strong>2%</strong> → Ganas <strong>$600</strong> (6% de tu capital)
+                        <br>
+                        📉 BTC baja <strong>2%</strong> → Pierdes <strong>$600</strong> (6% de tu capital)
+                        <br><br>
+                        <strong>✅ Con 3x, ganas o pierdes 3 veces más rápido.</strong>
+                        <br>
+                        <strong>⚠️ Pero con Stop-Loss al 1%, tu pérdida máxima es de 3%.</strong>
+                    </div>
+
+                    <div class="ventajas-box">
+                        <div class="titulo">✅ Uso Profesional del Apalancamiento:</div>
+                        <ul class="lista-simple">
+                            <li>⚡ <strong>Optimiza el capital</strong> sin arriesgar demasiado</li>
+                            <li>📊 <strong>Amplifica ganancias</strong> en movimientos claros</li>
+                            <li>🛡️ <strong>Siempre con Stop-Loss</strong> ajustado</li>
+                        </ul>
+                    </div>
+
+                    <div class="desventajas-box">
+                        <div class="titulo">⚠️ Error Común:</div>
+                        <ul class="lista-simple">
+                            <li>❌ <strong>Usar apalancamiento alto</strong> sin experiencia (20x-50x)</li>
+                            <li>❌ <strong>No usar Stop-Loss</strong> con apalancamiento</li>
+                            <li>❌ <strong>Apostar</strong> en lugar de invertir con apalancamiento</li>
+                        </ul>
+                    </div>
+
+                    <div class="ejemplo-box-bajista">
+                        <strong>⚠️ EL PELIGRO DEL APALANCAMIENTO ALTO:</strong>
+                        <br><br>
+                        💰 Tienes <strong>$1,000</strong>.
+                        <br>
+                        ⚡ Usas <strong>20x</strong> → Operas con $20,000.
+                        <br>
+                        📉 BTC baja <strong>5%</strong> → Pierdes <strong>$1,000</strong>.
+                        <br>
+                        💔 <strong>¡Has perdido TODO tu capital!</strong>
+                        <br><br>
+                        <strong>✅ Con 3x, solo habrías perdido $150 (15%).</strong>
+                    </div>
+
+                    <div class="mentor-dice">
+                        "El apalancamiento es como <strong>conducir a alta velocidad</strong>.
+                        <br><br>
+                        <strong>Regla de oro:</strong> <span class="highlight">Usa apalancamiento bajo (2x-5x)</span> y <strong>siempre con Stop-Loss</strong>.
+                        <br>
+                        <strong>Recuerda:</strong> Los profesionales usan apalancamiento <strong>con disciplina</strong>."
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-secondary" onclick="irANivel(4)">⬅️</button>
+                <button class="btn btn-primary" onclick="irANivel(6)">📊 Ratio de Sharpe →</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 6: RATIO DE SHARPE
+        ========================================== -->
+        <div class="section" id="section6" data-nivel="6" data-nombre="Ratio de Sharpe">
+            <h2>📊 Nivel 6: Ratio de Sharpe</h2>
+
+            <div class="riesgo-card riesgo-avanzado">
+                <div class="riesgo-imagen">
+                    <svg width="260" height="260" viewBox="0 0 260 260">
+                        <rect x="10" y="10" width="240" height="240" rx="25" fill="#1a1a2e" stroke="#9c27b0" stroke-width="3"/>
+                        <!-- Medición -->
+                        <rect x="60" y="160" width="20" height="40" fill="#ff5252" opacity="0.3"/>
+                        <text x="70" y="155" text-anchor="middle" font-size="10" fill="#ff5252">0.5</text>
+                        <rect x="100" y="130" width="20" height="70" fill="#ffd700" opacity="0.5"/>
+                        <text x="110" y="125" text-anchor="middle" font-size="10" fill="#ffd700">1</text>
+                        <rect x="140" y="90" width="20" height="110" fill="#00c853" opacity="0.7"/>
+                        <text x="150" y="85" text-anchor="middle" font-size="10" fill="#00c853">2</text>
+                        <rect x="180" y="70" width="20" height="130" fill="#00c853" opacity="0.5"/>
+                        <text x="190" y="65" text-anchor="middle" font-size="10" fill="#00c853">3</text>
+                        <text x="130" y="200" text-anchor="middle" font-size="14" fill="#9c27b0" font-weight="bold">📊 RATIO SHARPE</text>
+                        <text x="130" y="225" text-anchor="middle" font-size="12" fill="#b0b0d0">Rendimiento ajustado al riesgo</text>
+                    </svg>
+                    <span class="etiqueta">📊 Sharpe</span>
+                    <span class="descripcion-imagen">Rendimiento ajustado al riesgo</span>
+                </div>
+                <div class="riesgo-contenido">
+                    <h3>📊 Ratio de Sharpe</h3>
+
+                    <h4>¿Qué es?</h4>
+                    <p>
+                        El <strong>RATIO DE SHARPE</strong> mide <span class="highlight">cuánto ganas por cada unidad de riesgo</span>
+                        que asumes. Es la herramienta para <strong>evaluar si vale la pena</strong> una estrategia.
+                    </p>
+
+                    <div class="formula-box">
+                        <div class="formula">Sharpe = (Rendimiento - Tasa Libre de Riesgo) / Volatilidad</div>
+                        <div class="descripcion">Simplificado: Sharpe = (Ganancia Promedio) / (Desviación Estándar de las Ganancias)</div>
+                    </div>
+
+                    <div class="concepto-clave">
+                        <p><strong>🎯 IDEA CLAVE:</strong> <span class="highlight">Un Sharpe alto significa</span> que ganas mucho en comparación con el riesgo que tomas.
+                        <strong>Sharpe > 1 es bueno, Sharpe > 2 es excelente.</strong></p>
+                    </div>
+
+                    <h4>📌 Interpretación del Ratio de Sharpe:</h4>
+                    <ul class="lista-simple">
+                        <li><strong>🔴 Sharpe &lt; 1:</strong> <span class="highlight">Riesgo alto vs ganancia</span> (no vale la pena)</li>
+                        <li><strong>🟡 Sharpe = 1:</strong> <span class="highlight">Aceptable</span> (ganas lo mismo que arriesgas)</li>
+                        <li><strong>🟢 Sharpe = 1.5 - 2:</strong> <span class="highlight">Bueno</span> (buena relación riesgo/beneficio)</li>
+                        <li><strong>🟢 Sharpe &gt; 2:</strong> <span class="highlight">Excelente</span> (muy buena relación)</li>
+                    </ul>
+
+                    <div class="ejemplo-box">
+                        <strong>📊 EJEMPLO DE RATIO SHARPE:</strong>
+                        <br><br>
+                        <strong>Estrategia A:</strong>
+                        <br>
+                        📈 Ganas promedio: <strong>10%</strong> al mes
+                        <br>
+                        📊 Volatilidad: <strong>15%</strong>
+                        <br>
+                        📐 <strong>Sharpe = 10% / 15% = 0.67</strong> (bajo)
+                        <br><br>
+                        <strong>Estrategia B:</strong>
+                        <br>
+                        📈 Ganas promedio: <strong>8%</strong> al mes
+                        <br>
+                        📊 Volatilidad: <strong>3%</strong>
+                        <br>
+                        📐 <strong>Sharpe = 8% / 3% = 2.67</strong> (excelente)
+                        <br><br>
+                        <strong>✅ La Estrategia B es mejor porque ganas más por cada unidad de riesgo.</strong>
+                    </div>
+
+                    <div class="ventajas-box">
+                        <div class="titulo">✅ Beneficios del Ratio de Sharpe:</div>
+                        <ul class="lista-simple">
+                            <li>📊 <strong>Compara estrategias</strong> objetivamente</li>
+                            <li>📈 <strong>Evalúa el riesgo</strong> de tus operaciones</li>
+                            <li>🎯 <strong>Identifica</strong> si estás asumiendo demasiado riesgo</li>
+                        </ul>
+                    </div>
+
+                    <div class="mentor-dice">
+                        "El Ratio de Sharpe es tu <strong>termómetro de eficiencia</strong>.
+                        <br><br>
+                        <strong>Regla de oro:</strong> <span class="highlight">Busca siempre Sharpe > 1</span>.
+                        <br>
+                        <strong>Recuerda:</strong> No importa cuánto ganes, <strong>importa cuánto arriesgas</strong> para ganarlo."
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-secondary" onclick="irANivel(5)">⬅️</button>
+                <button class="btn btn-primary" onclick="irANivel(7)">🎯 Práctica Interactiva →</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 7: PRÁCTICA INTERACTIVA (6 EJERCICIOS)
+        ========================================== -->
+        <div class="section" id="section7" data-nivel="7" data-nombre="Práctica Interactiva">
+            <h2>🎯 Nivel 7: Práctica Interactiva - Gestión de Riesgo</h2>
+            <p>
+                <span class="highlight">Calcula el tamaño de posición</span>, el <strong>riesgo por operación</strong>
+                y el <strong>drawdown</strong> para cada escenario.
+                <br>
+                <strong>¡La consola te dirá si lo hiciste bien!</strong>
+            </p>
+
+            <!-- PRÁCTICA 1: CÁLCULO DE TAMAÑO DE POSICIÓN -->
+            <div class="practica-container" id="practica1">
+                <h3 style="color:#2196f3; margin-bottom:10px;">📊 Práctica 1: Cálculo del Tamaño de Posición</h3>
+                <div class="contexto">
+                    <strong>Contexto:</strong> Tienes <strong>$10,000</strong> de capital. Quieres arriesgar <strong>2%</strong> en una operación.
+                    Entrada: <strong>$50,000</strong>, Stop-Loss: <strong>$49,000</strong>.
+                </div>
+                <div class="pista">💡 <strong>Pista:</strong> Tamaño = (Capital × %Riesgo) / (Entrada - Stop-Loss)</div>
+
+                <div class="resultado-box" id="resultado1">
+                    <div class="fila"><span class="label">💰 Capital</span><span class="valor">$10,000</span></div>
+                    <div class="fila"><span class="label">📊 Riesgo</span><span class="valor" id="riesgo1">-</span></div>
+                    <div class="fila"><span class="label">📐 Distancia SL</span><span class="valor" id="distancia1">-</span></div>
+                    <div class="fila"><span class="label">📊 Tamaño de Posición</span><span class="valor verde" id="tamano1">-</span></div>
+                </div>
+
+                <div class="input-group" id="inputs1">
+                    <div class="campo">
+                        <label>📊 Capital ($)</label>
+                        <input type="number" id="capital1" value="10000" step="100" disabled>
+                    </div>
+                    <div class="campo">
+                        <label>📊 % Riesgo</label>
+                        <input type="number" id="riesgo_input1" placeholder="Ej: 2" step="0.1" disabled>
+                        <div class="precio-ayuda">Ejemplo: 2 = 2%</div>
+                    </div>
+                    <div class="campo">
+                        <label>📊 Tamaño (BTC)</label>
+                        <input type="number" id="tamano_input1" placeholder="Ej: 0.2" step="0.01" disabled>
+                        <div class="precio-ayuda">Cantidad a comprar</div>
+                    </div>
+                    <div class="campo" style="min-width:100px; flex:0;">
+                        <label>&nbsp;</label>
+                        <button class="btn-verificar" id="verificar1" onclick="verificarPractica(1)" disabled>✅ Verificar</button>
+                    </div>
+                </div>
+
+                <div class="feedback-practica" id="feedback1"></div>
+            </div>
+
+            <!-- PRÁCTICA 2: RIESGO POR OPERACIÓN -->
+            <div class="practica-container" id="practica2">
+                <h3 style="color:#ff5252; margin-bottom:10px;">📊 Práctica 2: Riesgo por Operación</h3>
+                <div class="contexto">
+                    <strong>Contexto:</strong> Tienes <strong>$5,000</strong> de capital. Quieres saber cuánto es <strong>1%</strong> y <strong>2%</strong>.
+                </div>
+                <div class="pista">💡 <strong>Pista:</strong> 1% = Capital × 0.01, 2% = Capital × 0.02</div>
+
+                <div class="resultado-box" id="resultado2">
+                    <div class="fila"><span class="label">💰 Capital</span><span class="valor">$5,000</span></div>
+                    <div class="fila"><span class="label">📊 1% =</span><span class="valor verde" id="uno_porciento2">-</span></div>
+                    <div class="fila"><span class="label">📊 2% =</span><span class="valor verde" id="dos_porciento2">-</span></div>
+                </div>
+
+                <div class="input-group" id="inputs2">
+                    <div class="campo">
+                        <label>📊 Capital ($)</label>
+                        <input type="number" id="capital2" value="5000" step="100" disabled>
+                    </div>
+                    <div class="campo">
+                        <label>📊 1% ($)</label>
+                        <input type="number" id="uno_input2" placeholder="Ej: 50" step="1" disabled>
+                    </div>
+                    <div class="campo">
+                        <label>📊 2% ($)</label>
+                        <input type="number" id="dos_input2" placeholder="Ej: 100" step="1" disabled>
+                    </div>
+                    <div class="campo" style="min-width:100px; flex:0;">
+                        <label>&nbsp;</label>
+                        <button class="btn-verificar" id="verificar2" onclick="verificarPractica(2)" disabled>✅ Verificar</button>
+                    </div>
+                </div>
+
+                <div class="feedback-practica" id="feedback2"></div>
+            </div>
+
+            <!-- PRÁCTICA 3: DRAWDOWN -->
+            <div class="practica-container" id="practica3">
+                <h3 style="color:#ffd700; margin-bottom:10px;">📈 Práctica 3: Drawdown</h3>
+                <div class="contexto">
+                    <strong>Contexto:</strong> Tu cuenta llegó a <strong>$15,000</strong> (máximo). Ahora está en <strong>$12,000</strong>.
+                </div>
+                <div class="pista">💡 <strong>Pista:</strong> Drawdown = (Máximo - Actual) / Máximo × 100</div>
+
+                <div class="resultado-box" id="resultado3">
+                    <div class="fila"><span class="label">📈 Máximo</span><span class="valor">$15,000</span></div>
+                    <div class="fila"><span class="label">📉 Actual</span><span class="valor">$12,000</span></div>
+                    <div class="fila"><span class="label">📊 Drawdown</span><span class="valor rojo" id="drawdown3">-</span></div>
+                </div>
+
+                <div class="input-group" id="inputs3">
+                    <div class="campo">
+                        <label>📊 Drawdown (%)</label>
+                        <input type="number" id="drawdown_input3" placeholder="Ej: 20" step="0.1" disabled>
+                        <div class="precio-ayuda">Ejemplo: 20 = 20%</div>
+                    </div>
+                    <div class="campo" style="min-width:100px; flex:0;">
+                        <label>&nbsp;</label>
+                        <button class="btn-verificar" id="verificar3" onclick="verificarPractica(3)" disabled>✅ Verificar</button>
+                    </div>
+                </div>
+
+                <div class="feedback-practica" id="feedback3"></div>
+            </div>
+
+            <!-- PRÁCTICA 4: RECUPERACIÓN -->
+            <div class="practica-container" id="practica4">
+                <h3 style="color:#ff5252; margin-bottom:10px;">📈 Práctica 4: Recuperación</h3>
+                <div class="contexto">
+                    <strong>Contexto:</strong> Has perdido <strong>25%</strong> de tu capital. ¿Cuánto necesitas ganar para recuperar?
+                </div>
+                <div class="pista">💡 <strong>Pista:</strong> Recuperación = (100 / (100 - Drawdown) - 1) × 100</div>
+
+                <div class="resultado-box" id="resultado4">
+                    <div class="fila"><span class="label">📊 Drawdown</span><span class="valor rojo">25%</span></div>
+                    <div class="fila"><span class="label">📈 Recuperación necesaria</span><span class="valor verde" id="recuperacion4">-</span></div>
+                </div>
+
+                <div class="input-group" id="inputs4">
+                    <div class="campo">
+                        <label>📈 % Recuperación</label>
+                        <input type="number" id="recuperacion_input4" placeholder="Ej: 33.3" step="0.1" disabled>
+                        <div class="precio-ayuda">Ejemplo: 33.3 = 33.3%</div>
+                    </div>
+                    <div class="campo" style="min-width:100px; flex:0;">
+                        <label>&nbsp;</label>
+                        <button class="btn-verificar" id="verificar4" onclick="verificarPractica(4)" disabled>✅ Verificar</button>
+                    </div>
+                </div>
+
+                <div class="feedback-practica" id="feedback4"></div>
+            </div>
+
+            <!-- PRÁCTICA 5: DIVERSIFICACIÓN -->
+            <div class="practica-container" id="practica5">
+                <h3 style="color:#00c853; margin-bottom:10px;">📋 Práctica 5: Diversificación</h3>
+                <div class="contexto">
+                    <strong>Contexto:</strong> Tienes <strong>$10,000</strong>. Quieres diversificar en 3 activos: BTC (40%), ETH (35%), SOL (25%).
+                </div>
+                <div class="pista">💡 <strong>Pista:</strong> Calcula cuánto va a cada activo.</div>
+
+                <div class="resultado-box" id="resultado5">
+                    <div class="fila"><span class="label">💰 Total</span><span class="valor">$10,000</span></div>
+                    <div class="fila"><span class="label">📊 BTC (40%)</span><span class="valor verde" id="btc5">-</span></div>
+                    <div class="fila"><span class="label">📊 ETH (35%)</span><span class="valor verde" id="eth5">-</span></div>
+                    <div class="fila"><span class="label">📊 SOL (25%)</span><span class="valor verde" id="sol5">-</span></div>
+                </div>
+
+                <div class="input-group" id="inputs5">
+                    <div class="campo">
+                        <label>📊 BTC ($)</label>
+                        <input type="number" id="btc_input5" placeholder="Ej: 4000" step="100" disabled>
+                    </div>
+                    <div class="campo">
+                        <label>📊 ETH ($)</label>
+                        <input type="number" id="eth_input5" placeholder="Ej: 3500" step="100" disabled>
+                    </div>
+                    <div class="campo">
+                        <label>📊 SOL ($)</label>
+                        <input type="number" id="sol_input5" placeholder="Ej: 2500" step="100" disabled>
+                    </div>
+                    <div class="campo" style="min-width:100px; flex:0;">
+                        <label>&nbsp;</label>
+                        <button class="btn-verificar" id="verificar5" onclick="verificarPractica(5)" disabled>✅ Verificar</button>
+                    </div>
+                </div>
+
+                <div class="feedback-practica" id="feedback5"></div>
+            </div>
+
+            <!-- PRÁCTICA 6: RATIO SHARPE -->
+            <div class="practica-container" id="practica6">
+                <h3 style="color:#9c27b0; margin-bottom:10px;">📊 Práctica 6: Ratio de Sharpe</h3>
+                <div class="contexto">
+                    <strong>Contexto:</strong> Una estrategia gana <strong>15%</strong> al mes con una volatilidad del <strong>5%</strong>.
+                </div>
+                <div class="pista">💡 <strong>Pista:</strong> Sharpe = Ganancia / Volatilidad</div>
+
+                <div class="resultado-box" id="resultado6">
+                    <div class="fila"><span class="label">📈 Ganancia</span><span class="valor">15%</span></div>
+                    <div class="fila"><span class="label">📊 Volatilidad</span><span class="valor">5%</span></div>
+                    <div class="fila"><span class="label">📊 Ratio Sharpe</span><span class="valor verde" id="sharpe6">-</span></div>
+                </div>
+
+                <div class="input-group" id="inputs6">
+                    <div class="campo">
+                        <label>📊 Sharpe</label>
+                        <input type="number" id="sharpe_input6" placeholder="Ej: 3" step="0.1" disabled>
+                        <div class="precio-ayuda">Ejemplo: 3 = 3.0</div>
+                    </div>
+                    <div class="campo" style="min-width:100px; flex:0;">
+                        <label>&nbsp;</label>
+                        <button class="btn-verificar" id="verificar6" onclick="verificarPractica(6)" disabled>✅ Verificar</button>
+                    </div>
+                </div>
+
+                <div class="feedback-practica" id="feedback6"></div>
+            </div>
+
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-secondary" onclick="irANivel(6)">⬅️ Ratio Sharpe</button>
+                <button class="btn btn-primary" onclick="irANivel(8)">🧪 Laboratorio →</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 8: LABORATORIO - 20 EJERCICIOS
+        ========================================== -->
+        <div class="section" id="section8" data-nivel="8" data-nombre="Laboratorio - 20 Ejercicios">
+            <h2>🧪 Nivel 8: Laboratorio - 20 Ejercicios</h2>
+            <p>
+                Pon a prueba tus conocimientos sobre <strong>Gestión de Riesgo Avanzada</strong> con estos 20 ejercicios.
+            </p>
+
+            <div class="quiz-container" id="quizContainer">
+                <div id="quizContent"></div>
+            </div>
+
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-secondary" onclick="irANivel(7)">⬅️ Práctica</button>
+                <button class="btn btn-outline" onclick="cargarQuiz()">🔄 Reiniciar 20 Ejercicios</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        FOOTER LEGAL
+        ========================================== -->
+        <div class="footer-legal">
+            <h3>✍️ YURBI GONZALEZ LOPEZ</h3>
+            <p><span class="badge-proteccion">🔒 CONTENIDO PROTEGIDO</span></p>
+            <p class="copyright">© 2026 - Todos los derechos reservados</p>
+            <p style="font-size:18px; color:#8888aa; margin-top:8px;">
+                Prohibida la reproducción total o parcial sin autorización expresa.
+                <br>
+                <span style="color:#ffd700;">🛡️ Master en Gestión de Riesgo Avanzada v1.0</span>
+            </p>
+            <p style="font-size:16px; color:#666688; margin-top:4px;">
+                Código registrado y protegido contra plagio digital
+            </p>
+        </div>
+    </div>
+
+    <!-- ==========================================
+    JAVASCRIPT COMPLETO
+    ========================================== -->
+    <script>
+        // ============================================
+        // 0. SISTEMA DE VOZ OPTIMIZADO
+        // ============================================
+        let synth = window.speechSynthesis;
+        let utterance = null;
+        let isSpeaking = false;
+        let vozInicializada = false;
+
+        function inicializarVoz() {
+            if (vozInicializada) return;
+            if (!window.speechSynthesis) {
+                console.warn('Web Speech API no soportada');
+                return;
+            }
+            try {
+                synth.getVoices();
+                const tempUtterance = new SpeechSynthesisUtterance(' ');
+                tempUtterance.volume = 0;
+                tempUtterance.rate = 0.1;
+                synth.speak(tempUtterance);
+                setTimeout(() => {
+                    synth.cancel();
+                    vozInicializada = true;
+                    console.log('✅ Sistema de voz inicializado');
+                }, 200);
+            } catch (e) {
+                console.warn('Error al inicializar voz:', e);
+                vozInicializada = true;
+            }
+        }
+
+        document.addEventListener('click', function initVozClick() {
+            inicializarVoz();
+            document.removeEventListener('click', initVozClick);
+        }, { once: true });
+
+        document.addEventListener('touchstart', function initVozTouch() {
+            inicializarVoz();
+            document.removeEventListener('touchstart', initVozTouch);
+        }, { once: true });
+
+        document.addEventListener('keydown', function initVozKey() {
+            inicializarVoz();
+            document.removeEventListener('keydown', initVozKey);
+        }, { once: true });
+
+        function hablarTexto(texto, callback) {
+            if (!window.speechSynthesis) {
+                if (callback) callback();
+                return;
+            }
+            if (!vozInicializada) inicializarVoz();
+
+            try {
+                if (synth.speaking) synth.cancel();
+            } catch (e) {
+                console.warn('Error al cancelar voz:', e);
+            }
+
+            let textoLimpio = texto.replace(/[📖🧠💡🎯🔊📊🟢🔴⏰🔄📌✅❌⬆⬇📐📜🎯💥🛡️❓😰💰📋⏳🔐📱⚡⚖️]/g, '');
+            textoLimpio = textoLimpio.replace(/\s+/g, ' ').trim();
+
+            if (textoLimpio.length === 0) {
+                if (callback) callback();
+                return;
+            }
+
+            try {
+                utterance = new SpeechSynthesisUtterance(textoLimpio);
+                utterance.lang = 'es-ES';
+                utterance.rate = 0.80;
+                utterance.pitch = 1.0;
+                utterance.volume = 1.0;
+
+                const voces = synth.getVoices();
+                const vozEsp = voces.find(v => v.lang.startsWith('es'));
+                if (vozEsp) utterance.voice = vozEsp;
+
+                utterance.onstart = function() {
+                    isSpeaking = true;
+                    const btn = document.getElementById('btnVoice');
+                    if (btn) {
+                        btn.classList.add('playing');
+                        btn.textContent = '🔊 Leyendo...';
+                    }
+                };
+
+                utterance.onend = function() {
+                    isSpeaking = false;
+                    const btn = document.getElementById('btnVoice');
+                    if (btn) {
+                        btn.classList.remove('playing');
+                        btn.textContent = '🔊 Escuchar Lección';
+                    }
+                    if (callback) callback();
+                };
+
+                utterance.onerror = function(e) {
+                    console.warn('Error en síntesis:', e);
+                    isSpeaking = false;
+                    const btn = document.getElementById('btnVoice');
+                    if (btn) {
+                        btn.classList.remove('playing');
+                        btn.textContent = '🔊 Escuchar Lección';
+                    }
+                    if (callback) callback();
+                };
+
+                synth.speak(utterance);
+            } catch (e) {
+                console.warn('Error al hablar:', e);
+                if (callback) callback();
+            }
+        }
+
+        function leerSeccion(nivel) {
+            const section = document.getElementById(`section${nivel}`);
+            if (!section) return;
+
+            const textoElementos = section.querySelectorAll('h2, h3, h4, p, li, .mentor-dice, .ejemplo-box, .ejemplo-box-bajista, .concepto-clave, .ventajas-box, .desventajas-box, .formula-box, .practica-container');
+            let textoCompleto = '';
+            textoElementos.forEach(el => {
+                const texto = el.textContent || '';
+                textoCompleto += texto + '. ';
+            });
+
+            if (textoCompleto.length > 0) {
+                hablarTexto(textoCompleto);
+            }
+        }
+
+        document.getElementById('btnVoice').addEventListener('click', function() {
+            const activeSection = document.querySelector('.section.active');
+            if (!activeSection) return;
+
+            if (isSpeaking) {
+                try {
+                    if (synth.speaking) synth.cancel();
+                } catch (e) {
+                    console.warn('Error al cancelar:', e);
+                }
+                isSpeaking = false;
+                this.classList.remove('playing');
+                this.textContent = '🔊 Escuchar Lección';
+                return;
+            }
+
+            const nivel = parseInt(activeSection.id.replace('section', ''));
+            if (!vozInicializada) inicializarVoz();
+            leerSeccion(nivel);
+        });
+
+        // ============================================
+        // 1. PRÁCTICAS INTERACTIVAS
+        // ============================================
+        let practicaCompletada = { 1: false, 2: false, 3: false, 4: false, 5: false, 6: false };
+
+        // VALORES CORRECTOS
+        const valoresCorrectos = {
+            1: { riesgo: 2, tamano: 0.2 },
+            2: { uno: 50, dos: 100 },
+            3: { drawdown: 20 },
+            4: { recuperacion: 33.33 },
+            5: { btc: 4000, eth: 3500, sol: 2500 },
+            6: { sharpe: 3 }
+        };
+
+        function verificarPractica(num) {
+            if (practicaCompletada[num]) return;
+
+            const correcto = valoresCorrectos[num];
+            const feedback = document.getElementById(`feedback${num}`);
+
+            let todosOk = true;
+            let errores = [];
+
+            if (num === 1) {
+                const riesgo = parseFloat(document.getElementById('riesgo_input1').value);
+                const tamano = parseFloat(document.getElementById('tamano_input1').value);
+                const riesgoOk = riesgo === correcto.riesgo;
+                const tamanoOk = Math.abs(tamano - correcto.tamano) < 0.01;
+
+                document.getElementById('riesgo1').textContent = riesgoOk ? '✅ 2%' : '❌ ' + riesgo + '%';
+                document.getElementById('distancia1').textContent = '$1,000';
+                document.getElementById('tamano1').textContent = tamanoOk ? '✅ ' + tamano + ' BTC' : '❌ ' + tamano + ' BTC';
+
+                if (!riesgoOk) errores.push('riesgo');
+                if (!tamanoOk) errores.push('tamaño');
+                todosOk = riesgoOk && tamanoOk;
+
+                document.getElementById('riesgo_input1').disabled = true;
+                document.getElementById('tamano_input1').disabled = true;
+                document.getElementById('verificar1').disabled = true;
+
+            } else if (num === 2) {
+                const uno = parseFloat(document.getElementById('uno_input2').value);
+                const dos = parseFloat(document.getElementById('dos_input2').value);
+                const unoOk = uno === correcto.uno;
+                const dosOk = dos === correcto.dos;
+
+                document.getElementById('uno_porciento2').textContent = unoOk ? '✅ $' + uno : '❌ $' + uno;
+                document.getElementById('dos_porciento2').textContent = dosOk ? '✅ $' + dos : '❌ $' + dos;
+
+                if (!unoOk) errores.push('1%');
+                if (!dosOk) errores.push('2%');
+                todosOk = unoOk && dosOk;
+
+                document.getElementById('uno_input2').disabled = true;
+                document.getElementById('dos_input2').disabled = true;
+                document.getElementById('verificar2').disabled = true;
+
+            } else if (num === 3) {
+                const drawdown = parseFloat(document.getElementById('drawdown_input3').value);
+                const drawdownOk = Math.abs(drawdown - correcto.drawdown) < 0.1;
+
+                document.getElementById('drawdown3').textContent = drawdownOk ? '✅ ' + drawdown + '%' : '❌ ' + drawdown + '%';
+
+                if (!drawdownOk) errores.push('drawdown');
+                todosOk = drawdownOk;
+
+                document.getElementById('drawdown_input3').disabled = true;
+                document.getElementById('verificar3').disabled = true;
+
+            } else if (num === 4) {
+                const recuperacion = parseFloat(document.getElementById('recuperacion_input4').value);
+                const recOk = Math.abs(recuperacion - correcto.recuperacion) < 0.5;
+
+                document.getElementById('recuperacion4').textContent = recOk ? '✅ ' + recuperacion.toFixed(1) + '%' : '❌ ' + recuperacion.toFixed(1) + '%';
+
+                if (!recOk) errores.push('recuperación');
+                todosOk = recOk;
+
+                document.getElementById('recuperacion_input4').disabled = true;
+                document.getElementById('verificar4').disabled = true;
+
+            } else if (num === 5) {
+                const btc = parseFloat(document.getElementById('btc_input5').value);
+                const eth = parseFloat(document.getElementById('eth_input5').value);
+                const sol = parseFloat(document.getElementById('sol_input5').value);
+                const btcOk = Math.abs(btc - correcto.btc) < 10;
+                const ethOk = Math.abs(eth - correcto.eth) < 10;
+                const solOk = Math.abs(sol - correcto.sol) < 10;
+
+                document.getElementById('btc5').textContent = btcOk ? '✅ $' + btc : '❌ $' + btc;
+                document.getElementById('eth5').textContent = ethOk ? '✅ $' + eth : '❌ $' + eth;
+                document.getElementById('sol5').textContent = solOk ? '✅ $' + sol : '❌ $' + sol;
+
+                if (!btcOk) errores.push('BTC');
+                if (!ethOk) errores.push('ETH');
+                if (!solOk) errores.push('SOL');
+                todosOk = btcOk && ethOk && solOk;
+
+                document.getElementById('btc_input5').disabled = true;
+                document.getElementById('eth_input5').disabled = true;
+                document.getElementById('sol_input5').disabled = true;
+                document.getElementById('verificar5').disabled = true;
+
+            } else if (num === 6) {
+                const sharpe = parseFloat(document.getElementById('sharpe_input6').value);
+                const sharpeOk = Math.abs(sharpe - correcto.sharpe) < 0.1;
+
+                document.getElementById('sharpe6').textContent = sharpeOk ? '✅ ' + sharpe : '❌ ' + sharpe;
+
+                if (!sharpeOk) errores.push('Sharpe');
+                todosOk = sharpeOk;
+
+                document.getElementById('sharpe_input6').disabled = true;
+                document.getElementById('verificar6').disabled = true;
+            }
+
+            if (todosOk) {
+                feedback.className = 'feedback-practica mostrar acierto';
+                feedback.innerHTML = `
+                    ✅ ¡EXCELENTE! Todos los cálculos son correctos.
+                    <div class="explicacion">
+                        🎯 Has demostrado un buen entendimiento de la gestión de riesgo.
+                    </div>
+                `;
+                practicaCompletada[num] = true;
+            } else {
+                feedback.className = 'feedback-practica mostrar fallo';
+                feedback.innerHTML = `
+                    ❌ Los siguientes valores no son correctos: <strong>${errores.join(', ')}</strong>
+                    <div class="explicacion">
+                        <strong>Valores correctos:</strong><br>
+                        ${Object.entries(correcto).map(([k, v]) => `${k}: ${v}`).join('<br>')}
+                        <br><br>
+                        <button onclick="reiniciarPractica(${num})" style="margin-top:10px; padding:8px 20px; border:2px solid #ffd700; border-radius:30px; background:transparent; color:#ffd700; cursor:pointer; font-size:16px;">
+                            🔄 Reintentar
+                        </button>
+                    </div>
+                `;
+            }
+        }
+
+        function reiniciarPractica(num) {
+            practicaCompletada[num] = false;
+
+            const inputs = document.querySelectorAll(`#inputs${num} input`);
+            inputs.forEach(inp => {
+                inp.disabled = true;
+                inp.value = '';
+                inp.classList.remove('correcto', 'incorrecto');
+            });
+
+            const verificar = document.getElementById(`verificar${num}`);
+            if (verificar) verificar.disabled = true;
+
+            const feedback = document.getElementById(`feedback${num}`);
+            feedback.className = 'feedback-practica';
+            feedback.innerHTML = '';
+
+            // Habilitar inputs nuevamente
+            setTimeout(() => {
+                inputs.forEach(inp => {
+                    inp.disabled = false;
+                });
+                if (verificar) verificar.disabled = false;
+            }, 100);
+        }
+
+        // ============================================
+        // 2. DATOS DEL QUIZ - 20 EJERCICIOS
+        // ============================================
+        const ejercicios = [
+            // Tamaño de posición
+            { id: 1, pregunta: '¿Qué es el TAMAÑO DE POSICIÓN?', opciones: ['Cuánto compras o vendes', 'El precio de entrada', 'El stop-loss'], correcta: 0, explicacion: '✅ Tamaño de Posición: Es la cantidad de activo que compras o vendes en una operación.' },
+            { id: 2, pregunta: '¿Qué fórmula se usa para calcular el TAMAÑO DE POSICIÓN?', opciones: ['(Capital × %Riesgo) / (Entrada - Stop-Loss)', 'Capital × %Riesgo', 'Entrada - Stop-Loss'], correcta: 0, explicacion: '✅ Fórmula: (Capital × %Riesgo) / (Entrada - Stop-Loss).' },
+            { id: 3, pregunta: '¿Cuál es el RIESGO RECOMENDADO por operación?', opciones: ['1%-2%', '10%-20%', '50%-100%'], correcta: 0, explicacion: '✅ 1%-2%: Es el riesgo recomendado por operación para proteger tu capital.' },
+            // Riesgo
+            { id: 4, pregunta: '¿Qué es el DRAWDOWN?', opciones: ['Pérdida desde el punto más alto', 'Ganancia máxima', 'El precio de entrada'], correcta: 0, explicacion: '✅ Drawdown: Es la pérdida desde el punto más alto de tu cuenta.' },
+            { id: 5, pregunta: 'Si pierdes 20%, ¿cuánto necesitas ganar para recuperar?', opciones: ['20%', '25%', '30%'], correcta: 1, explicacion: '✅ 25%: Para recuperar un 20% necesitas ganar 25% (100/80 - 1 = 25%).' },
+            { id: 6, pregunta: 'Si pierdes 50%, ¿cuánto necesitas ganar para recuperar?', opciones: ['50%', '100%', '200%'], correcta: 1, explicacion: '✅ 100%: Para recuperar un 50% necesitas ganar 100% (el doble).' },
+            // Diversificación
+            { id: 7, pregunta: '¿Qué es la DIVERSIFICACIÓN?', opciones: ['Repartir el capital en diferentes activos', 'Poner todo en un solo activo', 'No invertir'], correcta: 0, explicacion: '✅ Diversificación: Repartir el capital en diferentes activos para reducir riesgo.' },
+            { id: 8, pregunta: '¿Cuántos activos se recomienda tener en una cartera diversificada?', opciones: ['3-5', '1-2', 'Más de 20'], correcta: 0, explicacion: '✅ 3-5: Es el número recomendado de activos para una buena diversificación.' },
+            // Apalancamiento
+            { id: 9, pregunta: '¿Cuál es el apalancamiento RECOMENDADO para PRINCIPIANTES?', opciones: ['2x-3x', '10x-20x', '50x-100x'], correcta: 0, explicacion: '✅ 2x-3x: Apalancamiento recomendado para principiantes.' },
+            { id: 10, pregunta: '¿Qué es la LIQUIDACIÓN?', opciones: ['La plataforma cierra tu posición por pérdidas', 'Ganas mucho dinero', 'El precio sube'], correcta: 0, explicacion: '✅ Liquidación: La plataforma cierra tu posición cuando pierdes el dinero de tu garantía.' },
+            // Ratio Sharpe
+            { id: 11, pregunta: '¿Qué mide el RATIO DE SHARPE?', opciones: ['Rendimiento ajustado al riesgo', 'El precio de entrada', 'La cantidad de activos'], correcta: 0, explicacion: '✅ Ratio Sharpe: Mide el rendimiento ajustado al riesgo.' },
+            { id: 12, pregunta: '¿Qué significa un Sharpe > 2?', opciones: ['Excelente relación riesgo/beneficio', 'Mala relación', 'No significa nada'], correcta: 0, explicacion: '✅ Sharpe > 2: Excelente relación entre riesgo y beneficio.' },
+            // Conceptos generales
+            { id: 13, pregunta: '¿Qué es la GESTIÓN DE RIESGO?', opciones: ['Controlar cuánto arriesgas en cada operación', 'Apostar todo en una operación', 'No usar stop-loss'], correcta: 0, explicacion: '✅ Gestión de Riesgo: Controlar cuánto arriesgas en cada operación para proteger tu capital.' },
+            { id: 14, pregunta: '¿Cuál es la REGLA DE ORO de la gestión de riesgo?', opciones: ['Arriesgar 1%-2% por operación', 'Arriesgar 50% por operación', 'No arriesgar nada'], correcta: 0, explicacion: '✅ Regla de Oro: Arriesgar 1%-2% del capital por operación.' },
+            { id: 15, pregunta: '¿Qué es el STOP-LOSS?', opciones: ['Limita tus pérdidas automáticamente', 'Asegura tus ganancias', 'No hace nada'], correcta: 0, explicacion: '✅ Stop-Loss: Limita tus pérdidas automáticamente.' },
+            { id: 16, pregunta: '¿Qué es el TAKE-PROFIT?', opciones: ['Asegura tus ganancias', 'Limita tus pérdidas', 'No hace nada'], correcta: 0, explicacion: '✅ Take-Profit: Asegura tus ganancias automáticamente.' },
+            // Casos prácticos
+            { id: 17, pregunta: 'Con $10,000 y riesgo 2%, ¿cuánto arriesgas por operación?', opciones: ['$200', '$500', '$1,000'], correcta: 0, explicacion: '✅ $200: 2% de $10,000 = $200.' },
+            { id: 18, pregunta: 'Con $5,000 y riesgo 1%, ¿cuánto arriesgas por operación?', opciones: ['$50', '$100', '$500'], correcta: 0, explicacion: '✅ $50: 1% de $5,000 = $50.' },
+            { id: 19, pregunta: '¿Qué relación R/R se recomienda buscar?', opciones: ['1:2 o mejor', '2:1', '1:1'], correcta: 0, explicacion: '✅ 1:2 o mejor: Busca siempre arriesgar 1 para ganar 2 o más.' },
+            { id: 20, pregunta: '¿Cuál es el primer paso antes de abrir una operación?', opciones: ['Calcular el tamaño de posición', 'Comprar sin pensar', 'Poner todo el capital'], correcta: 0, explicacion: '✅ Calcular el tamaño de posición: Es el primer paso para gestionar el riesgo.' }
+        ];
+
+        function generarEjercicios() {
+            const copia = [...ejercicios];
+            const seleccionados = [];
+            const cantidad = Math.min(20, copia.length);
+            for (let i = 0; i < cantidad; i++) {
+                const idx = Math.floor(Math.random() * copia.length);
+                seleccionados.push(copia[idx]);
+                copia.splice(idx, 1);
+            }
+            return seleccionados;
+        }
+
+        let casosActuales = [];
+        let casoActualIndex = 0;
+        let puntuacion = { correctos: 0, incorrectos: 0 };
+        let respondido = false;
+
+        function cargarQuiz() {
+            casosActuales = generarEjercicios();
+            casoActualIndex = 0;
+            puntuacion = { correctos: 0, incorrectos: 0 };
+            respondido = false;
+            mostrarCaso();
+        }
+
+        function mostrarCaso() {
+            if (!casosActuales.length || casoActualIndex >= casosActuales.length) {
+                const total = puntuacion.correctos + puntuacion.incorrectos;
+                const porcentaje = total > 0 ? Math.round((puntuacion.correctos / total) * 100) : 0;
+                let mensaje = '';
+                let emoji = '';
+
+                if (porcentaje >= 90) { mensaje = '¡Excelente! Eres un maestro en gestión de riesgo. 🏆';
+                    emoji = '🛡️'; } else if (porcentaje >= 70) { mensaje = '¡Muy bien! Tienes un buen entendimiento. 💪';
+                    emoji = '📊'; } else if (porcentaje >= 50) { mensaje = 'Vas por buen camino. 📚';
+                    emoji = '📖'; } else { mensaje = 'No te desanimes. La gestión de riesgo es lo más difícil. 🎯';
+                    emoji = '🔄'; }
+
+                document.getElementById('quizContent').innerHTML = `
+                            <div class="text-center" style="padding: 30px;">
+                                <h3>🎉 ¡Has completado los 20 ejercicios!</h3>
+                                <div style="font-size: 60px; margin: 20px 0;">${emoji}</div>
+                                <p style="font-size: 24px;">
+                                    ✅ Correctos: <span style="color:#00c853; font-weight:700;">${puntuacion.correctos}</span>
+                                    &nbsp;|&nbsp;
+                                    ❌ Incorrectos: <span style="color:#ff5252; font-weight:700;">${puntuacion.incorrectos}</span>
+                                    &nbsp;|&nbsp;
+                                    🎯 Aciertos: <span style="color:#ffd700; font-weight:700;">${porcentaje}%</span>
+                                </p>
+                                <p style="font-size: 22px; color: #b0b0d0;">${mensaje}</p>
+                                <p style="font-size: 18px; color: #ffd700; margin-top:10px;">
+                                    🛡️ ¡Has completado TODAS las consolas de la serie!
+                                    <br>
+                                    <span style="color:#b0b0d0; font-size:16px;">
+                                        Fundamentos → Velas → Soportes → Estructura → Estrategias → Psicología → Seguridad → Órdenes → Gestión de Riesgo
+                                    </span>
+                                    <br><br>
+                                    🎯 <strong>¡Ahora eres un trader completo!</strong>
+                                </p>
+                                <button class="btn btn-primary" onclick="cargarQuiz()" style="margin-top:20px;">
+                                    🔄 Repetir 20 Ejercicios
+                                </button>
+                            </div>
+                        `;
+                actualizarProgreso();
+                return;
+            }
+
+            const ejercicio = casosActuales[casoActualIndex];
+            respondido = false;
+
+            let html = `
+                        <div class="text-center">
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+                                <span style="font-size:22px; font-weight:600; color:#ffd700;">
+                                    📝 Ejercicio ${casoActualIndex + 1} de 20
+                                </span>
+                                <span style="font-size:20px; color:#b0b0d0;">
+                                    ✅ ${puntuacion.correctos} | ❌ ${puntuacion.incorrectos}
+                                </span>
+                            </div>
+                            <p style="font-size:22px; color:#ffffff; margin-top:15px; font-weight:500;">
+                                ${ejercicio.pregunta}
+                            </p>
+                        </div>
+                        <div class="quiz-options" id="opcionesQuiz">
+                        `;
+
+            ejercicio.opciones.forEach((opcion, index) => {
+                html += `<button class="btn btn-secondary" onclick="responderPreguntaQuiz(${index})">${opcion}</button>`;
+            });
+
+            html += `
+                        </div>
+                        <div id="feedbackQuiz" class="feedback"></div>
+                        <div class="progreso-quiz">
+                            <span class="contador-preguntas">
+                                Pregunta <span>${casoActualIndex + 1}</span> de <span>20</span>
+                            </span>
+                            <span style="font-size:18px; color:#b0b0d0;">
+                                ⏳ ${20 - (casoActualIndex + 1)} restantes
+                            </span>
+                        </div>
+                    `;
+
+            document.getElementById('quizContent').innerHTML = html;
+            actualizarProgreso();
+        }
+
+        function responderPreguntaQuiz(elegida) {
+            if (respondido) return;
+            respondido = true;
+
+            const ejercicio = casosActuales[casoActualIndex];
+            const correcta = ejercicio.correcta;
+            const feedback = document.getElementById('feedbackQuiz');
+
+            if (elegida === correcta) {
+                feedback.className = 'feedback correct';
+                feedback.innerHTML = `✅ ¡Correcto! ${ejercicio.explicacion}`;
+                puntuacion.correctos++;
+            } else {
+                feedback.className = 'feedback incorrect';
+                const correctaText = ejercicio.opciones[correcta];
+                feedback.innerHTML = `❌ La respuesta correcta es: <strong>${correctaText}</strong>.<br><div class="explanation">📖 ${ejercicio.explicacion}</div>`;
+                puntuacion.incorrectos++;
+            }
+
+            document.querySelectorAll('#opcionesQuiz .btn').forEach(btn => {
+                btn.disabled = true;
+                btn.style.opacity = '0.5';
+            });
+
+            actualizarProgreso();
+
+            const container = document.getElementById('quizContent');
+            const btnSiguiente = document.createElement('div');
+            btnSiguiente.className = 'text-center mt-20';
+            btnSiguiente.innerHTML = `
+                        <button class="btn btn-primary" onclick="siguienteCaso()">
+                            ${casoActualIndex < casosActuales.length - 1 ? '➡️ Siguiente Pregunta' : '📊 Ver Resultados Finales'}
+                        </button>
+                    `;
+            container.appendChild(btnSiguiente);
+        }
+
+        function siguienteCaso() {
+            casoActualIndex++;
+            respondido = false;
+            mostrarCaso();
+        }
+
+        // ============================================
+        // 3. NAVEGACIÓN
+        // ============================================
+        function irANivel(nivel) {
+            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+            const target = document.getElementById(`section${nivel}`);
+            if (target) {
+                target.classList.add('active');
+                document.getElementById('nivelActualDisplay').textContent = nivel + 1;
+                document.getElementById('seccionNombre').textContent = target.dataset.nombre || 'Sección';
+                if (nivel === 8) cargarQuiz();
+                actualizarProgreso();
+
+                setTimeout(() => {
+                    leerSeccion(nivel);
+                }, 300);
+
+                document.querySelector('#app').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        function actualizarProgreso() {
+            const secciones = document.querySelectorAll('.section');
+            let indexActual = 0;
+            secciones.forEach((sec, idx) => {
+                if (sec.classList.contains('active')) indexActual = idx;
+            });
+            const progreso = ((indexActual) / (secciones.length - 1)) * 100;
+            document.getElementById('progressBar').style.width = `${Math.min(100, progreso)}%`;
+        }
+
+        // ============================================
+        // 4. INICIALIZACIÓN
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            irANivel(0);
+
+            if (window.speechSynthesis) {
+                window.speechSynthesis.getVoices();
+                window.speechSynthesis.onvoiceschanged = () => {
+                    window.speechSynthesis.getVoices();
+                };
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                const active = document.querySelector('.section.active');
+                if (active) {
+                    const nivel = parseInt(active.id.replace('section', ''));
+                    if (nivel > 0) { irANivel(nivel - 1);
+                        e.preventDefault(); }
+                }
+            }
+            if (e.key === 'ArrowRight') {
+                const active = document.querySelector('.section.active');
+                if (active) {
+                    const nivel = parseInt(active.id.replace('section', ''));
+                    const total = document.querySelectorAll('.section').length - 1;
+                    if (nivel < total) { irANivel(nivel + 1);
+                        e.preventDefault(); }
+                }
+            }
+            if (e.key === ' ' || e.key === 'Space') {
+                const btn = document.getElementById('btnVoice');
+                if (document.activeElement?.tagName !== 'BUTTON') {
+                    btn.click();
+                    e.preventDefault();
+                }
+            }
+        });
+
+        console.log('%c═══════════════════════════════════════════', 'color: #ffd700; font-size: 16px;');
+        console.log('%c🛡️ MASTER EN GESTIÓN DE RIESGO AVANZADA v1.0', 'color: #ffd700; font-size: 20px; font-weight: bold;');
+        console.log('%c✍️  Creado por: YURBI GONZALEZ LOPEZ', 'color: #00c853; font-size: 16px;');
+        console.log('%c© Todos los derechos reservados 2026', 'color: #ff5252; font-size: 14px;');
+        console.log('%c🎯 9 Niveles | 20 Ejercicios', 'color: #ffd700; font-size: 14px;');
+        console.log('%c📊 Tamaño de Posición | Riesgo 1%-2% | Drawdown | Diversificación', 'color: #2196f3; font-size: 13px;');
+        console.log('%c⚡ Apalancamiento Profesional | Ratio de Sharpe', 'color: #9c27b0; font-size: 13px;');
+        console.log('%c═══════════════════════════════════════════', 'color: #ffd700; font-size: 16px;');
+    </script>
+
+</body>
+</html>

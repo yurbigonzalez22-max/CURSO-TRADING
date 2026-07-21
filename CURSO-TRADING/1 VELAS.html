@@ -1,0 +1,2050 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Master en Velas Japonesas - YURBI GONZALEZ LOPEZ</title>
+    <!-- Prevenir copia y plagio -->
+    <script>
+        // Protección contra copia de texto
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            alert('📚 Contenido protegido por derechos de autor de YURBI GONZALEZ LOPEZ. Prohibida su reproducción sin autorización.');
+            return false;
+        });
+
+        // Protección contra selección de texto
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // Protección contra clic derecho
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert('© YURBI GONZALEZ LOPEZ - Todos los derechos reservados. Este contenido está protegido contra plagio.');
+            return false;
+        });
+
+        // Protección contra teclas de atajo
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'v' || e.key === 'V' || e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+                alert('📚 Contenido protegido por derechos de autor de YURBI GONZALEZ LOPEZ.');
+                return false;
+            }
+            if (e.key === 'F12') {
+                e.preventDefault();
+                alert('🔒 Herramientas de desarrollador desactivadas para proteger el contenido.');
+                return false;
+            }
+        });
+
+        // Marca de agua en consola
+        console.log('%c═══════════════════════════════════════════', 'color: #ffd700; font-size: 16px;');
+        console.log('%c📚 MASTER EN VELAS JAPONESAS', 'color: #ffd700; font-size: 20px; font-weight: bold;');
+        console.log('%c✍️  Creado por: YURBI GONZALEZ LOPEZ', 'color: #00c853; font-size: 16px;');
+        console.log('%c© Todos los derechos reservados 2026', 'color: #ff5252; font-size: 14px;');
+        console.log('%c🔒 Contenido protegido contra plagio', 'color: #ffd700; font-size: 14px;');
+        console.log('%c═══════════════════════════════════════════', 'color: #ffd700; font-size: 16px;');
+    </script>
+    <style>
+        /* ========================================
+               RESET Y CONFIGURACIÓN BASE
+            ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            background: #0f0e1a;
+            color: #f0f0f0;
+            line-height: 1.8;
+            font-size: 20px;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        /* Marca de agua de protección */
+        body::before {
+            content: "© YURBI GONZALEZ LOPEZ";
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 11px;
+            color: rgba(255, 215, 0, 0.08);
+            transform: rotate(0deg);
+            pointer-events: none;
+            z-index: 9999;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        #app {
+            max-width: 1100px;
+            width: 100%;
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border-radius: 32px;
+            padding: 40px 35px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            border: 2px solid #2a2a4a;
+            margin: 10px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Sello de protección */
+        #app::after {
+            content: "© YURBI GONZALEZ LOPEZ";
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 60px;
+            color: rgba(255, 215, 0, 0.03);
+            transform: rotate(-15deg);
+            pointer-events: none;
+            font-weight: bold;
+            letter-spacing: 5px;
+            white-space: nowrap;
+        }
+
+        /* ========================================
+               TIPOGRAFÍA
+            ======================================== */
+        h1 {
+            font-size: 38px;
+            font-weight: 700;
+            color: #ffd700;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 25px 0 15px 0;
+            border-left: 6px solid #ffd700;
+            padding-left: 18px;
+        }
+
+        h3 {
+            font-size: 28px;
+            font-weight: 500;
+            color: #e0e0ff;
+            margin: 20px 0 12px 0;
+        }
+
+        h4 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #ffd700;
+            margin: 15px 0 10px 0;
+        }
+
+        p,
+        li,
+        .texto {
+            font-size: 20px;
+            line-height: 1.9;
+            color: #e8e8f0;
+            margin-bottom: 14px;
+        }
+
+        .mentor-dice {
+            background: rgba(255, 215, 0, 0.12);
+            border-left: 6px solid #ffd700;
+            padding: 18px 24px;
+            border-radius: 12px;
+            margin: 20px 0;
+            font-style: italic;
+            font-size: 22px;
+            color: #fff5d6;
+        }
+
+        .mentor-dice::before {
+            content: "🎯 ";
+            font-style: normal;
+        }
+
+        .ejemplo-box {
+            background: rgba(0, 200, 83, 0.08);
+            border: 2px solid #00c853;
+            border-radius: 16px;
+            padding: 18px 24px;
+            margin: 15px 0;
+        }
+
+        .ejemplo-box::before {
+            content: "💡 EJEMPLO: ";
+            font-weight: 700;
+            color: #00c853;
+        }
+
+        .ejemplo-box-bajista {
+            background: rgba(255, 82, 82, 0.08);
+            border: 2px solid #ff5252;
+            border-radius: 16px;
+            padding: 18px 24px;
+            margin: 15px 0;
+        }
+
+        .ejemplo-box-bajista::before {
+            content: "💡 EJEMPLO: ";
+            font-weight: 700;
+            color: #ff5252;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #ffd700;
+            color: #0f0e1a;
+            padding: 4px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* ========================================
+               TARJETAS DE PATRONES
+            ======================================== */
+        .patron-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid #2a2a5a;
+            border-radius: 24px;
+            padding: 28px 30px;
+            margin: 30px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+        }
+
+        .patron-card:hover {
+            border-color: #ffd700;
+            background: rgba(255, 215, 0, 0.06);
+        }
+
+        .patron-imagen {
+            flex: 0 0 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            padding: 20px 15px;
+            border: 2px solid #3a3a6a;
+            min-height: 200px;
+        }
+
+        .patron-imagen svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .patron-imagen .etiqueta {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffd700;
+            margin-top: 12px;
+            text-align: center;
+            background: rgba(255, 215, 0, 0.1);
+            padding: 4px 16px;
+            border-radius: 30px;
+        }
+
+        .patron-contenido {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .patron-contenido h3 {
+            color: #ffd700;
+            font-size: 28px;
+            margin-top: 0;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+            padding-bottom: 8px;
+        }
+
+        .patron-contenido p {
+            font-size: 19px;
+            line-height: 1.8;
+        }
+
+        .patron-contenido strong {
+            color: #ffd700;
+        }
+
+        .patron-contenido .highlight {
+            color: #ffd700;
+            font-weight: 600;
+        }
+
+        /* ========================================
+               BOTONES
+            ======================================== */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            font-size: 22px;
+            font-weight: 600;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            min-height: 60px;
+            min-width: 160px;
+            text-align: center;
+            margin: 8px 10px 8px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.5px;
+            touch-action: manipulation;
+        }
+
+        .btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        .btn-primary {
+            background: #ffd700;
+            color: #0f0e1a;
+        }
+
+        .btn-primary:hover {
+            background: #ffe44d;
+        }
+
+        .btn-secondary {
+            background: #4a4a7a;
+            color: #ffffff;
+        }
+
+        .btn-secondary:hover {
+            background: #5a5a9a;
+        }
+
+        .btn-success {
+            background: #00c853;
+            color: #ffffff;
+        }
+
+        .btn-success:hover {
+            background: #00e676;
+        }
+
+        .btn-danger {
+            background: #d32f2f;
+            color: #ffffff;
+        }
+
+        .btn-danger:hover {
+            background: #f44336;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 3px solid #ffd700;
+            color: #ffd700;
+        }
+
+        .btn-outline:hover {
+            background: #ffd700;
+            color: #0f0e1a;
+        }
+
+        .btn-voice {
+            background: #2196f3;
+            color: #ffffff;
+            font-size: 24px;
+            padding: 16px 36px;
+            position: relative;
+        }
+
+        .btn-voice:hover {
+            background: #42a5f5;
+        }
+
+        .btn-voice.playing {
+            background: #f44336;
+            animation: pulse-voice 1s infinite;
+        }
+
+        @keyframes pulse-voice {
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(244, 67, 54, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 0 20px rgba(244, 67, 54, 0);
+            }
+        }
+
+        .btn-voice .badge-voice {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ffd700;
+            color: #0f0e1a;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0;
+            justify-content: center;
+        }
+
+        /* ========================================
+               NAVEGACIÓN
+            ======================================== */
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 18px 0;
+            border-bottom: 2px solid #2a2a4a;
+            margin-bottom: 25px;
+        }
+
+        .nav-bar .nivel-info {
+            font-size: 22px;
+            font-weight: 600;
+            color: #b0b0d0;
+        }
+
+        .nav-bar .nivel-info span {
+            color: #ffd700;
+        }
+
+        .progress-container {
+            width: 100%;
+            background: #2a2a4a;
+            border-radius: 60px;
+            height: 18px;
+            margin: 10px 0;
+            overflow: hidden;
+            border: 1px solid #3a3a5a;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ffd700, #ffb300);
+            border-radius: 60px;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+
+        /* ========================================
+               SECCIONES
+            ======================================== */
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========================================
+               QUIZ
+            ======================================== */
+        .quiz-container {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 24px;
+            padding: 30px;
+            margin: 25px 0;
+            border: 2px solid #3a3a6a;
+        }
+
+        .quiz-graph {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid #2a2a5a;
+            min-height: 220px;
+        }
+
+        .quiz-graph svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .quiz-options .btn {
+            min-width: 140px;
+            flex: 1 1 auto;
+        }
+
+        .feedback {
+            padding: 20px 28px;
+            border-radius: 16px;
+            font-size: 22px;
+            font-weight: 600;
+            margin: 18px 0;
+            display: none;
+            border: 3px solid transparent;
+        }
+
+        .feedback.correct {
+            display: block;
+            background: rgba(0, 200, 83, 0.15);
+            border-color: #00c853;
+            color: #b9f6ca;
+        }
+
+        .feedback.incorrect {
+            display: block;
+            background: rgba(211, 47, 47, 0.15);
+            border-color: #d32f2f;
+            color: #ffcdd2;
+        }
+
+        .feedback .explanation {
+            font-weight: 400;
+            font-size: 20px;
+            margin-top: 10px;
+            line-height: 1.7;
+        }
+
+        .progreso-quiz {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px 0;
+            border-top: 2px solid #2a2a4a;
+            margin-top: 20px;
+        }
+
+        .contador-preguntas {
+            font-size: 20px;
+            color: #b0b0d0;
+        }
+
+        .contador-preguntas span {
+            color: #ffd700;
+            font-weight: 700;
+        }
+
+        /* ========================================
+               FOOTER LEGAL
+            ======================================== */
+        .footer-legal {
+            margin-top: 40px;
+            padding: 25px 30px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 24px;
+            border: 2px solid #2a2a4a;
+            text-align: center;
+        }
+
+        .footer-legal h3 {
+            color: #ffd700;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .footer-legal p {
+            font-size: 18px;
+            color: #b0b0d0;
+            margin-bottom: 4px;
+        }
+
+        .footer-legal .copyright {
+            color: #ffd700;
+            font-weight: 600;
+        }
+
+        .badge-proteccion {
+            display: inline-block;
+            background: #d32f2f;
+            color: #ffffff;
+            padding: 4px 16px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            margin: 4px 0;
+            letter-spacing: 1px;
+        }
+
+        /* ========================================
+               RESPONSIVE
+            ======================================== */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+                font-size: 18px;
+            }
+
+            #app {
+                padding: 20px 16px;
+                border-radius: 24px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            h3 {
+                font-size: 22px;
+            }
+            h4 {
+                font-size: 20px;
+            }
+            p,
+            li {
+                font-size: 18px;
+            }
+
+            .patron-card {
+                flex-direction: column;
+                align-items: center;
+                padding: 18px;
+                gap: 18px;
+            }
+
+            .patron-imagen {
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 200px;
+                min-height: 150px;
+                padding: 15px;
+            }
+
+            .patron-contenido {
+                width: 100%;
+            }
+
+            .patron-contenido h3 {
+                font-size: 24px;
+            }
+            .patron-contenido p {
+                font-size: 17px;
+            }
+
+            .btn {
+                font-size: 18px;
+                padding: 12px 20px;
+                min-height: 50px;
+                min-width: 120px;
+                margin: 5px 6px;
+            }
+
+            .btn-voice {
+                font-size: 20px;
+                padding: 14px 24px;
+                min-height: 50px;
+            }
+
+            .quiz-graph {
+                min-height: 150px;
+                padding: 15px;
+            }
+
+            .quiz-options .btn {
+                min-width: 100px;
+                font-size: 16px;
+                padding: 10px 16px;
+                min-height: 44px;
+            }
+
+            .nav-bar {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+
+            .nav-bar .nivel-info {
+                font-size: 18px;
+            }
+
+            .mentor-dice {
+                font-size: 18px;
+                padding: 14px 18px;
+            }
+
+            .ejemplo-box,
+            .ejemplo-box-bajista {
+                font-size: 17px;
+                padding: 14px 18px;
+            }
+
+            .footer-legal {
+                padding: 18px 16px;
+            }
+
+            .footer-legal h3 {
+                font-size: 20px;
+            }
+            .footer-legal p {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #app {
+                padding: 14px 10px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 20px;
+                padding-left: 12px;
+            }
+            h3 {
+                font-size: 19px;
+            }
+            p,
+            li {
+                font-size: 16px;
+            }
+
+            .btn {
+                font-size: 16px;
+                padding: 10px 14px;
+                min-height: 44px;
+                min-width: 90px;
+            }
+
+            .btn-voice {
+                font-size: 17px;
+                padding: 12px 18px;
+                min-height: 44px;
+            }
+
+            .patron-imagen {
+                max-width: 150px;
+                min-height: 120px;
+                padding: 10px;
+            }
+
+            .patron-imagen svg {
+                max-height: 120px;
+            }
+
+            .patron-contenido h3 {
+                font-size: 20px;
+            }
+
+            .patron-contenido p {
+                font-size: 15px;
+            }
+
+            .quiz-graph {
+                min-height: 120px;
+                padding: 10px;
+            }
+
+            .feedback {
+                font-size: 17px;
+                padding: 14px 18px;
+            }
+
+            .feedback .explanation {
+                font-size: 16px;
+            }
+
+            .mentor-dice {
+                font-size: 16px;
+                padding: 12px 14px;
+            }
+
+            .badge-proteccion {
+                font-size: 13px;
+                padding: 3px 12px;
+            }
+        }
+
+        /* Utilidades */
+        .text-center {
+            text-align: center;
+        }
+        .mt-20 {
+            margin-top: 20px;
+        }
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+        .highlight {
+            color: #ffd700;
+            font-weight: 600;
+        }
+        .separator {
+            border: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #2a2a5a, transparent);
+            margin: 30px 0;
+        }
+
+        *:focus-visible {
+            outline: 4px solid #ffd700;
+            outline-offset: 4px;
+            border-radius: 12px;
+        }
+
+        .lista-simple {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .lista-simple li {
+            padding: 10px 16px;
+            margin: 8px 0;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 12px;
+            border-left: 4px solid #ffd700;
+            font-size: 19px;
+        }
+
+        .lista-simple li strong {
+            color: #ffd700;
+        }
+
+        .timeframe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .timeframe-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid #2a2a5a;
+            border-radius: 16px;
+            padding: 14px 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .timeframe-item:hover {
+            border-color: #ffd700;
+            background: rgba(255, 215, 0, 0.06);
+        }
+
+        .timeframe-item .tf-titulo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffd700;
+        }
+
+        .timeframe-item .tf-desc {
+            font-size: 15px;
+            color: #b0b0d0;
+            margin-top: 4px;
+        }
+
+        .timeframe-item .tf-emoji {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <!-- ==========================================
+        HEADER / NAVEGACIÓN
+        ========================================== -->
+        <div class="nav-bar">
+            <div>
+                <h1>📊 Master en Velas Japonesas</h1>
+                <div class="nivel-info">
+                    Nivel <span id="nivelActualDisplay">1</span> de <span id="totalNiveles">4</span>
+                    &nbsp;|&nbsp; <span id="seccionNombre">Introducción</span>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-voice" id="btnVoice" aria-label="Escuchar lección en voz alta">
+                    🔊 Escuchar Lección
+                    <span class="badge-voice">🎙️</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Barra de progreso -->
+        <div class="progress-container" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" id="progressBar" style="width: 0%;"></div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 0: INTRODUCCIÓN
+        ========================================== -->
+        <div class="section active" id="section0" data-nivel="0" data-nombre="Introducción">
+            <h2>📜 Origen de las Velas Japonesas</h2>
+
+            <div class="patron-card" style="border-color:#ffd700;">
+                <div class="patron-imagen">
+                    <svg width="180" height="200" viewBox="0 0 180 200">
+                        <rect x="10" y="10" width="160" height="180" rx="20" fill="#1a1a2e" stroke="#ffd700" stroke-width="3"/>
+                        <circle cx="90" cy="50" r="25" fill="#ffd700" opacity="0.8"/>
+                        <circle cx="90" cy="140" r="25" fill="#ffd700" opacity="0.8"/>
+                        <rect x="60" y="75" width="60" height="40" rx="5" fill="#ffd700" opacity="0.6"/>
+                        <text x="90" y="103" text-anchor="middle" font-size="18" fill="#1a1a2e" font-weight="bold">JAPÓN</text>
+                        <text x="90" y="170" text-anchor="middle" font-size="14" fill="#ffd700">⛩️ 1724</text>
+                        <text x="90" y="192" text-anchor="middle" font-size="12" fill="#b0b0d0">Munehisa Homma</text>
+                    </svg>
+                    <span class="etiqueta">🏯 Origen</span>
+                </div>
+                <div class="patron-contenido">
+                    <h3>El Padre del Análisis de Velas</h3>
+                    <p>
+                        <strong>Munehisa Homma</strong> (1724-1803), un comerciante de arroz japonés, es considerado
+                        el padre del análisis de velas. Homma desarrolló un sistema para interpretar el
+                        <span class="highlight">comportamiento del mercado</span> basado en la psicología de los traders.
+                    </p>
+                    <p>
+                        Su método, conocido como <span class="highlight">"El Método del Río de Arroz"</span>,
+                        sentó las bases de lo que hoy conocemos como <strong>Velas Japonesas</strong> o <em>Candlesticks</em>.
+                    </p>
+                    <p>
+                        Homma descubrió que el precio no solo se mueve por oferta y demanda, sino también por las
+                        <strong>emociones</strong> de los participantes: <span class="highlight">miedo, codicia, esperanza y pánico</span>.
+                    </p>
+                    <div class="mentor-dice">
+                        "El mercado no es matemática pura, es psicología humana plasmada en velas. Homma lo entendió hace 300 años."
+                    </div>
+                    <p>
+                        En esta consola aprenderás los <strong>6 patrones clave</strong> con imágenes, ejemplos prácticos
+                        y ejercicios para reforzar tu aprendizaje.
+                    </p>
+                </div>
+            </div>
+
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-primary" onclick="irANivel(1)">📖 Ver los 6 Patrones →</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 1: TEORÍA - 6 PATRONES (CON PSICOLOGÍA COMPLETA)
+        ========================================== -->
+        <div class="section" id="section1" data-nivel="1" data-nombre="Teoría: 6 Patrones">
+            <h2>📖 Nivel 1: Los 6 Patrones Clave</h2>
+            <p>
+                Cada patrón incluye su <strong>estructura</strong>, <strong>psicología</strong> (con ejemplos),
+                <strong>contexto</strong> y el consejo del mentor.
+            </p>
+
+            <!-- ===== 1. DOJI ===== -->
+            <div class="patron-card">
+                <div class="patron-imagen">
+                    <svg width="160" height="180" viewBox="0 0 160 180">
+                        <rect x="10" y="10" width="140" height="160" rx="15" fill="#1a1a2e" stroke="#4a4a7a" stroke-width="2"/>
+                        <line x1="80" y1="25" x2="80" y2="155" stroke="#888" stroke-width="4"/>
+                        <line x1="50" y1="25" x2="110" y2="25" stroke="#888" stroke-width="4"/>
+                        <line x1="50" y1="155" x2="110" y2="155" stroke="#888" stroke-width="4"/>
+                        <rect x="55" y="60" width="50" height="60" rx="3" fill="#ffd700" stroke="#ffd700" stroke-width="2"/>
+                        <line x1="55" y1="90" x2="105" y2="90" stroke="#0f0e1a" stroke-width="3"/>
+                        <text x="80" y="20" text-anchor="middle" font-size="12" fill="#888">↑</text>
+                        <text x="80" y="170" text-anchor="middle" font-size="12" fill="#888">↓</text>
+                    </svg>
+                    <span class="etiqueta">⚖️ Doji</span>
+                </div>
+                <div class="patron-contenido">
+                    <h3>1. DOJI ⚖️</h3>
+
+                    <h4>📐 Estructura:</h4>
+                    <p>La apertura es igual al cierre (o muy cercana), con sombras superior e inferior. Parece una cruz o un signo más.</p>
+
+                    <h4>🧠 Psicología (con ejemplos):</h4>
+                    <p>El Doji representa <strong>indecisión total</strong> en el mercado. Compradores y vendedores están empatados, como un partido de fútbol que termina en empate 0-0.</p>
+
+                    <div class="ejemplo-box">
+                        <strong>EJEMPLO PRÁCTICO:</strong> Imagina que estás en un mercado de frutas. Los vendedores quieren vender manzanas a $2, pero los compradores solo quieren pagar $1.50. Después de mucho regateo, nadie cede y el precio se mantiene en $1.75. Eso es un Doji: <strong>nadie ganó, nadie perdió</strong>, hay empate.
+                    </div>
+
+                    <p><strong>¿Qué significa esto para el trader?</strong> Que el mercado está en <span class="highlight">pausa</span>, como un auto detenido en un semáforo. No sabe si acelerar (subir) o frenar (bajar).</p>
+
+                    <h4>💡 Contexto clave:</h4>
+                    <ul class="lista-simple">
+                        <li>📈 En <strong>tendencia alcista</strong> → puede ser señal de <span class="highlight">agotamiento</span>. Los compradores están cansados.</li>
+                        <li>📉 En <strong>tendencia bajista</strong> → puede ser señal de <span class="highlight">frenada</span>. Los vendedores están perdiendo fuerza.</li>
+                        <li>⏸️ Después de un <strong>movimiento fuerte</strong> → el mercado necesita <span class="highlight">descansar</span> antes de continuar o cambiar de dirección.</li>
+                    </ul>
+
+                    <div class="mentor-dice">
+                        "El Doji no te dice hacia dónde irá el precio, te dice que el mercado está indeciso. Como un conductor en una intersección sin señales. <strong>Espera la confirmación</strong> en la siguiente vela antes de actuar."
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 2. MARTILLO ===== -->
+            <div class="patron-card">
+                <div class="patron-imagen">
+                    <svg width="160" height="180" viewBox="0 0 160 180">
+                        <rect x="10" y="10" width="140" height="160" rx="15" fill="#1a1a2e" stroke="#4a4a7a" stroke-width="2"/>
+                        <line x1="80" y1="25" x2="80" y2="155" stroke="#888" stroke-width="4"/>
+                        <rect x="55" y="55" width="50" height="35" rx="3" fill="#00c853" stroke="#00c853" stroke-width="2"/>
+                        <line x1="80" y1="90" x2="80" y2="155" stroke="#00c853" stroke-width="4"/>
+                        <line x1="80" y1="25" x2="80" y2="55" stroke="#888" stroke-width="3"/>
+                        <text x="80" y="175" text-anchor="middle" font-size="12" fill="#00c853">⬆ REBOTE</text>
+                    </svg>
+                    <span class="etiqueta">🔨 Martillo</span>
+                </div>
+                <div class="patron-contenido">
+                    <h3>2. MARTILLO 🔨</h3>
+
+                    <h4>📐 Estructura:</h4>
+                    <p>Cuerpo pequeño en la parte superior (puede ser verde o rojo) con una <strong>sombra inferior larga</strong> que mide al menos el doble del cuerpo.</p>
+
+                    <h4>🧠 Psicología (con ejemplos):</h4>
+                    <p>El Martillo muestra que los <strong>osos (vendedores)</strong> empujaron el precio hacia abajo durante la sesión, pero los <strong>toros (compradores)</strong> recuperaron el control y cerraron cerca del máximo. Es como un boxeador que recibe un golpe fuerte pero se levanta y termina la pelea de pie.</p>
+
+                    <div class="ejemplo-box">
+                        <strong>EJEMPLO PRÁCTICO:</strong> Imagina que estás en una subasta. Alguien ofrece $100 por un objeto, pero nadie puja más y el precio baja a $80. De repente, alguien grita "¡$95!" y todos empiezan a pujar de nuevo, cerrando la subasta en $98. Eso es un Martillo: <strong>los compradores llegaron al final y salvaron la subasta</strong>.
+                    </div>
+
+                    <p><strong>¿Qué significa esto para el trader?</strong> Que los <span class="highlight">compradores están tomando el control</span> después de una caída. Es como un resorte que se comprime y luego rebota con fuerza.</p>
+
+                    <h4>💡 Contexto clave:</h4>
+                    <ul class="lista-simple">
+                        <li>📉 Debe aparecer <strong>después de una tendencia bajista</strong> (caída de precios).</li>
+                        <li>🟢 La sombra inferior larga muestra <span class="highlight">rechazo de precios más bajos</span>.</li>
+                        <li>✅ <strong>Regla de oro:</strong> Espera confirmación con una vela verde al día siguiente.</li>
+                    </ul>
+
+                    <div class="mentor-dice">
+                        "El Martillo es un puñetazo en la mesa de los toros. Están diciendo: <strong>'¡Hasta aquí llegaste, oso!'</strong>. Pero no te lances de inmediato. Espera a que la siguiente vela sea verde para confirmar que los toros realmente tienen fuerza."
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 3. HOMBRE COLGADO ===== -->
+            <div class="patron-card">
+                <div class="patron-imagen">
+                    <svg width="160" height="180" viewBox="0 0 160 180">
+                        <rect x="10" y="10" width="140" height="160" rx="15" fill="#1a1a2e" stroke="#4a4a7a" stroke-width="2"/>
+                        <line x1="80" y1="25" x2="80" y2="155" stroke="#888" stroke-width="4"/>
+                        <rect x="55" y="55" width="50" height="35" rx="3" fill="#ff5252" stroke="#ff5252" stroke-width="2"/>
+                        <line x1="80" y1="90" x2="80" y2="155" stroke="#ff5252" stroke-width="4"/>
+                        <line x1="80" y1="25" x2="80" y2="55" stroke="#888" stroke-width="3"/>
+                        <text x="80" y="175" text-anchor="middle" font-size="12" fill="#ff5252">⬇ CAÍDA</text>
+                    </svg>
+                    <span class="etiqueta">🪢 Hombre Colgado</span>
+                </div>
+                <div class="patron-contenido">
+                    <h3>3. HOMBRE COLGADO 🪢</h3>
+
+                    <h4>📐 Estructura:</h4>
+                    <p><strong>IDÉNTICO al Martillo:</strong> cuerpo pequeño en la parte superior y sombra inferior larga. ¡La forma es la misma!</p>
+
+                    <h4>🧠 Psicología (con ejemplos):</h4>
+                    <p>El Hombre Colgado tiene la <strong>misma forma</strong> que el Martillo, pero aparece en <strong>contexto opuesto</strong>: en la cima de una subida. Es como un boxeador que está ganando la pelea, pero en el último asalto recibe un golpe que lo hace tambalearse.</p>
+
+                    <div class="ejemplo-box-bajista">
+                        <strong>EJEMPLO PRÁCTICO:</strong> Imagina que el precio de una casa ha subido de $100,000 a $200,000 en pocos meses. Un día, el precio abre en $200,000, cae a $180,000, pero cierra en $198,000. Aunque parece que subió, <strong>los vendedores ya están probando el terreno</strong>. Es como si alguien estuviera "colgando" de una cuerda a punto de caer.
+                    </div>
+
+                    <p><strong>¿Qué significa esto para el trader?</strong> Que los <span class="highlight">toros están cansados</span> después de una larga subida. Los osos (vendedores) están probando si pueden hacer caer el precio. <strong>Peligro de reversión bajista</strong>.</p>
+
+                    <h4>💡 Contexto clave:</h4>
+                    <ul class="lista-simple">
+                        <li>📈 Aparece <strong>después de una tendencia alcista</strong> (subida de precios).</li>
+                        <li>🔴 Misma forma que el Martillo, pero <span class="highlight">en la cima</span>.</li>
+                        <li>⚠️ <strong>Señal de advertencia:</strong> Los toros están perdiendo fuerza.</li>
+                    </ul>
+
+                    <div class="mentor-dice">
+                        "El Hombre Colgado es el 'martillo de la muerte'. Misma forma, contexto opuesto. En la cima, esta vela dice: <strong>'Los toros están cansados, los osos están probando'</strong>. No vendas en pánico, pero ponte en alerta y espera confirmación bajista."
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 4. ENVOLVENTE ALCISTA ===== -->
+            <div class="patron-card">
+                <div class="patron-imagen">
+                    <svg width="160" height="180" viewBox="0 0 160 180">
+                        <rect x="10" y="10" width="140" height="160" rx="15" fill="#1a1a2e" stroke="#4a4a7a" stroke-width="2"/>
+                        <line x1="80" y1="25" x2="80" y2="155" stroke="#888" stroke-width="4"/>
+                        <rect x="60" y="85" width="40" height="30" rx="3" fill="#ff5252" stroke="#ff5252" stroke-width="2"/>
+                        <rect x="45" y="55" width="70" height="50" rx="3" fill="#00c853" stroke="#00c853" stroke-width="2"/>
+                        <text x="80" y="175" text-anchor="middle" font-size="12" fill="#00c853">🔄 CAMBIO</text>
+                    </svg>
+                    <span class="etiqueta">🔄 Envolvente Alcista</span>
+                </div>
+                <div class="patron-contenido">
+                    <h3>4. ENVOLVENTE ALCISTA 🔄</h3>
+
+                    <h4>📐 Estructura:</h4>
+                    <p>Una <strong>vela roja pequeña</strong> seguida de una <strong>vela verde grande</strong> que <span class="highlight">ENGLOBA completamente</span> el cuerpo de la vela anterior (y opcionalmente las sombras).</p>
+
+                    <h4>🧠 Psicología (con ejemplos):</h4>
+                    <p>Este patrón muestra un <strong>cambio completo de sentimiento</strong>. Los compradores toman el control absoluto y borran la sesión anterior. Es como un equipo de fútbol que va perdiendo 0-2 en el medio tiempo, pero en el segundo tiempo mete 3 goles y gana el partido.</p>
+
+                    <div class="ejemplo-box">
+                        <strong>EJEMPLO PRÁCTICO:</strong> Un día, el precio de una acción cae de $50 a $48 (vela roja). Al día siguiente, el precio no solo recupera los $50, sino que sube a $55 (vela verde que cubre toda la caída anterior). <strong>Los compradores han borrado la derrota del día anterior</strong> y ahora están en control total.
+                    </div>
+
+                    <p><strong>¿Qué significa esto para el trader?</strong> Es una <span class="highlight">señal muy fuerte de reversión</span>. Los compradores están diciendo: "Olvida lo que pasó ayer, hoy mandamos nosotros".</p>
+
+                    <h4>💡 Contexto clave:</h4>
+                    <ul class="lista-simple">
+                        <li>📉 Aparece <strong>después de una tendencia bajista</strong> (caída de precios).</li>
+                        <li>🟢 Mientras más grande sea la segunda vela, <span class="highlight">más fuerte es la señal</span>.</li>
+                        <li>✅ <strong>Muy confiable</strong> cuando aparece en niveles de soporte.</li>
+                    </ul>
+
+                    <div class="mentor-dice">
+                        "El Envolvente Alcista no es una sugerencia, es un <strong>cambio de régimen</strong>. El mercado está diciendo: <strong>'Olvida lo que pasó ayer, hoy mando yo'</strong>. Es de los patrones más confiables y potentes que existen."
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 5. ENVOLVENTE BAJISTA ===== -->
+            <div class="patron-card">
+                <div class="patron-imagen">
+                    <svg width="160" height="180" viewBox="0 0 160 180">
+                        <rect x="10" y="10" width="140" height="160" rx="15" fill="#1a1a2e" stroke="#4a4a7a" stroke-width="2"/>
+                        <line x1="80" y1="25" x2="80" y2="155" stroke="#888" stroke-width="4"/>
+                        <rect x="60" y="65" width="40" height="30" rx="3" fill="#00c853" stroke="#00c853" stroke-width="2"/>
+                        <rect x="45" y="75" width="70" height="50" rx="3" fill="#ff5252" stroke="#ff5252" stroke-width="2"/>
+                        <text x="80" y="175" text-anchor="middle" font-size="12" fill="#ff5252">🔄 CAMBIO</text>
+                    </svg>
+                    <span class="etiqueta">🔄 Envolvente Bajista</span>
+                </div>
+                <div class="patron-contenido">
+                    <h3>4B. ENVOLVENTE BAJISTA 🔄</h3>
+
+                    <h4>📐 Estructura:</h4>
+                    <p>Una <strong>vela verde pequeña</strong> seguida de una <strong>vela roja grande</strong> que <span class="highlight">ENGLOBA completamente</span> el cuerpo de la vela anterior.</p>
+
+                    <h4>🧠 Psicología (con ejemplos):</h4>
+                    <p>Los <strong>vendedores toman el control absoluto</strong> y borran la ganancia del día anterior. Es como un equipo que va ganando 2-0 en el medio tiempo, pero en el segundo tiempo el otro equipo mete 3 goles y les da la vuelta al partido.</p>
+
+                    <div class="ejemplo-box-bajista">
+                        <strong>EJEMPLO PRÁCTICO:</strong> Una acción sube de $100 a $102 (vela verde). Al día siguiente, el precio cae a $95 (vela roja que cubre toda la subida anterior). <strong>Los vendedores han borrado la victoria del día anterior</strong> y ahora están en control total.
+                    </div>
+
+                    <p><strong>¿Qué significa esto para el trader?</strong> Es una <span class="highlight">señal muy fuerte de reversión bajista</span>. Los vendedores están diciendo: "Olvida tus ganancias de ayer, hoy caemos".</p>
+
+                    <h4>💡 Contexto clave:</h4>
+                    <ul class="lista-simple">
+                        <li>📈 Aparece <strong>después de una tendencia alcista</strong> (subida de precios).</li>
+                        <li>🔴 Mientras más grande sea la segunda vela, <span class="highlight">más fuerte es la señal</span>.</li>
+                        <li>⚠️ <strong>Muy confiable</strong> cuando aparece en niveles de resistencia.</li>
+                    </ul>
+
+                    <div class="mentor-dice">
+                        "El Envolvente Bajista es el <strong>látigo del oso</strong>. Cuando aparece, los toros corren a cubrirse. Es una señal muy potente de que la fiesta alcista se ha terminado."
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 6. PIN BAR ALCISTA ===== -->
+            <div class="patron-card">
+                <div class="patron-imagen">
+                    <svg width="160" height="180" viewBox="0 0 160 180">
+                        <rect x="10" y="10" width="140" height="160" rx="15" fill="#1a1a2e" stroke="#4a4a7a" stroke-width="2"/>
+                        <line x1="80" y1="25" x2="80" y2="155" stroke="#888" stroke-width="4"/>
+                        <rect x="60" y="55" width="40" height="30" rx="3" fill="#00c853" stroke="#00c853" stroke-width="2"/>
+                        <line x1="80" y1="85" x2="80" y2="155" stroke="#00c853" stroke-width="4"/>
+                        <text x="80" y="175" text-anchor="middle" font-size="11" fill="#00c853">🚫 RECHAZO</text>
+                    </svg>
+                    <span class="etiqueta">📌 Pin Bar Alcista</span>
+                </div>
+                <div class="patron-contenido">
+                    <h3>5. PIN BAR ALCISTA 📌</h3>
+
+                    <h4>📐 Estructura:</h4>
+                    <p>Cuerpo pequeño en la parte superior y una <strong>sombra inferior muy larga</strong>. La sombra muestra un <span class="highlight">rechazo claro</span> de un nivel de precio.</p>
+
+                    <h4>🧠 Psicología (con ejemplos):</h4>
+                    <p>Los vendedores intentaron bajar el precio, pero <strong>los compradores dijeron "NO"</strong> y lo subieron de nuevo. Es como si alguien intentara empujar una puerta, pero esta está firmemente cerrada y no se mueve.</p>
+
+                    <div class="ejemplo-box">
+                        <strong>EJEMPLO PRÁCTICO:</strong> Una acción está en $50. Los vendedores intentan bajarla a $45, pero en cuanto llega a $45, <strong>los compradores aparecen en masa</strong> y la suben de nuevo a $49. El precio cerró en $49, mostrando que los compradores <strong>defendieron el nivel de $45</strong> con fuerza.
+                    </div>
+
+                    <p><strong>¿Qué significa esto para el trader?</strong> Es una <span class="highlight">señal de compra</span>. El mercado ha probado un soporte y ha dicho: "Aquí no pasas".</p>
+
+                    <h4>💡 Contexto clave:</h4>
+                    <ul class="lista-simple">
+                        <li>🟢 Aparece en <strong>niveles de soporte</strong> (pisos).</li>
+                        <li>📌 La sombra larga es evidencia del <span class="highlight">rechazo</span>.</li>
+                        <li>✅ <strong>Más efectivo</strong> cuando coincide con un nivel de soporte importante.</li>
+                    </ul>
+
+                    <div class="mentor-dice">
+                        "El Pin Bar es un <strong>'no' rotundo</strong>. El mercado tocó un nivel y salió corriendo. Es la vela de la convicción: <strong>'Aquí no, gracias'</strong>. Es una señal excelente para comprar en el nivel de soporte."
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 7. PIN BAR BAJISTA ===== -->
+            <div class="patron-card">
+                <div class="patron-imagen">
+                    <svg width="160" height="180" viewBox="0 0 160 180">
+                        <rect x="10" y="10" width="140" height="160" rx="15" fill="#1a1a2e" stroke="#4a4a7a" stroke-width="2"/>
+                        <line x1="80" y1="25" x2="80" y2="155" stroke="#888" stroke-width="4"/>
+                        <rect x="60" y="95" width="40" height="30" rx="3" fill="#ff5252" stroke="#ff5252" stroke-width="2"/>
+                        <line x1="80" y1="25" x2="80" y2="95" stroke="#ff5252" stroke-width="4"/>
+                        <text x="80" y="175" text-anchor="middle" font-size="11" fill="#ff5252">🚫 RECHAZO</text>
+                    </svg>
+                    <span class="etiqueta">📌 Pin Bar Bajista</span>
+                </div>
+                <div class="patron-contenido">
+                    <h3>5B. PIN BAR BAJISTA 📌</h3>
+
+                    <h4>📐 Estructura:</h4>
+                    <p>Cuerpo pequeño en la parte inferior y una <strong>sombra superior muy larga</strong>. La sombra muestra un <span class="highlight">rechazo claro</span> de un nivel de precio.</p>
+
+                    <h4>🧠 Psicología (con ejemplos):</h4>
+                    <p>Los compradores intentaron subir el precio, pero <strong>los vendedores dijeron "NO"</strong> y lo bajaron de nuevo. Es como si alguien intentara saltar un muro, pero el muro es demasiado alto y siempre rebota.</p>
+
+                    <div class="ejemplo-box-bajista">
+                        <strong>EJEMPLO PRÁCTICO:</strong> Una acción está en $100. Los compradores intentan subirla a $105, pero en cuanto llega a $105, <strong>los vendedores aparecen en masa</strong> y la bajan de nuevo a $101. El precio cerró en $101, mostrando que los vendedores <strong>defendieron el nivel de $105</strong> con fuerza.
+                    </div>
+
+                    <p><strong>¿Qué significa esto para el trader?</strong> Es una <span class="highlight">señal de venta</span>. El mercado ha probado una resistencia y ha dicho: "Aquí no pasas".</p>
+
+                    <h4>💡 Contexto clave:</h4>
+                    <ul class="lista-simple">
+                        <li>🔴 Aparece en <strong>niveles de resistencia</strong> (techos).</li>
+                        <li>📌 La sombra larga es evidencia del <span class="highlight">rechazo</span>.</li>
+                        <li>⚠️ <strong>Más efectivo</strong> cuando coincide con un nivel de resistencia importante.</li>
+                    </ul>
+
+                    <div class="mentor-dice">
+                        "El Pin Bar Bajista es el <strong>techo de cristal</strong>. El mercado choca y rebota. Es una señal excelente para vender en el nivel de resistencia. El mercado te está diciendo: <strong>'Hasta aquí llegaste, toro'</strong>."
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 8. SOLDADOS ALCISTAS ===== -->
+            <div class="patron-card">
+                <div class="patron-imagen">
+                    <svg width="160" height="180" viewBox="0 0 160 180">
+                        <rect x="10" y="10" width="140" height="160" rx="15" fill="#1a1a2e" stroke="#4a4a7a" stroke-width="2"/>
+                        <line x1="80" y1="25" x2="80" y2="155" stroke="#888" stroke-width="4"/>
+                        <rect x="50" y="100" width="25" height="35" rx="3" fill="#00c853" stroke="#00c853" stroke-width="2"/>
+                        <rect x="68" y="70" width="25" height="35" rx="3" fill="#00c853" stroke="#00c853" stroke-width="2"/>
+                        <rect x="86" y="40" width="25" height="35" rx="3" fill="#00c853" stroke="#00c853" stroke-width="2"/>
+                        <text x="80" y="175" text-anchor="middle" font-size="12" fill="#00c853">⚔️ FUERZA</text>
+                    </svg>
+                    <span class="etiqueta">⚔️ Soldados Alcistas</span>
+                </div>
+                <div class="patron-contenido">
+                    <h3>6. SOLDADOS ALCISTAS ⚔️</h3>
+
+                    <h4>📐 Estructura:</h4>
+                    <p><strong>Tres velas verdes consecutivas</strong>, cada una cerrando en nuevos máximos y con cuerpos grandes. Es como un ejército avanzando paso a paso.</p>
+
+                    <h4>🧠 Psicología (con ejemplos):</h4>
+                    <p>Este patrón muestra <strong>fuerza de continuación pura</strong>. No hay dudas, el mercado se mueve en una dirección con convicción. Es como un tren que acelera y no se detiene.</p>
+
+                    <div class="ejemplo-box">
+                        <strong>EJEMPLO PRÁCTICO:</strong> Una acción sube de $50 a $52 el lunes, de $52 a $54 el martes, y de $54 a $56 el miércoles. Cada día <strong>cierra en un nuevo máximo</strong>. Los compradores están comprando con confianza todos los días. <strong>El tren alcista está en marcha</strong>.
+                    </div>
+
+                    <p><strong>¿Qué significa esto para el trader?</strong> Es una <span class="highlight">confirmación de tendencia alcista</span>. Los toros tienen el control total y el precio sigue subiendo con fuerza.</p>
+
+                    <h4>💡 Contexto clave:</h4>
+                    <ul class="lista-simple">
+                        <li>🟢 Confirma una <strong>tendencia alcista</strong>.</li>
+                        <li>📈 Las velas deben ser de <span class="highlight">tamaño similar</span> (no una gigante y dos pequeñas).</li>
+                        <li>⚡ <strong>Señal de continuación</strong>, no de reversión.</li>
+                    </ul>
+
+                    <div class="mentor-dice">
+                        "Los Soldados son el <strong>'full speed ahead'</strong> del mercado. No hay indecisión, solo dirección. Pero ojo: <strong>después de 3 velas verdes consecutivas</strong>, el mercado suele necesitar descanso. No persigas el tren, espera un retroceso para subirte."
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 9. CUERVOS BAJISTAS ===== -->
+            <div class="patron-card">
+                <div class="patron-imagen">
+                    <svg width="160" height="180" viewBox="0 0 160 180">
+                        <rect x="10" y="10" width="140" height="160" rx="15" fill="#1a1a2e" stroke="#4a4a7a" stroke-width="2"/>
+                        <line x1="80" y1="25" x2="80" y2="155" stroke="#888" stroke-width="4"/>
+                        <rect x="50" y="40" width="25" height="35" rx="3" fill="#ff5252" stroke="#ff5252" stroke-width="2"/>
+                        <rect x="68" y="70" width="25" height="35" rx="3" fill="#ff5252" stroke="#ff5252" stroke-width="2"/>
+                        <rect x="86" y="100" width="25" height="35" rx="3" fill="#ff5252" stroke="#ff5252" stroke-width="2"/>
+                        <text x="80" y="175" text-anchor="middle" font-size="12" fill="#ff5252">⬇ PRESIÓN</text>
+                    </svg>
+                    <span class="etiqueta">⚔️ Cuervos Bajistas</span>
+                </div>
+                <div class="patron-contenido">
+                    <h3>6B. CUERVOS BAJISTAS ⚔️</h3>
+
+                    <h4>📐 Estructura:</h4>
+                    <p><strong>Tres velas rojas consecutivas</strong>, cada una cerrando en nuevos mínimos y con cuerpos grandes. Es como una avalancha que no se detiene.</p>
+
+                    <h4>🧠 Psicología (con ejemplos):</h4>
+                    <p>Este patrón muestra <strong>presión bajista continua</strong>. Los vendedores tienen el control total y el precio cae sin piedad. Es como una bola de nieve que rueda cuesta abajo y cada vez va más rápido.</p>
+
+                    <div class="ejemplo-box-bajista">
+                        <strong>EJEMPLO PRÁCTICO:</strong> Una acción cae de $60 a $58 el lunes, de $58 a $56 el martes, y de $56 a $54 el miércoles. Cada día <strong>cierra en un nuevo mínimo</strong>. Los vendedores están vendiendo con fuerza todos los días. <strong>El tren bajista está en marcha</strong>.
+                    </div>
+
+                    <p><strong>¿Qué significa esto para el trader?</strong> Es una <span class="highlight">confirmación de tendencia bajista</span>. Los osos tienen el control total y el precio sigue cayendo con fuerza.</p>
+
+                    <h4>💡 Contexto clave:</h4>
+                    <ul class="lista-simple">
+                        <li>🔴 Confirma una <strong>tendencia bajista</strong>.</li>
+                        <li>📉 Las velas deben ser de <span class="highlight">tamaño similar</span>.</li>
+                        <li>⚡ <strong>Señal de continuación</strong>, no de reversión.</li>
+                    </ul>
+
+                    <div class="mentor-dice">
+                        "Los Cuervos son el <strong>martillo de los osos</strong>. Caída libre con convicción. <strong>Después de 3 velas rojas consecutivas</strong>, el mercado suele necesitar un respiro. Si estás en corto, toma ganancias parciales."
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-secondary" onclick="irANivel(0)">⬅️ Introducción</button>
+                <button class="btn btn-primary" onclick="irANivel(2)">⏰ Explicación de Timeframes →</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 2: EXPLICACIÓN DE TIMEFRAMES (CORREGIDA)
+        ========================================== -->
+        <div class="section" id="section2" data-nivel="2" data-nombre="Timeframes y Contexto">
+            <h2>⏰ Nivel 2: Timeframes - El Tiempo en el Trading</h2>
+
+            <div class="patron-card" style="border-color:#ffd700;">
+                <div class="patron-imagen">
+                    <svg width="160" height="200" viewBox="0 0 160 200">
+                        <rect x="10" y="10" width="140" height="180" rx="15" fill="#1a1a2e" stroke="#4a4a7a" stroke-width="2"/>
+                        <circle cx="80" cy="90" r="50" fill="none" stroke="#ffd700" stroke-width="4"/>
+                        <line x1="80" y1="90" x2="80" y2="50" stroke="#ffd700" stroke-width="4"/>
+                        <line x1="80" y1="90" x2="110" y2="90" stroke="#ffd700" stroke-width="4"/>
+                        <circle cx="80" cy="90" r="6" fill="#ffd700"/>
+                        <text x="80" y="165" text-anchor="middle" font-size="13" fill="#b0b0d0">1m 5m 15m 1h 4h D</text>
+                        <text x="80" y="185" text-anchor="middle" font-size="12" fill="#ffd700">⏰ TIMEFRAME</text>
+                    </svg>
+                    <span class="etiqueta">⏰ Timeframe</span>
+                </div>
+                <div class="patron-contenido">
+                    <h3>¿Qué es un Timeframe?</h3>
+
+                    <p>
+                        El <strong>Timeframe</strong> es el <span class="highlight">período de tiempo</span> que representa <strong>cada vela</strong> en un gráfico.
+                        Es como elegir la <strong>velocidad de un video</strong>: puedes verlo en cámara lenta (timeframes largos) o en velocidad rápida (timeframes cortos).
+                    </p>
+
+                    <div class="ejemplo-box">
+                        <strong>EJEMPLO PRÁCTICO:</strong> Imagina que estás viendo el precio de una acción durante un día completo.
+                        <br><br>
+                        📊 Si cada vela representa <strong>1 hora</strong>, tendrás 24 velas en un día.
+                        <br>
+                        📊 Si cada vela representa <strong>5 minutos</strong>, tendrás 288 velas en un día.
+                        <br><br>
+                        <strong>El timeframe determina cuántos detalles ves</strong>. ¡Más velas = más detalles, pero también más ruido!
+                    </div>
+
+                    <h4>🎯 Los Timeframes más Comunes:</h4>
+
+                    <div class="timeframe-grid">
+                        <div class="timeframe-item">
+                            <span class="tf-emoji">⚡</span>
+                            <div class="tf-titulo">1 minuto</div>
+                            <div class="tf-desc">Muy rápido, mucho ruido</div>
+                            <div class="tf-desc" style="color:#ff5252;">⚠️ Para expertos</div>
+                        </div>
+                        <div class="timeframe-item">
+                            <span class="tf-emoji">📊</span>
+                            <div class="tf-titulo">5-15 minutos</div>
+                            <div class="tf-desc">Intradiario, scalping</div>
+                            <div class="tf-desc" style="color:#ffd700;">💰 Alto riesgo</div>
+                        </div>
+                        <div class="timeframe-item">
+                            <span class="tf-emoji">📈</span>
+                            <div class="tf-titulo">1 hora</div>
+                            <div class="tf-desc">Swing trading</div>
+                            <div class="tf-desc" style="color:#00c853;">✅ Equilibrado</div>
+                        </div>
+                        <div class="timeframe-item">
+                            <span class="tf-emoji">📅</span>
+                            <div class="tf-titulo">4 horas / Diario</div>
+                            <div class="tf-desc">Tendencias principales</div>
+                            <div class="tf-desc" style="color:#00c853;">✅ Muy confiable</div>
+                        </div>
+                        <div class="timeframe-item">
+                            <span class="tf-emoji">🗓️</span>
+                            <div class="tf-titulo">Semanal / Mensual</div>
+                            <div class="tf-desc">Macro tendencias</div>
+                            <div class="tf-desc" style="color:#ffd700;">🏆 Visión global</div>
+                        </div>
+                    </div>
+
+                    <h4>🧠 Psicología del Timeframe:</h4>
+                    <p>
+                        <strong>Los timeframes más largos (diario, semanal) muestran la <span class="highlight">verdadera tendencia</span></strong>.
+                        Los timeframes cortos (1-15 minutos) muestran <strong>ruido y emociones momentáneas</strong>.
+                    </p>
+
+                    <div class="ejemplo-box">
+                        <strong>EJEMPLO PRÁCTICO:</strong> Imagina que estás mirando el mar.
+                        <br><br>
+                        🌊 En <strong>timeframe corto (1 minuto)</strong>: ves cada ola individual, sube y baja constantemente. Es <strong>ruido</strong>.
+                        <br>
+                        🌅 En <strong>timeframe largo (diario)</strong>: ves la marea. Sabes si está subiendo o bajando. Es la <strong>tendencia</strong>.
+                        <br><br>
+                        <strong>Los traders exitosos usan timeframes largos para identificar la tendencia</strong> y timeframes cortos para encontrar puntos de entrada.
+                    </div>
+
+                    <h4>💡 Reglas de Oro del Timeframe:</h4>
+                    <ul class="lista-simple">
+                        <li>📌 <strong>Siempre mira el timeframe diario primero</strong> para saber la tendencia general.</li>
+                        <li>📌 Los <strong>soportes y resistencias</strong> son <span class="highlight">más fuertes</span> en timeframes largos.</li>
+                        <li>📌 <strong>No operes contra la tendencia</strong> del timeframe diario.</li>
+                        <li>📌 Los <strong>patrones de velas</strong> son más confiables en timeframes largos.</li>
+                    </ul>
+
+                    <div class="mentor-dice">
+                        "Un soporte en 1 minuto es una <strong>sugerencia</strong>. Un soporte en diario es una <strong>promesa</strong>.
+                        <br><br>
+                        Siempre alinea tu análisis con el timeframe que coincida con tu estrategia. Si eres principiante, <strong>empieza con timeframes de 1 hora o diario</strong>.
+                        <br><br>
+                        <strong>Recuerda:</strong> El tiempo es tu aliado. No tengas prisa. Los mejores trades se ven en los timeframes largos."
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-secondary" onclick="irANivel(1)">⬅️ Teoría de Patrones</button>
+                <button class="btn btn-primary" onclick="irANivel(3)">🧪 Ir al Laboratorio (10 Ejercicios) →</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 3: LABORATORIO - 10 EJERCICIOS
+        ========================================== -->
+        <div class="section" id="section3" data-nivel="3" data-nombre="Laboratorio - 10 Ejercicios">
+            <h2>🧪 Nivel 3: Laboratorio - 10 Ejercicios Prácticos</h2>
+            <p>
+                Pon a prueba tus conocimientos con <strong>10 ejercicios</strong>. Observa el gráfico y elige:
+                <br>1) <strong>Qué tipo de vela</strong> es.
+                <br>2) <strong>Qué acción</strong> recomendarías (Compra, Venta o Neutral).
+            </p>
+
+            <div class="quiz-container" id="quizContainer">
+                <div id="quizContent"></div>
+            </div>
+
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-secondary" onclick="irANivel(2)">⬅️ Timeframes</button>
+                <button class="btn btn-outline" onclick="cargarQuiz()">🔄 Reiniciar 10 Ejercicios</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        FOOTER LEGAL
+        ========================================== -->
+        <div class="footer-legal">
+            <h3>✍️ YURBI GONZALEZ LOPEZ</h3>
+            <p><span class="badge-proteccion">🔒 CONTENIDO PROTEGIDO</span></p>
+            <p class="copyright">© 2026 - Todos los derechos reservados</p>
+            <p style="font-size:16px; color:#8888aa; margin-top:8px;">
+                Prohibida la reproducción total o parcial sin autorización expresa.
+                <br>
+                <span style="color:#ffd700;">📚 Master en Velas Japonesas v3.0</span>
+            </p>
+            <p style="font-size:14px; color:#666688; margin-top:4px;">
+                Código registrado y protegido contra plagio digital
+            </p>
+        </div>
+    </div>
+
+    <!-- ==========================================
+    JAVASCRIPT - CON VOZ MEJORADA PARA MÓVILES
+    ========================================== -->
+    <script>
+        // ============================================
+        // 0. SISTEMA DE VOZ MEJORADO (PARA MÓVILES)
+        // ============================================
+        let synth = window.speechSynthesis;
+        let utterance = null;
+        let isSpeaking = false;
+        let vozInicializada = false;
+
+        // Función para inicializar la voz (requiere interacción del usuario)
+        function inicializarVoz() {
+            if (vozInicializada) return;
+            if (!window.speechSynthesis) {
+                console.warn('Web Speech API no soportada');
+                return;
+            }
+
+            // Cargar voces disponibles
+            synth.getVoices();
+
+            // Crear un utterance vacío para "activar" el sistema de voz
+            try {
+                const tempUtterance = new SpeechSynthesisUtterance(' ');
+                tempUtterance.volume = 0;
+                tempUtterance.rate = 0.1;
+                synth.speak(tempUtterance);
+                setTimeout(() => {
+                    synth.cancel();
+                    vozInicializada = true;
+                    console.log('✅ Sistema de voz inicializado');
+                }, 200);
+            } catch (e) {
+                console.warn('Error al inicializar voz:', e);
+                vozInicializada = true;
+            }
+        }
+
+        // Detectar cuando el usuario hace clic/toca la pantalla para inicializar la voz
+        document.addEventListener('click', function initVozClick() {
+            inicializarVoz();
+            document.removeEventListener('click', initVozClick);
+        }, { once: true });
+
+        document.addEventListener('touchstart', function initVozTouch() {
+            inicializarVoz();
+            document.removeEventListener('touchstart', initVozTouch);
+        }, { once: true });
+
+        // También inicializar con teclado
+        document.addEventListener('keydown', function initVozKey() {
+            inicializarVoz();
+            document.removeEventListener('keydown', initVozKey);
+        }, { once: true });
+
+        // Función principal de hablar
+        function hablarTexto(texto, callback) {
+            if (!window.speechSynthesis) {
+                console.warn('Web Speech API no soportada');
+                if (callback) callback();
+                return;
+            }
+
+            // Asegurar que la voz esté inicializada
+            if (!vozInicializada) {
+                inicializarVoz();
+            }
+
+            // Cancelar cualquier voz en curso
+            try {
+                if (synth.speaking) {
+                    synth.cancel();
+                }
+            } catch (e) {
+                console.warn('Error al cancelar voz:', e);
+            }
+
+            // Limpiar el texto de emojis
+            let textoLimpio = texto.replace(/[📖🧠💡🎯🔊📊🟢🔴⏰⚖️🔨🪢🔄📌⚔️✅❌⬆⬇🚫📐📜]/g, '');
+            textoLimpio = textoLimpio.replace(/\s+/g, ' ').trim();
+
+            if (textoLimpio.length === 0) {
+                if (callback) callback();
+                return;
+            }
+
+            try {
+                utterance = new SpeechSynthesisUtterance(textoLimpio);
+                utterance.lang = 'es-ES';
+                utterance.rate = 0.80;
+                utterance.pitch = 1.0;
+                utterance.volume = 1.0;
+
+                // Seleccionar voz en español
+                const voces = synth.getVoices();
+                const vozEsp = voces.find(v => v.lang.startsWith('es'));
+                if (vozEsp) utterance.voice = vozEsp;
+
+                utterance.onstart = function() {
+                    isSpeaking = true;
+                    const btn = document.getElementById('btnVoice');
+                    if (btn) {
+                        btn.classList.add('playing');
+                        btn.textContent = '🔊 Leyendo...';
+                    }
+                };
+
+                utterance.onend = function() {
+                    isSpeaking = false;
+                    const btn = document.getElementById('btnVoice');
+                    if (btn) {
+                        btn.classList.remove('playing');
+                        btn.textContent = '🔊 Escuchar Lección';
+                    }
+                    if (callback) callback();
+                };
+
+                utterance.onerror = function(e) {
+                    console.warn('Error en síntesis de voz:', e);
+                    isSpeaking = false;
+                    const btn = document.getElementById('btnVoice');
+                    if (btn) {
+                        btn.classList.remove('playing');
+                        btn.textContent = '🔊 Escuchar Lección';
+                    }
+                    if (callback) callback();
+                };
+
+                synth.speak(utterance);
+            } catch (e) {
+                console.warn('Error al hablar:', e);
+                if (callback) callback();
+            }
+        }
+
+        function leerSeccion(nivel) {
+            const section = document.getElementById(`section${nivel}`);
+            if (!section) {
+                console.warn('Sección no encontrada:', nivel);
+                return;
+            }
+
+            // Extraer texto de la sección
+            const textoElementos = section.querySelectorAll('h2, h3, h4, p, li, .mentor-dice, .ejemplo-box, .ejemplo-box-bajista');
+            let textoCompleto = '';
+            textoElementos.forEach(el => {
+                const texto = el.textContent || '';
+                textoCompleto += texto + '. ';
+            });
+
+            if (textoCompleto.length > 0) {
+                hablarTexto(textoCompleto);
+            } else {
+                console.warn('No hay texto para leer en la sección:', nivel);
+            }
+        }
+
+        // ============================================
+        // 1. DATOS DEL QUIZ - 10 EJERCICIOS
+        // ============================================
+        const patrones = [
+            { id: 'doji', nombre: 'Doji', accionCorrecta: 'neutral', explicacion: 'Doji = indecisión. El mercado está empatado. Espera confirmación.' },
+            { id: 'martillo', nombre: 'Martillo', accionCorrecta: 'compra', explicacion: 'Martillo = reversión alcista. Los compradores rechazaron precios más bajos. Señal de compra tras confirmación.' },
+            { id: 'hombre_colgado', nombre: 'Hombre Colgado', accionCorrecta: 'venta', explicacion: 'Hombre Colgado = reversión bajista en la cima. Los toros están cansados. Señal de venta.' },
+            { id: 'envolvente_alcista', nombre: 'Envolvente Alcista', accionCorrecta: 'compra', explicacion: 'Envolvente Alcista = cambio de tendencia a alcista. Los compradores tomaron el control. Señal de compra.' },
+            { id: 'envolvente_bajista', nombre: 'Envolvente Bajista', accionCorrecta: 'venta', explicacion: 'Envolvente Bajista = cambio de tendencia a bajista. Los vendedores tomaron el control. Señal de venta.' },
+            { id: 'pin_bar_alcista', nombre: 'Pin Bar Alcista', accionCorrecta: 'compra', explicacion: 'Pin Bar Alcista = rechazo de soporte. Los compradores defendieron el nivel. Señal de compra.' },
+            { id: 'pin_bar_bajista', nombre: 'Pin Bar Bajista', accionCorrecta: 'venta', explicacion: 'Pin Bar Bajista = rechazo de resistencia. Los vendedores defendieron el nivel. Señal de venta.' },
+            { id: 'soldados', nombre: '3 Soldados Alcistas', accionCorrecta: 'compra', explicacion: '3 Soldados = fuerte continuación alcista. Los toros tienen el control total. Señal de compra.' },
+            { id: 'cuervos', nombre: '3 Cuervos Bajistas', accionCorrecta: 'venta', explicacion: '3 Cuervos = fuerte continuación bajista. Los osos tienen el control total. Señal de venta.' }
+        ];
+
+        function generarCasosAleatorios() {
+            const casos = [];
+            for (let i = 0; i < 10; i++) {
+                const idx = Math.floor(Math.random() * patrones.length);
+                casos.push(patrones[idx]);
+            }
+            return casos;
+        }
+
+        let casosActuales = [];
+        let casoActualIndex = 0;
+        let puntuacion = { correctos: 0, incorrectos: 0 };
+        let identificacionRespondida = false;
+        let accionRespondida = false;
+
+        // ============================================
+        // 2. SVG DE PATRONES
+        // ============================================
+        function renderizarSVG(patronId) {
+            const svgs = {
+                'doji': `<svg width="140" height="180" viewBox="0 0 140 180">
+                            <line x1="70" y1="20" x2="70" y2="160" stroke="#888" stroke-width="4"/>
+                            <line x1="40" y1="20" x2="100" y2="20" stroke="#888" stroke-width="4"/>
+                            <line x1="40" y1="160" x2="100" y2="160" stroke="#888" stroke-width="4"/>
+                            <rect x="45" y="65" width="50" height="50" rx="3" fill="#ffd700" stroke="#ffd700" stroke-width="2"/>
+                            <line x1="45" y1="90" x2="95" y2="90" stroke="#0f0e1a" stroke-width="3"/>
+                        </svg>`,
+                'martillo': `<svg width="140" height="180" viewBox="0 0 140 180">
+                            <line x1="70" y1="20" x2="70" y2="160" stroke="#888" stroke-width="4"/>
+                            <rect x="45" y="55" width="50" height="35" rx="3" fill="#00c853" stroke="#00c853" stroke-width="2"/>
+                            <line x1="70" y1="90" x2="70" y2="160" stroke="#00c853" stroke-width="4"/>
+                            <line x1="70" y1="20" x2="70" y2="55" stroke="#888" stroke-width="3"/>
+                        </svg>`,
+                'hombre_colgado': `<svg width="140" height="180" viewBox="0 0 140 180">
+                            <line x1="70" y1="20" x2="70" y2="160" stroke="#888" stroke-width="4"/>
+                            <rect x="45" y="55" width="50" height="35" rx="3" fill="#ff5252" stroke="#ff5252" stroke-width="2"/>
+                            <line x1="70" y1="90" x2="70" y2="160" stroke="#ff5252" stroke-width="4"/>
+                            <line x1="70" y1="20" x2="70" y2="55" stroke="#888" stroke-width="3"/>
+                        </svg>`,
+                'envolvente_alcista': `<svg width="140" height="180" viewBox="0 0 140 180">
+                            <line x1="70" y1="20" x2="70" y2="160" stroke="#888" stroke-width="4"/>
+                            <rect x="50" y="85" width="40" height="30" rx="3" fill="#ff5252" stroke="#ff5252" stroke-width="2"/>
+                            <rect x="35" y="55" width="70" height="50" rx="3" fill="#00c853" stroke="#00c853" stroke-width="2"/>
+                        </svg>`,
+                'envolvente_bajista': `<svg width="140" height="180" viewBox="0 0 140 180">
+                            <line x1="70" y1="20" x2="70" y2="160" stroke="#888" stroke-width="4"/>
+                            <rect x="50" y="65" width="40" height="30" rx="3" fill="#00c853" stroke="#00c853" stroke-width="2"/>
+                            <rect x="35" y="75" width="70" height="50" rx="3" fill="#ff5252" stroke="#ff5252" stroke-width="2"/>
+                        </svg>`,
+                'pin_bar_alcista': `<svg width="140" height="180" viewBox="0 0 140 180">
+                            <line x1="70" y1="20" x2="70" y2="160" stroke="#888" stroke-width="4"/>
+                            <rect x="50" y="55" width="40" height="30" rx="3" fill="#00c853" stroke="#00c853" stroke-width="2"/>
+                            <line x1="70" y1="85" x2="70" y2="160" stroke="#00c853" stroke-width="4"/>
+                        </svg>`,
+                'pin_bar_bajista': `<svg width="140" height="180" viewBox="0 0 140 180">
+                            <line x1="70" y1="20" x2="70" y2="160" stroke="#888" stroke-width="4"/>
+                            <rect x="50" y="95" width="40" height="30" rx="3" fill="#ff5252" stroke="#ff5252" stroke-width="2"/>
+                            <line x1="70" y1="20" x2="70" y2="95" stroke="#ff5252" stroke-width="4"/>
+                        </svg>`,
+                'soldados': `<svg width="140" height="180" viewBox="0 0 140 180">
+                            <line x1="70" y1="20" x2="70" y2="160" stroke="#888" stroke-width="4"/>
+                            <rect x="40" y="100" width="25" height="35" rx="3" fill="#00c853" stroke="#00c853" stroke-width="2"/>
+                            <rect x="58" y="70" width="25" height="35" rx="3" fill="#00c853" stroke="#00c853" stroke-width="2"/>
+                            <rect x="76" y="40" width="25" height="35" rx="3" fill="#00c853" stroke="#00c853" stroke-width="2"/>
+                        </svg>`,
+                'cuervos': `<svg width="140" height="180" viewBox="0 0 140 180">
+                            <line x1="70" y1="20" x2="70" y2="160" stroke="#888" stroke-width="4"/>
+                            <rect x="40" y="40" width="25" height="35" rx="3" fill="#ff5252" stroke="#ff5252" stroke-width="2"/>
+                            <rect x="58" y="70" width="25" height="35" rx="3" fill="#ff5252" stroke="#ff5252" stroke-width="2"/>
+                            <rect x="76" y="100" width="25" height="35" rx="3" fill="#ff5252" stroke="#ff5252" stroke-width="2"/>
+                        </svg>`
+            };
+            return svgs[patronId] || svgs['doji'];
+        }
+
+        // ============================================
+        // 3. FUNCIONES DEL QUIZ
+        // ============================================
+        function cargarQuiz() {
+            casosActuales = generarCasosAleatorios();
+            casoActualIndex = 0;
+            puntuacion = { correctos: 0, incorrectos: 0 };
+            identificacionRespondida = false;
+            accionRespondida = false;
+            mostrarCaso();
+        }
+
+        function mostrarCaso() {
+            if (!casosActuales.length || casoActualIndex >= casosActuales.length) {
+                const total = puntuacion.correctos + puntuacion.incorrectos;
+                const porcentaje = total > 0 ? Math.round((puntuacion.correctos / total) * 100) : 0;
+                let mensaje = '';
+                let emoji = '';
+
+                if (porcentaje >= 90) { mensaje = '¡Excelente! Eres un experto en velas japonesas. 🏆';
+                    emoji = '🌟'; } else if (porcentaje >= 70) { mensaje = '¡Muy bien! Tienes un buen entendimiento. Sigue practicando. 💪';
+                    emoji = '📈'; } else if (porcentaje >= 50) { mensaje = 'Vas por buen camino. Revisa los patrones que fallaste. 📚';
+                    emoji = '📖'; } else { mensaje = 'No te desanimes. Vuelve a leer la teoría y practica de nuevo. 🎯';
+                    emoji = '🔄'; }
+
+                document.getElementById('quizContent').innerHTML = `
+                            <div class="text-center" style="padding: 30px;">
+                                <h3>🎉 ¡Has completado los 10 ejercicios!</h3>
+                                <div style="font-size: 60px; margin: 20px 0;">${emoji}</div>
+                                <p style="font-size: 24px;">
+                                    ✅ Correctos: <span style="color:#00c853; font-weight:700;">${puntuacion.correctos}</span>
+                                    &nbsp;|&nbsp;
+                                    ❌ Incorrectos: <span style="color:#ff5252; font-weight:700;">${puntuacion.incorrectos}</span>
+                                    &nbsp;|&nbsp;
+                                    🎯 Aciertos: <span style="color:#ffd700; font-weight:700;">${porcentaje}%</span>
+                                </p>
+                                <p style="font-size: 22px; color: #b0b0d0;">${mensaje}</p>
+                                <button class="btn btn-primary" onclick="cargarQuiz()" style="margin-top:20px;">
+                                    🔄 Repetir 10 Ejercicios
+                                </button>
+                            </div>
+                        `;
+                actualizarProgreso();
+                return;
+            }
+
+            const caso = casosActuales[casoActualIndex];
+            const svgHtml = renderizarSVG(caso.id);
+
+            const todasLasOpciones = patrones.map(p => p.nombre);
+            const opcionesId = [caso.nombre];
+            const otras = patrones.filter(p => p.nombre !== caso.nombre);
+            for (let i = 0; i < Math.min(2, otras.length); i++) {
+                const idx = Math.floor(Math.random() * otras.length);
+                opcionesId.push(otras[idx].nombre);
+                otras.splice(idx, 1);
+            }
+            for (let i = opcionesId.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [opcionesId[i], opcionesId[j]] = [opcionesId[j], opcionesId[i]];
+            }
+
+            let html = `
+                        <div class="text-center">
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+                                <span style="font-size:22px; font-weight:600; color:#ffd700;">
+                                    📝 Ejercicio ${casoActualIndex + 1} de 10
+                                </span>
+                                <span style="font-size:20px; color:#b0b0d0;">
+                                    ✅ ${puntuacion.correctos} | ❌ ${puntuacion.incorrectos}
+                                </span>
+                            </div>
+                            <p style="font-size:18px; color:#b0b0d0; margin-top:6px;">Observa la vela y elige la opción correcta</p>
+                        </div>
+                        <div class="quiz-graph">
+                            ${svgHtml}
+                        </div>
+                        <div style="margin:15px 0;">
+                            <p style="font-size:22px; font-weight:600; text-align:center;">1. ¿Qué vela es?</p>
+                            <div class="quiz-options" id="opcionesIdentificacion">
+                        `;
+
+            opcionesId.forEach(op => {
+                html += `<button class="btn btn-secondary" onclick="responderIdentificacion('${op}', '${caso.nombre}')">${op}</button>`;
+            });
+
+            html += `
+                            </div>
+                        </div>
+                        <div style="margin:15px 0;">
+                            <p style="font-size:22px; font-weight:600; text-align:center;">2. ¿Qué acción recomiendas?</p>
+                            <div class="quiz-options" id="opcionesAccion">
+                                <button class="btn btn-success" onclick="responderAccion('compra', '${caso.accionCorrecta}', '${caso.explicacion}')">📈 Compra</button>
+                                <button class="btn btn-danger" onclick="responderAccion('venta', '${caso.accionCorrecta}', '${caso.explicacion}')">📉 Venta</button>
+                                <button class="btn btn-secondary" onclick="responderAccion('neutral', '${caso.accionCorrecta}', '${caso.explicacion}')">⏸️ Neutral</button>
+                            </div>
+                        </div>
+                        <div id="feedbackQuiz" class="feedback"></div>
+                        <div class="progreso-quiz">
+                            <span class="contador-preguntas">
+                                Pregunta <span>${casoActualIndex + 1}</span> de <span>10</span>
+                            </span>
+                            <span style="font-size:18px; color:#b0b0d0;">
+                                ⏳ ${10 - (casoActualIndex + 1)} restantes
+                            </span>
+                        </div>
+                    `;
+
+            document.getElementById('quizContent').innerHTML = html;
+            actualizarProgreso();
+        }
+
+        function responderIdentificacion(elegida, correcta) {
+            if (identificacionRespondida) return;
+            identificacionRespondida = true;
+            const feedback = document.getElementById('feedbackQuiz');
+            if (elegida === correcta) {
+                feedback.className = 'feedback correct';
+                feedback.innerHTML = `✅ ¡Correcto! Es un <strong>${correcta}</strong>. Bien identificado. 🎯`;
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.innerHTML = `❌ No es "${elegida}". La vela es <strong>${correcta}</strong>. Revisa la estructura. 📖`;
+                puntuacion.incorrectos++;
+            }
+            document.querySelectorAll('#opcionesIdentificacion .btn').forEach(btn => {
+                btn.disabled = true;
+                btn.style.opacity = '0.5';
+            });
+            actualizarProgreso();
+        }
+
+        function responderAccion(elegida, correcta, explicacion) {
+            if (accionRespondida) return;
+            accionRespondida = true;
+            const feedback = document.getElementById('feedbackQuiz');
+            if (elegida === correcta) {
+                feedback.className = 'feedback correct';
+                feedback.innerHTML = `
+                            ✅ ¡Acción correcta! <strong>${elegida.toUpperCase()}</strong> es lo recomendado.
+                            <div class="explanation">📖 ${explicacion}</div>
+                        `;
+                puntuacion.correctos++;
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.innerHTML = `
+                            ❌ La acción correcta era <strong>${correcta.toUpperCase()}</strong>.
+                            <div class="explanation">📖 ${explicacion}</div>
+                        `;
+                puntuacion.incorrectos++;
+            }
+            document.querySelectorAll('#opcionesAccion .btn').forEach(btn => {
+                btn.disabled = true;
+                btn.style.opacity = '0.5';
+            });
+            actualizarProgreso();
+
+            const container = document.getElementById('quizContent');
+            const btnSiguiente = document.createElement('div');
+            btnSiguiente.className = 'text-center mt-20';
+            btnSiguiente.innerHTML = `
+                        <button class="btn btn-primary" onclick="siguienteCaso()">
+                            ${casoActualIndex < casosActuales.length - 1 ? '➡️ Siguiente Ejercicio' : '📊 Ver Resultados Finales'}
+                        </button>
+                    `;
+            container.appendChild(btnSiguiente);
+        }
+
+        function siguienteCaso() {
+            casoActualIndex++;
+            identificacionRespondida = false;
+            accionRespondida = false;
+            mostrarCaso();
+        }
+
+        // ============================================
+        // 4. NAVEGACIÓN
+        // ============================================
+        function irANivel(nivel) {
+            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+            const target = document.getElementById(`section${nivel}`);
+            if (target) {
+                target.classList.add('active');
+                document.getElementById('nivelActualDisplay').textContent = nivel + 1;
+                document.getElementById('seccionNombre').textContent = target.dataset.nombre || 'Sección';
+                if (nivel === 3) cargarQuiz();
+                actualizarProgreso();
+
+                // Leer la sección con un pequeño retraso para asegurar que el DOM esté listo
+                setTimeout(() => {
+                    leerSeccion(nivel);
+                }, 300);
+
+                document.querySelector('#app').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        function actualizarProgreso() {
+            const secciones = document.querySelectorAll('.section');
+            let indexActual = 0;
+            secciones.forEach((sec, idx) => {
+                if (sec.classList.contains('active')) indexActual = idx;
+            });
+            const progreso = ((indexActual) / (secciones.length - 1)) * 100;
+            document.getElementById('progressBar').style.width = `${Math.min(100, progreso)}%`;
+        }
+
+        // ============================================
+        // 5. EVENTOS DEL BOTÓN DE VOZ
+        // ============================================
+        document.getElementById('btnVoice').addEventListener('click', function() {
+            const activeSection = document.querySelector('.section.active');
+            if (!activeSection) {
+                console.warn('No hay sección activa');
+                return;
+            }
+
+            // Si está hablando, cancelar
+            if (isSpeaking) {
+                try {
+                    if (synth.speaking) synth.cancel();
+                } catch (e) {
+                    console.warn('Error al cancelar:', e);
+                }
+                isSpeaking = false;
+                this.classList.remove('playing');
+                this.textContent = '🔊 Escuchar Lección';
+                return;
+            }
+
+            const nivel = parseInt(activeSection.id.replace('section', ''));
+            // Inicializar voz si es necesario
+            if (!vozInicializada) {
+                inicializarVoz();
+            }
+            leerSeccion(nivel);
+        });
+
+        // ============================================
+        // 6. INICIALIZACIÓN
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            irANivel(0);
+
+            // Precargar voces
+            if (window.speechSynthesis) {
+                window.speechSynthesis.getVoices();
+                window.speechSynthesis.onvoiceschanged = () => {
+                    window.speechSynthesis.getVoices();
+                };
+            }
+        });
+
+        // Atajos de teclado
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                const active = document.querySelector('.section.active');
+                if (active) {
+                    const nivel = parseInt(active.id.replace('section', ''));
+                    if (nivel > 0) { irANivel(nivel - 1);
+                        e.preventDefault(); }
+                }
+            }
+            if (e.key === 'ArrowRight') {
+                const active = document.querySelector('.section.active');
+                if (active) {
+                    const nivel = parseInt(active.id.replace('section', ''));
+                    const total = document.querySelectorAll('.section').length - 1;
+                    if (nivel < total) { irANivel(nivel + 1);
+                        e.preventDefault(); }
+                }
+            }
+            if (e.key === ' ' || e.key === 'Space') {
+                const btn = document.getElementById('btnVoice');
+                if (document.activeElement?.tagName !== 'BUTTON') {
+                    btn.click();
+                    e.preventDefault();
+                }
+            }
+        });
+
+        console.log('%c═══════════════════════════════════════════', 'color: #ffd700; font-size: 16px;');
+        console.log('%c📚 MASTER EN VELAS JAPONESAS v3.0', 'color: #ffd700; font-size: 20px; font-weight: bold;');
+        console.log('%c✍️  Creado por: YURBI GONZALEZ LOPEZ', 'color: #00c853; font-size: 16px;');
+        console.log('%c© Todos los derechos reservados 2026', 'color: #ff5252; font-size: 14px;');
+        console.log('%c🔒 Contenido protegido contra plagio', 'color: #ffd700; font-size: 14px;');
+        console.log('%c🎙️ Voz optimizada para móviles', 'color: #2196f3; font-size: 14px;');
+        console.log('%c═══════════════════════════════════════════', 'color: #ffd700; font-size: 16px;');
+    </script>
+
+</body>
+</html>
