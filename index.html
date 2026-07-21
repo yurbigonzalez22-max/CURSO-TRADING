@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Consolas de Trading - YURBI GONZALEZ LOPEZ</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #0f0e1a;
+            color: #f0f0f0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border-radius: 32px;
+            padding: 40px 35px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            border: 2px solid #2a2a4a;
+        }
+
+        h1 {
+            font-size: 38px;
+            font-weight: 700;
+            color: #ffd700;
+            text-align: center;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #b0b0d0;
+            font-size: 18px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #2a2a4a;
+            padding-bottom: 20px;
+        }
+
+        .subtitulo span {
+            color: #ffd700;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            margin: 12px 0;
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 14px;
+            border-left: 5px solid #2a2a5a;
+            transition: all 0.3s ease;
+        }
+
+        ul li:hover {
+            border-color: #ffd700;
+            background: rgba(255, 215, 0, 0.06);
+            transform: translateX(6px);
+        }
+
+        ul li a {
+            color: #e8e8f0;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        ul li a .numero {
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffd700;
+            background: rgba(255, 215, 0, 0.1);
+            padding: 2px 14px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            white-space: nowrap;
+        }
+
+        ul li a .nombre {
+            flex: 1;
+        }
+
+        ul li a .icono {
+            font-size: 24px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #2a2a4a;
+            text-align: center;
+            color: #8888aa;
+            font-size: 16px;
+        }
+
+        .footer .autor {
+            color: #ffd700;
+            font-weight: 600;
+        }
+
+        /* Colores por nivel */
+        ul li:nth-child(1) { border-color: #4a4a7a; }
+        ul li:nth-child(2) { border-color: #2196f3; }
+        ul li:nth-child(3) { border-color: #00c853; }
+        ul li:nth-child(4) { border-color: #ffd700; }
+        ul li:nth-child(5) { border-color: #ff9800; }
+        ul li:nth-child(6) { border-color: #9c27b0; }
+        ul li:nth-child(7) { border-color: #ff5252; }
+        ul li:nth-child(8) { border-color: #ff6f00; }
+        ul li:nth-child(9) { border-color: #e040fb; }
+        ul li:nth-child(10) { border-color: #00bcd4; }
+
+        @media (max-width: 600px) {
+            .container { padding: 20px 16px; }
+            h1 { font-size: 28px; }
+            ul li a { font-size: 17px; flex-wrap: wrap; }
+            ul li a .numero { font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>📚 Elige tu Consola de Aprendizaje</h1>
+        <div class="subtitulo">
+            🎯 <span>10 Consolas</span> para convertirte en un Trader Profesional
+        </div>
+
+        <ul>
+            <li>
+                <a href="consola0_fundamentos.html">
+                    <span class="icono">📚</span>
+                    <span class="numero">Nivel 0</span>
+                    <span class="nombre">Fundamentos del Trading</span>
+                </a>
+            </li>
+            <li>
+                <a href="consola1_velas.html">
+                    <span class="icono">🕯️</span>
+                    <span class="numero">Nivel 1</span>
+                    <span class="nombre">Master en Velas Japonesas</span>
+                </a>
+            </li>
+            <li>
+                <a href="consola2_soportes.html">
+                    <span class="icono">📊</span>
+                    <span class="numero">Nivel 2</span>
+                    <span class="nombre">Master en Soportes y Resistencias</span>
+                </a>
+            </li>
+            <li>
+                <a href="consola3_estructura.html">
+                    <span class="icono">📈</span>
+                    <span class="numero">Nivel 3</span>
+                    <span class="nombre">Master en Estructura de Mercado</span>
+                </a>
+            </li>
+            <li>
+                <a href="consola4_estrategias.html">
+                    <span class="icono">🎯</span>
+                    <span class="numero">Nivel 4</span>
+                    <span class="nombre">Master en Estrategias de Entrada</span>
+                </a>
+            </li>
+            <li>
+                <a href="consola5_psicologia.html">
+                    <span class="icono">🧠</span>
+                    <span class="numero">Nivel 5</span>
+                    <span class="nombre">Master en Psicología del Trading</span>
+                </a>
+            </li>
+            <li>
+                <a href="consola6_seguridad.html">
+                    <span class="icono">🔐</span>
+                    <span class="numero">Nivel 6</span>
+                    <span class="nombre">Master en Seguridad y Configuración</span>
+                </a>
+            </li>
+            <li>
+                <a href="consola7_ordenes.html">
+                    <span class="icono">📊</span>
+                    <span class="numero">Nivel 7</span>
+                    <span class="nombre">Master en Órdenes y Ejecución</span>
+                </a>
+            </li>
+            <li>
+                <a href="consola8_riesgo.html">
+                    <span class="icono">🛡️</span>
+                    <span class="numero">Nivel 8</span>
+                    <span class="nombre">Master en Gestión de Riesgo Avanzada</span>
+                </a>
+            </li>
+            <li>
+                <a href="consola9_simulador.html">
+                    <span class="icono">🎯</span>
+                    <span class="numero">Nivel 9</span>
+                    <span class="nombre">Master en Trading Real - Simulador</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="footer">
+            <span class="autor">✍️ YURBI GONZALEZ LOPEZ</span>
+            <br>
+            © 2026 - Todos los derechos reservados
+            <br>
+            <span style="font-size:14px; color:#666688;">🔒 Contenido protegido contra plagio</span>
+        </div>
+    </div>
+
+</body>
+</html>
