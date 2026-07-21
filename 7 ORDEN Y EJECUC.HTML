@@ -1,0 +1,3204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Master en Órdenes y Ejecución - YURBI GONZALEZ LOPEZ</title>
+    <script>
+        // Protección contra copia y plagio
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            alert('📚 Contenido protegido por derechos de autor de YURBI GONZALEZ LOPEZ. Prohibida su reproducción sin autorización.');
+            return false;
+        });
+
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert('© YURBI GONZALEZ LOPEZ - Todos los derechos reservados.');
+            return false;
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'v' || e.key === 'V' || e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+                alert('📚 Contenido protegido por YURBI GONZALEZ LOPEZ.');
+                return false;
+            }
+            if (e.key === 'F12') {
+                e.preventDefault();
+                alert('🔒 Herramientas de desarrollador desactivadas.');
+                return false;
+            }
+        });
+
+        console.log('%c═══════════════════════════════════════════', 'color: #ffd700; font-size: 16px;');
+        console.log('%c📊 MASTER EN ÓRDENES Y EJECUCIÓN v4.0', 'color: #ffd700; font-size: 20px; font-weight: bold;');
+        console.log('%c✍️  Creado por: YURBI GONZALEZ LOPEZ', 'color: #00c853; font-size: 16px;');
+        console.log('%c© Todos los derechos reservados 2026', 'color: #ff5252; font-size: 14px;');
+        console.log('%c═══════════════════════════════════════════', 'color: #ffd700; font-size: 16px;');
+    </script>
+    <style>
+        /* ========================================
+               ESTILOS COMPLETOS
+            ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            background: #0f0e1a;
+            color: #f0f0f0;
+            line-height: 1.9;
+            font-size: 20px;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        body::before {
+            content: "© YURBI GONZALEZ LOPEZ";
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 11px;
+            color: rgba(255, 215, 0, 0.08);
+            pointer-events: none;
+            z-index: 9999;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        #app {
+            max-width: 1200px;
+            width: 100%;
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border-radius: 32px;
+            padding: 40px 35px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            border: 2px solid #2a2a4a;
+            margin: 10px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #app::after {
+            content: "© YURBI GONZALEZ LOPEZ";
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 60px;
+            color: rgba(255, 215, 0, 0.03);
+            transform: rotate(-15deg);
+            pointer-events: none;
+            font-weight: bold;
+            letter-spacing: 5px;
+            white-space: nowrap;
+        }
+
+        /* ========================================
+               TIPOGRAFÍA
+            ======================================== */
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #ffd700;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 25px 0 15px 0;
+            border-left: 6px solid #ffd700;
+            padding-left: 18px;
+        }
+
+        h3 {
+            font-size: 30px;
+            font-weight: 500;
+            color: #e0e0ff;
+            margin: 20px 0 12px 0;
+        }
+
+        h4 {
+            font-size: 26px;
+            font-weight: 500;
+            color: #ffd700;
+            margin: 15px 0 10px 0;
+        }
+
+        p,
+        li,
+        .texto {
+            font-size: 22px;
+            line-height: 2.0;
+            color: #e8e8f0;
+            margin-bottom: 14px;
+        }
+
+        .mentor-dice {
+            background: rgba(255, 215, 0, 0.12);
+            border-left: 6px solid #ffd700;
+            padding: 20px 28px;
+            border-radius: 12px;
+            margin: 20px 0;
+            font-style: italic;
+            font-size: 24px;
+            color: #fff5d6;
+        }
+
+        .mentor-dice::before {
+            content: "🎯 ";
+            font-style: normal;
+        }
+
+        .ejemplo-box {
+            background: rgba(0, 200, 83, 0.08);
+            border: 2px solid #00c853;
+            border-radius: 16px;
+            padding: 20px 26px;
+            margin: 15px 0;
+        }
+
+        .ejemplo-box::before {
+            content: "💡 EJEMPLO: ";
+            font-weight: 700;
+            color: #00c853;
+        }
+
+        .ejemplo-box-bajista {
+            background: rgba(255, 82, 82, 0.08);
+            border: 2px solid #ff5252;
+            border-radius: 16px;
+            padding: 20px 26px;
+            margin: 15px 0;
+        }
+
+        .ejemplo-box-bajista::before {
+            content: "💡 EJEMPLO: ";
+            font-weight: 700;
+            color: #ff5252;
+        }
+
+        .concepto-clave {
+            background: rgba(255, 215, 0, 0.06);
+            border: 2px solid #ffd700;
+            border-radius: 16px;
+            padding: 18px 24px;
+            margin: 15px 0;
+        }
+
+        .concepto-clave strong {
+            color: #ffd700;
+        }
+
+        .ventajas-box {
+            background: rgba(33, 150, 243, 0.06);
+            border: 2px solid #2196f3;
+            border-radius: 16px;
+            padding: 18px 24px;
+            margin: 15px 0;
+        }
+
+        .ventajas-box .titulo {
+            font-weight: 700;
+            color: #2196f3;
+            font-size: 20px;
+        }
+
+        .desventajas-box {
+            background: rgba(255, 82, 82, 0.06);
+            border: 2px solid #ff5252;
+            border-radius: 16px;
+            padding: 18px 24px;
+            margin: 15px 0;
+        }
+
+        .desventajas-box .titulo {
+            font-weight: 700;
+            color: #ff5252;
+            font-size: 20px;
+        }
+
+        /* ========================================
+               TARJETAS DE ÓRDENES
+            ======================================== */
+        .orden-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid #2a2a5a;
+            border-radius: 24px;
+            padding: 30px 32px;
+            margin: 30px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: stretch;
+            transition: all 0.3s ease;
+        }
+
+        .orden-card:hover {
+            border-color: #ffd700;
+            background: rgba(255, 215, 0, 0.06);
+        }
+
+        .orden-imagen {
+            flex: 0 0 320px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+            padding: 25px 20px;
+            border: 2px solid #3a3a6a;
+            min-height: 350px;
+            transition: all 0.3s ease;
+        }
+
+        .orden-imagen svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .orden-imagen .etiqueta {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffd700;
+            margin-top: 16px;
+            text-align: center;
+            background: rgba(255, 215, 0, 0.15);
+            padding: 8px 28px;
+            border-radius: 30px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .orden-imagen .descripcion-imagen {
+            font-size: 18px;
+            color: #b0b0d0;
+            margin-top: 10px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .orden-contenido {
+            flex: 1;
+            min-width: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .orden-contenido h3 {
+            color: #ffd700;
+            font-size: 30px;
+            margin-top: 0;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+            padding-bottom: 10px;
+        }
+
+        .orden-contenido p {
+            font-size: 21px;
+            line-height: 1.9;
+        }
+
+        .orden-basica {
+            border-color: #2196f3;
+        }
+        .orden-basica:hover {
+            border-color: #2196f3;
+            background: rgba(33, 150, 243, 0.06);
+        }
+
+        .orden-proteccion {
+            border-color: #ffd700;
+        }
+        .orden-proteccion:hover {
+            border-color: #ffd700;
+            background: rgba(255, 215, 0, 0.06);
+        }
+
+        .orden-avanzada {
+            border-color: #9c27b0;
+        }
+        .orden-avanzada:hover {
+            border-color: #9c27b0;
+            background: rgba(156, 39, 176, 0.06);
+        }
+
+        .orden-riesgo {
+            border-color: #ff5252;
+        }
+        .orden-riesgo:hover {
+            border-color: #ff5252;
+            background: rgba(255, 82, 82, 0.06);
+        }
+
+        .orden-ratio {
+            border-color: #ff9800;
+        }
+        .orden-ratio:hover {
+            border-color: #ff9800;
+            background: rgba(255, 152, 0, 0.06);
+        }
+
+        /* ========================================
+               PRÁCTICA INTERACTIVA CON INPUTS
+            ======================================== */
+        .practica-container {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid #2a2a5a;
+        }
+
+        .practica-container .grafico-practica {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 10px 0;
+            border: 2px solid #2a2a5a;
+            min-height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .practica-container .grafico-practica svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .practica-container .contexto {
+            font-size: 18px;
+            color: #b0b0d0;
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+        }
+
+        .practica-container .pista {
+            font-size: 16px;
+            color: #888;
+            margin: 8px 0;
+            padding: 8px 12px;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid #ffd700;
+        }
+
+        .input-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 15px 0;
+            align-items: end;
+        }
+
+        .input-group .campo {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .input-group .campo label {
+            display: block;
+            font-size: 16px;
+            color: #b0b0d0;
+            margin-bottom: 4px;
+        }
+
+        .input-group .campo input {
+            width: 100%;
+            padding: 10px 14px;
+            font-size: 18px;
+            border: 2px solid #3a3a6a;
+            border-radius: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            color: #f0f0f0;
+            transition: all 0.3s ease;
+        }
+
+        .input-group .campo input:focus {
+            border-color: #ffd700;
+            outline: none;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.05);
+        }
+
+        .input-group .campo input.correcto {
+            border-color: #00c853;
+            background: rgba(0, 200, 83, 0.1);
+        }
+
+        .input-group .campo input.incorrecto {
+            border-color: #ff5252;
+            background: rgba(255, 82, 82, 0.1);
+        }
+
+        .input-group .campo input:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .input-group .campo .precio-ayuda {
+            font-size: 13px;
+            color: #888;
+            margin-top: 2px;
+        }
+
+        .practica-container .opciones-practica {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 15px 0;
+            justify-content: center;
+        }
+
+        .practica-container .opciones-practica button {
+            padding: 12px 28px;
+            font-size: 20px;
+            font-weight: 600;
+            border: 2px solid #3a3a6a;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #e8e8f0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 55px;
+            min-width: 140px;
+        }
+
+        .practica-container .opciones-practica button:hover {
+            border-color: #ffd700;
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .practica-container .opciones-practica button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .practica-container .opciones-practica button.seleccionado {
+            border-color: #ffd700;
+            background: rgba(255, 215, 0, 0.15);
+        }
+
+        .practica-container .opciones-practica button.correcto {
+            border-color: #00c853;
+            background: rgba(0, 200, 83, 0.15);
+        }
+
+        .practica-container .opciones-practica button.incorrecto {
+            border-color: #ff5252;
+            background: rgba(255, 82, 82, 0.15);
+        }
+
+        .btn-verificar {
+            background: #ffd700 !important;
+            color: #0f0e1a !important;
+            border-color: #ffd700 !important;
+            font-weight: 700 !important;
+            padding: 10px 24px !important;
+            font-size: 18px !important;
+            min-height: 48px !important;
+            min-width: 120px !important;
+        }
+
+        .btn-verificar:hover {
+            background: #ffe44d !important;
+        }
+
+        .btn-verificar:disabled {
+            opacity: 0.4 !important;
+            cursor: not-allowed !important;
+        }
+
+        .practica-container .feedback-practica {
+            margin-top: 15px;
+            padding: 15px 20px;
+            border-radius: 12px;
+            font-size: 18px;
+            display: none;
+        }
+
+        .practica-container .feedback-practica.mostrar {
+            display: block;
+        }
+
+        .practica-container .feedback-practica.acierto {
+            background: rgba(0, 200, 83, 0.1);
+            border: 1px solid #00c853;
+            color: #b9f6ca;
+        }
+
+        .practica-container .feedback-practica.fallo {
+            background: rgba(255, 82, 82, 0.1);
+            border: 1px solid #ff5252;
+            color: #ffcdd2;
+        }
+
+        .practica-container .feedback-practica .explicacion {
+            margin-top: 8px;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        .practica-container .feedback-practica .explicacion .correcto-texto {
+            color: #00c853;
+        }
+
+        .practica-container .feedback-practica .explicacion .incorrecto-texto {
+            color: #ff5252;
+        }
+
+        .panel-orden {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin: 10px 0;
+            border: 1px solid #3a3a6a;
+        }
+
+        .panel-orden .fila {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 5px 0;
+        }
+
+        .panel-orden .fila .label {
+            color: #b0b0d0;
+            font-size: 16px;
+        }
+
+        .panel-orden .fila .valor {
+            color: #ffd700;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .panel-orden .fila .valor.verde {
+            color: #00c853;
+        }
+
+        .panel-orden .fila .valor.rojo {
+            color: #ff5252;
+        }
+
+        .panel-orden .barra-progreso {
+            margin-top: 8px;
+            background: #2a2a4a;
+            border-radius: 8px;
+            height: 6px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .panel-orden .barra-progreso .relleno {
+            height: 100%;
+            border-radius: 8px;
+            transition: width 0.5s ease;
+        }
+
+        .panel-orden .barra-progreso .relleno.alcista {
+            background: linear-gradient(90deg, #ff5252, #ffd700 50%, #00c853);
+        }
+
+        .panel-orden .barra-progreso .relleno.bajista {
+            background: linear-gradient(90deg, #00c853, #ffd700 50%, #ff5252);
+        }
+
+        /* ========================================
+               BOTONES GENERALES
+            ======================================== */
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            font-size: 24px;
+            font-weight: 600;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            min-height: 70px;
+            min-width: 180px;
+            text-align: center;
+            margin: 8px 12px 8px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.5px;
+            touch-action: manipulation;
+        }
+
+        .btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        .btn-primary {
+            background: #ffd700;
+            color: #0f0e1a;
+        }
+
+        .btn-secondary {
+            background: #4a4a7a;
+            color: #ffffff;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 3px solid #ffd700;
+            color: #ffd700;
+        }
+
+        .btn-outline:hover {
+            background: #ffd700;
+            color: #0f0e1a;
+        }
+
+        .btn-voice {
+            background: #2196f3;
+            color: #ffffff;
+            font-size: 26px;
+            padding: 18px 40px;
+            position: relative;
+            min-height: 70px;
+        }
+
+        .btn-voice.playing {
+            background: #f44336;
+            animation: pulse-voice 1s infinite;
+        }
+
+        @keyframes pulse-voice {
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(244, 67, 54, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 0 20px rgba(244, 67, 54, 0);
+            }
+        }
+
+        .btn-voice .badge-voice {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ffd700;
+            color: #0f0e1a;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0;
+            justify-content: center;
+        }
+
+        /* ========================================
+               NAVEGACIÓN
+            ======================================== */
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 18px 0;
+            border-bottom: 2px solid #2a2a4a;
+            margin-bottom: 25px;
+            position: sticky;
+            top: 0;
+            background: #1a1a2e;
+            z-index: 100;
+            border-radius: 0 0 16px 16px;
+        }
+
+        .nav-bar .nivel-info {
+            font-size: 24px;
+            font-weight: 600;
+            color: #b0b0d0;
+        }
+
+        .nav-bar .nivel-info span {
+            color: #ffd700;
+        }
+
+        .progress-container {
+            width: 100%;
+            background: #2a2a4a;
+            border-radius: 60px;
+            height: 20px;
+            margin: 10px 0;
+            overflow: hidden;
+            border: 1px solid #3a3a5a;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ffd700, #ffb300);
+            border-radius: 60px;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========================================
+               QUIZ
+            ======================================== */
+        .quiz-container {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 24px;
+            padding: 30px;
+            margin: 25px 0;
+            border: 2px solid #3a3a6a;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .quiz-options .btn {
+            min-width: 140px;
+            flex: 1 1 auto;
+            font-size: 20px;
+            padding: 14px 24px;
+            min-height: 55px;
+        }
+
+        .feedback {
+            padding: 20px 28px;
+            border-radius: 16px;
+            font-size: 22px;
+            font-weight: 600;
+            margin: 18px 0;
+            display: none;
+            border: 3px solid transparent;
+        }
+
+        .feedback.correct {
+            display: block;
+            background: rgba(0, 200, 83, 0.15);
+            border-color: #00c853;
+            color: #b9f6ca;
+        }
+
+        .feedback.incorrect {
+            display: block;
+            background: rgba(211, 47, 47, 0.15);
+            border-color: #d32f2f;
+            color: #ffcdd2;
+        }
+
+        .feedback .explanation {
+            font-weight: 400;
+            font-size: 20px;
+            margin-top: 10px;
+            line-height: 1.7;
+        }
+
+        .progreso-quiz {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px 0;
+            border-top: 2px solid #2a2a4a;
+            margin-top: 20px;
+        }
+
+        .contador-preguntas {
+            font-size: 20px;
+            color: #b0b0d0;
+        }
+
+        .contador-preguntas span {
+            color: #ffd700;
+            font-weight: 700;
+        }
+
+        .lista-simple {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .lista-simple li {
+            padding: 14px 20px;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 14px;
+            border-left: 5px solid #ffd700;
+            font-size: 21px;
+        }
+
+        .lista-simple li strong {
+            color: #ffd700;
+        }
+
+        .footer-legal {
+            margin-top: 40px;
+            padding: 25px 30px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 24px;
+            border: 2px solid #2a2a4a;
+            text-align: center;
+        }
+
+        .footer-legal h3 {
+            color: #ffd700;
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .footer-legal p {
+            font-size: 20px;
+            color: #b0b0d0;
+            margin-bottom: 4px;
+        }
+
+        .footer-legal .copyright {
+            color: #ffd700;
+            font-weight: 600;
+        }
+
+        .badge-proteccion {
+            display: inline-block;
+            background: #d32f2f;
+            color: #ffffff;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 700;
+            margin: 4px 0;
+            letter-spacing: 1px;
+        }
+
+        /* ========================================
+               RESPONSIVE
+            ======================================== */
+        @media (max-width: 900px) {
+            .orden-imagen {
+                flex: 0 0 100%;
+                min-height: 250px;
+                max-width: 380px;
+                margin: 0 auto;
+            }
+
+            .orden-card {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+
+            .orden-contenido {
+                min-width: 100%;
+            }
+
+            .nav-bar {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+                position: relative;
+            }
+
+            .input-group {
+                flex-direction: column;
+            }
+
+            .input-group .campo {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+                font-size: 18px;
+            }
+
+            #app {
+                padding: 20px 16px;
+                border-radius: 24px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+            h2 {
+                font-size: 26px;
+            }
+            h3 {
+                font-size: 24px;
+            }
+            h4 {
+                font-size: 22px;
+            }
+            p,
+            li {
+                font-size: 20px;
+            }
+
+            .orden-imagen {
+                max-width: 300px;
+                min-height: 220px;
+                padding: 15px;
+            }
+
+            .orden-contenido h3 {
+                font-size: 26px;
+            }
+            .orden-contenido p {
+                font-size: 19px;
+            }
+
+            .btn {
+                font-size: 20px;
+                padding: 14px 24px;
+                min-height: 55px;
+                min-width: 130px;
+                margin: 5px 6px;
+            }
+
+            .btn-voice {
+                font-size: 22px;
+                padding: 16px 28px;
+                min-height: 55px;
+            }
+
+            .quiz-options .btn {
+                min-width: 100px;
+                font-size: 18px;
+                padding: 12px 18px;
+                min-height: 48px;
+            }
+
+            .nav-bar .nivel-info {
+                font-size: 20px;
+            }
+
+            .mentor-dice {
+                font-size: 20px;
+                padding: 14px 18px;
+            }
+
+            .footer-legal {
+                padding: 18px 16px;
+            }
+
+            .footer-legal h3 {
+                font-size: 22px;
+            }
+            .footer-legal p {
+                font-size: 18px;
+            }
+
+            .practica-container .opciones-practica button {
+                font-size: 17px;
+                padding: 10px 20px;
+                min-height: 48px;
+                min-width: 120px;
+            }
+
+            .input-group .campo input {
+                font-size: 16px;
+                padding: 8px 12px;
+            }
+
+            .practica-container .grafico-practica {
+                min-height: 150px;
+                padding: 10px;
+            }
+
+            .practica-container .grafico-practica svg {
+                max-height: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #app {
+                padding: 14px 10px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+            h2 {
+                font-size: 22px;
+                padding-left: 12px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+            p,
+            li {
+                font-size: 17px;
+            }
+
+            .btn {
+                font-size: 18px;
+                padding: 12px 18px;
+                min-height: 48px;
+                min-width: 100px;
+            }
+
+            .btn-voice {
+                font-size: 19px;
+                padding: 14px 22px;
+                min-height: 48px;
+            }
+
+            .orden-imagen {
+                max-width: 240px;
+                min-height: 180px;
+                padding: 12px;
+            }
+
+            .orden-imagen svg {
+                max-height: 140px;
+            }
+
+            .orden-contenido h3 {
+                font-size: 22px;
+            }
+
+            .orden-contenido p {
+                font-size: 17px;
+            }
+
+            .quiz-graph {
+                min-height: 120px;
+                padding: 10px;
+            }
+
+            .feedback {
+                font-size: 18px;
+                padding: 14px 18px;
+            }
+
+            .feedback .explanation {
+                font-size: 16px;
+            }
+
+            .mentor-dice {
+                font-size: 18px;
+                padding: 12px 14px;
+            }
+
+            .badge-proteccion {
+                font-size: 14px;
+                padding: 4px 14px;
+            }
+
+            .practica-container .opciones-practica button {
+                font-size: 15px;
+                padding: 8px 14px;
+                min-height: 40px;
+                min-width: 90px;
+            }
+
+            .input-group .campo input {
+                font-size: 14px;
+                padding: 6px 10px;
+            }
+
+            .practica-container .grafico-practica {
+                min-height: 120px;
+                padding: 8px;
+            }
+
+            .practica-container .grafico-practica svg {
+                max-height: 120px;
+            }
+
+            .btn-verificar {
+                font-size: 15px !important;
+                padding: 8px 16px !important;
+                min-height: 40px !important;
+                min-width: 90px !important;
+            }
+
+            .panel-orden .fila .label {
+                font-size: 14px;
+            }
+
+            .panel-orden .fila .valor {
+                font-size: 15px;
+            }
+        }
+
+        .text-center {
+            text-align: center;
+        }
+        .mt-20 {
+            margin-top: 20px;
+        }
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+        .highlight {
+            color: #ffd700;
+            font-weight: 600;
+        }
+        .separator {
+            border: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #2a2a5a, transparent);
+            margin: 30px 0;
+        }
+
+        *:focus-visible {
+            outline: 4px solid #ffd700;
+            outline-offset: 4px;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <!-- ==========================================
+        HEADER / NAVEGACIÓN
+        ========================================== -->
+        <div class="nav-bar">
+            <div>
+                <h1>📊 Master en Órdenes y Ejecución</h1>
+                <div class="nivel-info">
+                    Nivel <span id="nivelActualDisplay">1</span> de <span id="totalNiveles">13</span>
+                    &nbsp;|&nbsp; <span id="seccionNombre">Introducción</span>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-voice" id="btnVoice" aria-label="Escuchar lección en voz alta">
+                    🔊 Escuchar Lección
+                    <span class="badge-voice">🎙️</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Barra de progreso -->
+        <div class="progress-container" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" id="progressBar" style="width: 0%;"></div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 0: INTRODUCCIÓN
+        ========================================== -->
+        <div class="section active" id="section0" data-nivel="0" data-nombre="Introducción">
+            <h2>📊 ¿Cómo se Ejecuta una Operación en Binance?</h2>
+            <div class="orden-card" style="border-color:#ffd700;">
+                <div class="orden-imagen">
+                    <svg width="260" height="260" viewBox="0 0 260 260">
+                        <rect x="10" y="10" width="240" height="240" rx="25" fill="#1a1a2e" stroke="#ffd700" stroke-width="3"/>
+                        <rect x="50" y="50" width="160" height="140" rx="8" fill="none" stroke="#ffd700" stroke-width="2"/>
+                        <polyline points="60,110 80,90 100,100 120,70 140,85 160,55 180,70" fill="none" stroke="#ffd700" stroke-width="2"/>
+                        <rect x="70" y="160" width="50" height="20" rx="4" fill="none" stroke="#00c853" stroke-width="2"/>
+                        <text x="95" y="175" text-anchor="middle" font-size="10" fill="#00c853">COMPRAR</text>
+                        <rect x="130" y="160" width="50" height="20" rx="4" fill="none" stroke="#ff5252" stroke-width="2"/>
+                        <text x="155" y="175" text-anchor="middle" font-size="10" fill="#ff5252">VENDER</text>
+                        <text x="130" y="215" text-anchor="middle" font-size="18" fill="#ffd700" font-weight="bold">📊 EJECUCIÓN</text>
+                        <text x="130" y="245" text-anchor="middle" font-size="16" fill="#b0b0d0">De la teoría a la acción</text>
+                    </svg>
+                    <span class="etiqueta">📊 Ejecución</span>
+                    <span class="descripcion-imagen">De la teoría a la acción</span>
+                </div>
+                <div class="orden-contenido">
+                    <h3>El Momento de la Verdad</h3>
+                    <p>
+                        Has aprendido a <strong>analizar el mercado</strong>. Ahora es momento de <span class="highlight">ejecutar</span>.
+                        En Binance, hay <strong>diferentes tipos de órdenes</strong> para cada situación.
+                        <strong>Elegir la correcta</strong> es parte del éxito.
+                    </p>
+                    <div class="concepto-clave">
+                        <p><strong>🎯 IDEA CLAVE:</strong> <span class="highlight">Una buena estrategia + la orden correcta</span> = <strong>operación exitosa</strong>.</p>
+                    </div>
+                    <div class="ejemplo-box">
+                        <strong>EJEMPLO SENCILLO:</strong>
+                        <br><br>
+                        🏪 Imagina que quieres comprar <strong>pan</strong> en una panadería.
+                        <br>
+                        🥖 Puedes <strong>comprar al precio de hoy</strong> (Orden de Mercado).
+                        <br>
+                        ⏰ O puedes <strong>esperar a que baje</strong> a un precio que te guste (Orden Límite).
+                        <br><br>
+                        <strong>📊 En Binance es lo mismo, pero con criptomonedas.</strong>
+                    </div>
+                    <div class="mentor-dice">
+                        "La ejecución es el <strong>puente</strong> entre tu análisis y tus resultados."
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-primary" onclick="irANivel(1)">📈 Orden de Mercado →</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 1: ORDEN DE MERCADO (TEORÍA COMPLETA)
+        ========================================== -->
+        <div class="section" id="section1" data-nivel="1" data-nombre="Orden de Mercado">
+            <h2>📈 Nivel 1: Orden de Mercado</h2>
+            <div class="orden-card orden-basica">
+                <div class="orden-imagen">
+                    <svg width="260" height="260" viewBox="0 0 260 260">
+                        <rect x="10" y="10" width="240" height="240" rx="25" fill="#1a1a2e" stroke="#2196f3" stroke-width="3"/>
+                        <polygon points="130,60 170,120 90,120" fill="none" stroke="#2196f3" stroke-width="3"/>
+                        <text x="130" y="140" text-anchor="middle" font-size="14" fill="#2196f3">⚡ MERCADO</text>
+                        <text x="130" y="165" text-anchor="middle" font-size="12" fill="#b0b0d0">Ejecución inmediata</text>
+                        <text x="130" y="190" text-anchor="middle" font-size="16" fill="#ffd700">$50,000</text>
+                        <text x="130" y="210" text-anchor="middle" font-size="12" fill="#888">Precio actual</text>
+                        <text x="130" y="235" text-anchor="middle" font-size="18" fill="#2196f3" font-weight="bold">📈 ORDEN DE MERCADO</text>
+                    </svg>
+                    <span class="etiqueta">📈 Mercado</span>
+                    <span class="descripcion-imagen">Compra/Venta al precio actual</span>
+                </div>
+                <div class="orden-contenido">
+                    <h3>📈 Orden de Mercado</h3>
+
+                    <h4>¿Qué es?</h4>
+                    <p>Una <strong>Orden de Mercado</strong> es una instrucción para <span class="highlight">comprar o vender inmediatamente</span> al <strong>mejor precio disponible</strong> en ese momento.</p>
+
+                    <h4>¿Para qué sirve?</h4>
+                    <ul class="lista-simple">
+                        <li>⚡ Para <strong>entrar o salir de una operación rápidamente</strong></li>
+                        <li>💰 Cuando <strong>el precio actual es aceptable</strong> y no quieres esperar</li>
+                        <li>📊 En mercados <strong>muy líquidos</strong> donde el precio no se mueve mucho al ejecutar</li>
+                    </ul>
+
+                    <h4>¿Cómo funciona?</h4>
+                    <div class="pasos-box" style="border-left-color:#2196f3;">
+                        <div class="paso"><span class="numero" style="background:#2196f3; color:#0f0e1a;">1</span> Seleccionas <strong>"COMPRAR"</strong> o <strong>"VENDER"</strong></div>
+                        <div class="paso"><span class="numero" style="background:#2196f3; color:#0f0e1a;">2</span> Eliges <strong>"MERCADO"</strong> como tipo de orden</div>
+                        <div class="paso"><span class="numero" style="background:#2196f3; color:#0f0e1a;">3</span> La orden se ejecuta <strong>en segundos</strong> al precio actual</div>
+                        <div class="paso"><span class="numero" style="background:#2196f3; color:#0f0e1a;">4</span> Pagas el precio que hay en el momento</div>
+                    </div>
+
+                    <div class="ventajas-box">
+                        <div class="titulo">✅ Ventajas</div>
+                        <ul class="lista-simple">
+                            <li>⚡ <strong>Rápida</strong>: Se ejecuta inmediatamente</li>
+                            <li>✅ <strong>Sencilla</strong>: No requiere pensar en precios</li>
+                            <li>✅ <strong>Garantizada</strong>: Siempre se ejecuta (si hay liquidez)</li>
+                        </ul>
+                    </div>
+
+                    <div class="desventajas-box">
+                        <div class="titulo">⚠️ Desventajas</div>
+                        <ul class="lista-simple">
+                            <li>⚠️ <strong>No controlas el precio exacto</strong></li>
+                            <li>⚠️ Puede haber <strong>deslizamiento</strong> (el precio cambia mientras se ejecuta)</li>
+                            <li>⚠️ En mercados con <strong>baja liquidez</strong>, el precio puede moverse mucho</li>
+                        </ul>
+                    </div>
+
+                    <div class="ejemplo-box">
+                        <strong>📊 EJEMPLO EN BINANCE:</strong>
+                        <br><br>
+                        BTC está a <strong>$50,000</strong>. Quieres comprar AHORA.
+                        <br>
+                        👉 Seleccionas <strong>"COMPRAR"</strong> → <strong>"MERCADO"</strong>
+                        <br>
+                        👉 La orden se ejecuta en segundos a <strong>$50,000</strong> (o muy cerca)
+                        <br>
+                        ✅ ¡Tienes BTC!
+                    </div>
+
+                    <div class="mentor-dice">
+                        "La orden de mercado es tu <strong>herramienta más rápida</strong>.
+                        <br>
+                        <strong>Úsala</strong> cuando necesites entrar o salir ya."
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-secondary" onclick="irANivel(0)">⬅️</button>
+                <button class="btn btn-primary" onclick="irANivel(2)">📊 Orden Límite →</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 2: ORDEN LÍMITE (TEORÍA COMPLETA)
+        ========================================== -->
+        <div class="section" id="section2" data-nivel="2" data-nombre="Orden Límite">
+            <h2>📊 Nivel 2: Orden Límite</h2>
+            <div class="orden-card orden-basica">
+                <div class="orden-imagen">
+                    <svg width="260" height="260" viewBox="0 0 260 260">
+                        <rect x="10" y="10" width="240" height="240" rx="25" fill="#1a1a2e" stroke="#2196f3" stroke-width="3"/>
+                        <line x1="60" y1="140" x2="200" y2="140" stroke="#ffd700" stroke-width="2" stroke-dasharray="6,4"/>
+                        <polygon points="130,120 130,160 110,140" fill="#2196f3"/>
+                        <text x="130" y="185" text-anchor="middle" font-size="14" fill="#ffd700">$49,500</text>
+                        <text x="130" y="205" text-anchor="middle" font-size="12" fill="#b0b0d0">Precio Límite</text>
+                        <text x="130" y="235" text-anchor="middle" font-size="18" fill="#2196f3" font-weight="bold">📊 ORDEN LÍMITE</text>
+                    </svg>
+                    <span class="etiqueta">📊 Límite</span>
+                    <span class="descripcion-imagen">Tú eliges el precio</span>
+                </div>
+                <div class="orden-contenido">
+                    <h3>📊 Orden Límite</h3>
+
+                    <h4>¿Qué es?</h4>
+                    <p>Una <strong>Orden Límite</strong> es una instrucción para <span class="highlight">comprar o vender a un precio específico</span> que tú estableces. La orden <strong>solo se ejecuta</strong> si el mercado alcanza ese precio.</p>
+
+                    <h4>¿Para qué sirve?</h4>
+                    <ul class="lista-simple">
+                        <li>📉 Para <strong>comprar más barato</strong> de lo que está ahora</li>
+                        <li>📈 Para <strong>vender más caro</strong> de lo que está ahora</li>
+                        <li>🎯 Para <strong>controlar el precio exacto</strong> de entrada o salida</li>
+                        <li>⏰ Para <strong>no perseguir el precio</strong></li>
+                    </ul>
+
+                    <h4>¿Cómo funciona?</h4>
+                    <div class="pasos-box" style="border-left-color:#2196f3;">
+                        <div class="paso"><span class="numero" style="background:#2196f3; color:#0f0e1a;">1</span> Estableces el <strong>precio límite</strong> al que quieres comprar o vender</div>
+                        <div class="paso"><span class="numero" style="background:#2196f3; color:#0f0e1a;">2</span> La orden <strong>espera</strong> hasta que el mercado llegue a ese precio</div>
+                        <div class="paso"><span class="numero" style="background:#2196f3; color:#0f0e1a;">3</span> Si el precio llega, <strong>se ejecuta automáticamente</strong></div>
+                        <div class="paso"><span class="numero" style="background:#2196f3; color:#0f0e1a;">4</span> Si no llega, <strong>no se ejecuta</strong> y tu dinero está seguro</div>
+                    </div>
+
+                    <div class="ventajas-box">
+                        <div class="titulo">✅ Ventajas</div>
+                        <ul class="lista-simple">
+                            <li>🎯 <strong>Controlas el precio</strong>: Entras al precio que quieres</li>
+                            <li>💰 <strong>Mejor precio</strong>: Puedes comprar barato o vender caro</li>
+                            <li>⏰ <strong>No necesitas estar pendiente</strong>: La orden espera por ti</li>
+                        </ul>
+                    </div>
+
+                    <div class="desventajas-box">
+                        <div class="titulo">⚠️ Desventajas</div>
+                        <ul class="lista-simple">
+                            <li>⚠️ <strong>Puede no ejecutarse</strong>: Si el precio no llega a tu nivel</li>
+                            <li>⚠️ <strong>Pierdes oportunidades</strong>: Si el precio se va sin tocar tu nivel</li>
+                        </ul>
+                    </div>
+
+                    <div class="ejemplo-box">
+                        <strong>📊 EJEMPLO EN BINANCE:</strong>
+                        <br><br>
+                        BTC está a <strong>$50,000</strong>. Quieres comprar si baja a <strong>$49,500</strong>.
+                        <br>
+                        👉 Seleccionas <strong>"COMPRAR"</strong> → <strong>"LÍMITE"</strong> → Precio: <strong>$49,500</strong>
+                        <br>
+                        👉 La orden espera. Si BTC baja a $49,500, <strong>se ejecuta</strong>.
+                        <br>
+                        👉 Si BTC no baja, <strong>nunca se ejecuta</strong> y tu dinero sigue en tu cuenta.
+                        <br>
+                        ✅ ¡Compraste al precio que querías!
+                    </div>
+
+                    <div class="mentor-dice">
+                        "La orden límite es tu <strong>herramienta de precisión</strong>.
+                        <br>
+                        <strong>Úsala</strong> cuando quieras comprar barato o vender caro."
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-secondary" onclick="irANivel(1)">⬅️</button>
+                <button class="btn btn-primary" onclick="irANivel(3)">🛡️ Stop-Loss →</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 3: STOP-LOSS (TEORÍA COMPLETA)
+        ========================================== -->
+        <div class="section" id="section3" data-nivel="3" data-nombre="Stop-Loss">
+            <h2>🛡️ Nivel 3: Stop-Loss - Limita tus Pérdidas</h2>
+            <div class="orden-card orden-proteccion">
+                <div class="orden-imagen">
+                    <svg width="260" height="260" viewBox="0 0 260 260">
+                        <rect x="10" y="10" width="240" height="240" rx="25" fill="#1a1a2e" stroke="#ffd700" stroke-width="3"/>
+                        <path d="M80,40 L120,55 L120,100 Q120,130 80,150 Q40,130 40,100 L40,55 Z" fill="none" stroke="#ff5252" stroke-width="2"/>
+                        <text x="80" y="100" text-anchor="middle" font-size="14" fill="#ff5252">🛡️</text>
+                        <text x="80" y="140" text-anchor="middle" font-size="10" fill="#ff5252">STOP-LOSS</text>
+                        <text x="130" y="190" text-anchor="middle" font-size="16" fill="#ffd700" font-weight="bold">🛡️ STOP-LOSS</text>
+                        <text x="130" y="215" text-anchor="middle" font-size="14" fill="#b0b0d0">Limita tus pérdidas</text>
+                    </svg>
+                    <span class="etiqueta">🛡️ Stop-Loss</span>
+                    <span class="descripcion-imagen">Limita tus pérdidas automáticamente</span>
+                </div>
+                <div class="orden-contenido">
+                    <h3>🛡️ Stop-Loss</h3>
+
+                    <h4>¿Qué es?</h4>
+                    <p>Un <strong>Stop-Loss</strong> es una orden de <span class="highlight">protección</span> que <strong>cierra automáticamente</strong> tu operación si el precio va en tu contra. Es tu <strong>seguro</strong> en el trading.</p>
+
+                    <h4>¿Para qué sirve?</h4>
+                    <ul class="lista-simple">
+                        <li>🛡️ Para <strong>limitar tus pérdidas</strong> automáticamente</li>
+                        <li>💰 Para <strong>proteger tu capital</strong> de caídas grandes</li>
+                        <li>🧠 Para <strong>evitar decisiones emocionales</strong> cuando el mercado se mueve en tu contra</li>
+                        <li>📊 Para <strong>definir el riesgo máximo</strong> de cada operación</li>
+                    </ul>
+
+                    <h4>¿Cómo funciona?</h4>
+                    <div class="pasos-box" style="border-left-color:#ffd700;">
+                        <div class="paso"><span class="numero" style="background:#ffd700; color:#0f0e1a;">1</span> Cuando abres una operación, estableces un precio de <strong>Stop-Loss</strong></div>
+                        <div class="paso"><span class="numero" style="background:#ffd700; color:#0f0e1a;">2</span> Si el precio <strong>baja</strong> (en compra) o <strong>sube</strong> (en venta) hasta ese nivel</div>
+                        <div class="paso"><span class="numero" style="background:#ffd700; color:#0f0e1a;">3</span> La orden se <strong>activa</strong> y cierra la operación automáticamente</div>
+                        <div class="paso"><span class="numero" style="background:#ffd700; color:#0f0e1a;">4</span> <strong>Tu pérdida queda limitada</strong> a lo que decidiste</div>
+                    </div>
+
+                    <div class="ventajas-box">
+                        <div class="titulo">✅ Ventajas</div>
+                        <ul class="lista-simple">
+                            <li>🛡️ <strong>Protege tu capital</strong>: Limitas las pérdidas</li>
+                            <li>😌 <strong>Te da tranquilidad</strong>: Sabes que no perderás más de lo que decides</li>
+                            <li>🤖 <strong>Automático</strong>: No necesitas estar mirando la pantalla</li>
+                        </ul>
+                    </div>
+
+                    <div class="desventajas-box">
+                        <div class="titulo">⚠️ Desventajas</div>
+                        <ul class="lista-simple">
+                            <li>⚠️ <strong>Puede activarse por volatilidad</strong>: Si el precio baja y sube rápido</li>
+                            <li>⚠️ <strong>No garantiza el precio exacto</strong>: En mercados volátiles puede haber deslizamiento</li>
+                        </ul>
+                    </div>
+
+                    <div class="ejemplo-box">
+                        <strong>📊 EJEMPLO EN BINANCE:</strong>
+                        <br><br>
+                        Compras BTC a <strong>$50,000</strong>. Pones <strong>Stop-Loss</strong> en <strong>$49,000</strong>.
+                        <br>
+                        👉 Si BTC baja a $49,000, la orden se activa y vende tu BTC.
+                        <br>
+                        👉 Tu <strong>pérdida máxima</strong> es de <strong>$1,000</strong> (2% de $50,000).
+                        <br>
+                        ✅ ¡Tu capital está protegido!
+                    </div>
+
+                    <div class="mentor-dice">
+                        "El Stop-Loss es tu <strong>seguro de vida</strong> en el trading.
+                        <br>
+                        <strong>NUNCA</strong> operes sin Stop-Loss."
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-secondary" onclick="irANivel(2)">⬅️</button>
+                <button class="btn btn-primary" onclick="irANivel(4)">🎯 Take-Profit →</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 4: TAKE-PROFIT (TEORÍA COMPLETA)
+        ========================================== -->
+        <div class="section" id="section4" data-nivel="4" data-nombre="Take-Profit">
+            <h2>🎯 Nivel 4: Take-Profit - Asegura tus Ganancias</h2>
+            <div class="orden-card orden-proteccion">
+                <div class="orden-imagen">
+                    <svg width="260" height="260" viewBox="0 0 260 260">
+                        <rect x="10" y="10" width="240" height="240" rx="25" fill="#1a1a2e" stroke="#ffd700" stroke-width="3"/>
+                        <circle cx="130" cy="110" r="50" fill="none" stroke="#00c853" stroke-width="3"/>
+                        <circle cx="130" cy="110" r="30" fill="none" stroke="#00c853" stroke-width="2"/>
+                        <circle cx="130" cy="110" r="10" fill="#00c853" opacity="0.5"/>
+                        <text x="130" y="185" text-anchor="middle" font-size="16" fill="#00c853" font-weight="bold">🎯 TAKE-PROFIT</text>
+                        <text x="130" y="215" text-anchor="middle" font-size="14" fill="#b0b0d0">Asegura tus ganancias</text>
+                    </svg>
+                    <span class="etiqueta">🎯 Take-Profit</span>
+                    <span class="descripcion-imagen">Asegura tus ganancias automáticamente</span>
+                </div>
+                <div class="orden-contenido">
+                    <h3>🎯 Take-Profit</h3>
+
+                    <h4>¿Qué es?</h4>
+                    <p>Un <strong>Take-Profit</strong> es una orden que <span class="highlight">cierra automáticamente</span> tu operación cuando el precio alcanza tu objetivo de ganancia. Es la forma de <strong>asegurar tus ganancias</strong>.</p>
+
+                    <h4>¿Para qué sirve?</h4>
+                    <ul class="lista-simple">
+                        <li>🟢 Para <strong>asegurar tus ganancias</strong> automáticamente</li>
+                        <li>💰 Para <strong>no perder ganancias</strong> por no salir a tiempo</li>
+                        <li>🧠 Para <strong>evitar la codicia</strong> que te hace no tomar ganancias</li>
+                        <li>🎯 Para <strong>tener un objetivo claro</strong> antes de entrar</li>
+                    </ul>
+
+                    <h4>¿Cómo funciona?</h4>
+                    <div class="pasos-box" style="border-left-color:#ffd700;">
+                        <div class="paso"><span class="numero" style="background:#ffd700; color:#0f0e1a;">1</span> Cuando abres una operación, estableces un precio de <strong>Take-Profit</strong></div>
+                        <div class="paso"><span class="numero" style="background:#ffd700; color:#0f0e1a;">2</span> Si el precio <strong>sube</strong> (en compra) o <strong>baja</strong> (en venta) hasta ese nivel</div>
+                        <div class="paso"><span class="numero" style="background:#ffd700; color:#0f0e1a;">3</span> La orden se <strong>activa</strong> y cierra la operación automáticamente</div>
+                        <div class="paso"><span class="numero" style="background:#ffd700; color:#0f0e1a;">4</span> <strong>Tu ganancia queda asegurada</strong></div>
+                    </div>
+
+                    <div class="ventajas-box">
+                        <div class="titulo">✅ Ventajas</div>
+                        <ul class="lista-simple">
+                            <li>🟢 <strong>Asegura ganancias</strong>: No te quedas sin ganar por esperar más</li>
+                            <li>😌 <strong>Te da tranquilidad</strong>: Sabes que ganarás algo</li>
+                            <li>🤖 <strong>Automático</strong>: No necesitas estar mirando la pantalla</li>
+                        </ul>
+                    </div>
+
+                    <div class="desventajas-box">
+                        <div class="titulo">⚠️ Desventajas</div>
+                        <ul class="lista-simple">
+                            <li>⚠️ <strong>Puede cerrar antes de tiempo</strong>: Si el precio sube y baja</li>
+                            <li>⚠️ <strong>Limita ganancias potenciales</strong>: Si el precio sigue subiendo, te lo pierdes</li>
+                        </ul>
+                    </div>
+
+                    <div class="ejemplo-box">
+                        <strong>📊 EJEMPLO EN BINANCE:</strong>
+                        <br><br>
+                        Compras BTC a <strong>$50,000</strong>. Pones <strong>Take-Profit</strong> en <strong>$53,000</strong>.
+                        <br>
+                        👉 Si BTC sube a $53,000, la orden se activa y vende tu BTC.
+                        <br>
+                        👉 Tu <strong>ganancia</strong> es de <strong>$3,000</strong> (6% de $50,000).
+                        <br>
+                        ✅ ¡Tus ganancias están aseguradas!
+                    </div>
+
+                    <div class="mentor-dice">
+                        "El Take-Profit asegura que <strong>no te vayas sin ganancias</strong>.
+                        <br>
+                        <strong>Úsalo</strong> en todas tus operaciones."
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-secondary" onclick="irANivel(3)">⬅️</button>
+                <button class="btn btn-primary" onclick="irANivel(5)">⚡ Stop-Limit →</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 5: STOP-LIMIT (TEORÍA COMPLETA)
+        ========================================== -->
+        <div class="section" id="section5" data-nivel="5" data-nombre="Stop-Limit">
+            <h2>⚡ Nivel 5: Stop-Limit</h2>
+            <div class="orden-card orden-avanzada">
+                <div class="orden-imagen">
+                    <svg width="260" height="260" viewBox="0 0 260 260">
+                        <rect x="10" y="10" width="240" height="240" rx="25" fill="#1a1a2e" stroke="#9c27b0" stroke-width="3"/>
+                        <line x1="60" y1="100" x2="200" y2="100" stroke="#ff5252" stroke-width="2" stroke-dasharray="6,4"/>
+                        <text x="60" y="95" text-anchor="start" font-size="10" fill="#ff5252">STOP</text>
+                        <line x1="60" y1="140" x2="200" y2="140" stroke="#00c853" stroke-width="2" stroke-dasharray="6,4"/>
+                        <text x="60" y="155" text-anchor="start" font-size="10" fill="#00c853">LÍMITE</text>
+                        <polygon points="130,80 130,160 110,120" fill="#9c27b0"/>
+                        <text x="130" y="190" text-anchor="middle" font-size="14" fill="#9c27b0">⚡ STOP-LIMIT</text>
+                        <text x="130" y="215" text-anchor="middle" font-size="12" fill="#b0b0d0">Activación + Ejecución</text>
+                    </svg>
+                    <span class="etiqueta">⚡ Stop-Limit</span>
+                    <span class="descripcion-imagen">Activación y ejecución controladas</span>
+                </div>
+                <div class="orden-contenido">
+                    <h3>⚡ Stop-Limit</h3>
+
+                    <h4>¿Qué es?</h4>
+                    <p>Una orden <strong>Stop-Limit</strong> combina lo mejor del Stop-Loss y la Orden Límite. <span class="highlight">Primero se activa</span> cuando el precio alcanza el nivel de "Stop", y <span class="highlight">luego se ejecuta</span> como una orden Límite.</p>
+
+                    <h4>¿Para qué sirve?</h4>
+                    <ul class="lista-simple">
+                        <li>🎯 Para <strong>tener control total</strong> sobre el precio de ejecución</li>
+                        <li>🛡️ Para <strong>evitar deslizamientos</strong> en mercados volátiles</li>
+                        <li>💰 Para <strong>proteger tus ganancias</strong> con precisión</li>
+                        <li>📊 Para <strong>limitar pérdidas</strong> sin sorpresas de precio</li>
+                    </ul>
+
+                    <h4>¿Cómo funciona?</h4>
+                    <div class="pasos-box" style="border-left-color:#9c27b0;">
+                        <div class="paso"><span class="numero" style="background:#9c27b0; color:#ffffff;">1</span> Estableces un precio de <strong>STOP</strong> (activación)</div>
+                        <div class="paso"><span class="numero" style="background:#9c27b0; color:#ffffff;">2</span> Estableces un precio de <strong>LÍMITE</strong> (ejecución)</div>
+                        <div class="paso"><span class="numero" style="background:#9c27b0; color:#ffffff;">3</span> Cuando el precio alcanza el STOP, <strong>se activa</strong> la orden</div>
+                        <div class="paso"><span class="numero" style="background:#9c27b0; color:#ffffff;">4</span> Luego se ejecuta al precio <strong>LÍMITE</strong> (o mejor)</div>
+                    </div>
+
+                    <div class="ventajas-box">
+                        <div class="titulo">✅ Ventajas</div>
+                        <ul class="lista-simple">
+                            <li>⚡ <strong>Control total</strong>: Sabes exactamente a qué precio se ejecutará</li>
+                            <li>🛡️ <strong>Evita deslizamientos</strong>: No hay sorpresas en el precio</li>
+                            <li>🎯 <strong>Precisión</strong>: Ideal para mercados volátiles</li>
+                        </ul>
+                    </div>
+
+                    <div class="desventajas-box">
+                        <div class="titulo">⚠️ Desventajas</div>
+                        <ul class="lista-simple">
+                            <li>⚠️ <strong>Puede no ejecutarse</strong>: Si el precio salta el límite</li>
+                            <li>⚠️ <strong>Más compleja</strong>: Requiere entender dos niveles de precio</li>
+                        </ul>
+                    </div>
+
+                    <div class="ejemplo-box">
+                        <strong>📊 EJEMPLO EN BINANCE:</strong>
+                        <br><br>
+                        Compras BTC a <strong>$50,000</strong>. Quieres protegerte si baja.
+                        <br>
+                        👉 <strong>STOP</strong>: $49,000 (se activa si baja a este nivel)
+                        <br>
+                        👉 <strong>LÍMITE</strong>: $48,950 (se ejecuta a este precio)
+                        <br>
+                        👉 Si BTC baja a $49,000, se activa la orden
+                        <br>
+                        👉 Luego se ejecuta a <strong>$48,950</strong> (o mejor)
+                        <br>
+                        ✅ ¡Evitas el deslizamiento!
+                    </div>
+
+                    <div class="mentor-dice">
+                        "El Stop-Limit te da <strong>control total</strong> sobre el precio de ejecución.
+                        <br>
+                        <strong>Úsalo</strong> en mercados volátiles."
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-secondary" onclick="irANivel(4)">⬅️</button>
+                <button class="btn btn-primary" onclick="irANivel(6)">🔄 OCO →</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 6: OCO (TEORÍA COMPLETA)
+        ========================================== -->
+        <div class="section" id="section6" data-nivel="6" data-nombre="OCO">
+            <h2>🔄 Nivel 6: OCO - One Cancels Other</h2>
+            <div class="orden-card orden-avanzada">
+                <div class="orden-imagen">
+                    <svg width="260" height="260" viewBox="0 0 260 260">
+                        <rect x="10" y="10" width="240" height="240" rx="25" fill="#1a1a2e" stroke="#9c27b0" stroke-width="3"/>
+                        <rect x="60" y="70" width="50" height="40" rx="4" fill="none" stroke="#00c853" stroke-width="2"/>
+                        <text x="85" y="95" text-anchor="middle" font-size="12" fill="#00c853">TP</text>
+                        <rect x="150" y="70" width="50" height="40" rx="4" fill="none" stroke="#ff5252" stroke-width="2"/>
+                        <text x="175" y="95" text-anchor="middle" font-size="12" fill="#ff5252">SL</text>
+                        <line x1="110" y1="80" x2="150" y2="80" stroke="#ffd700" stroke-width="2"/>
+                        <polygon points="150,75 160,80 150,85" fill="#ffd700"/>
+                        <text x="130" y="140" text-anchor="middle" font-size="16" fill="#ffd700" font-weight="bold">🔄 OCO</text>
+                        <text x="130" y="170" text-anchor="middle" font-size="14" fill="#b0b0d0">Una cancela a la otra</text>
+                        <text x="130" y="195" text-anchor="middle" font-size="12" fill="#888">Take-Profit + Stop-Loss</text>
+                    </svg>
+                    <span class="etiqueta">🔄 OCO</span>
+                    <span class="descripcion-imagen">Una orden cancela a la otra</span>
+                </div>
+                <div class="orden-contenido">
+                    <h3>🔄 OCO: One Cancels Other</h3>
+
+                    <h4>¿Qué es?</h4>
+                    <p>Una orden <strong>OCO (One Cancels Other)</strong> es una <span class="highlight">orden compuesta</span> que incluye un <strong>Take-Profit</strong> y un <strong>Stop-Loss</strong> simultáneamente. <strong>Si una se ejecuta, la otra se cancela automáticamente</strong>.</p>
+
+                    <h4>¿Para qué sirve?</h4>
+                    <ul class="lista-simple">
+                        <li>🛡️ Para <strong>proteger tu operación</strong> desde el inicio</li>
+                        <li>🤖 Para <strong>automatizar</strong> tu gestión de riesgo</li>
+                        <li>🔄 Para <strong>no tener que elegir</strong> entre TP y SL</li>
+                        <li>😌 Para <strong>operar sin estrés</strong> sabiendo que estás protegido</li>
+                    </ul>
+
+                    <h4>¿Cómo funciona?</h4>
+                    <div class="pasos-box" style="border-left-color:#9c27b0;">
+                        <div class="paso"><span class="numero" style="background:#9c27b0; color:#ffffff;">1</span> Abres una operación y colocas <strong>OCO</strong></div>
+                        <div class="paso"><span class="numero" style="background:#9c27b0; color:#ffffff;">2</span> Estableces un precio de <strong>Take-Profit</strong> (ganancia)</div>
+                        <div class="paso"><span class="numero" style="background:#9c27b0; color:#ffffff;">3</span> Estableces un precio de <strong>Stop-Loss</strong> (pérdida)</div>
+                        <div class="paso"><span class="numero" style="background:#9c27b0; color:#ffffff;">4</span> Si el precio llega al TP, <strong>se ejecuta</strong> y el SL <strong>se cancela</strong></div>
+                        <div class="paso"><span class="numero" style="background:#9c27b0; color:#ffffff;">5</span> Si el precio llega al SL, <strong>se ejecuta</strong> y el TP <strong>se cancela</strong></div>
+                    </div>
+
+                    <div class="ventajas-box">
+                        <div class="titulo">✅ Ventajas</div>
+                        <ul class="lista-simple">
+                            <li>🔄 <strong>Protección completa</strong>: TP y SL activos simultáneamente</li>
+                            <li>🤖 <strong>Automatización total</strong>: No necesitas gestionar nada</li>
+                            <li>😌 <strong>Tranquilidad</strong>: Sabes que estás cubierto en ambas direcciones</li>
+                        </ul>
+                    </div>
+
+                    <div class="desventajas-box">
+                        <div class="titulo">⚠️ Desventajas</div>
+                        <ul class="lista-simple">
+                            <li>⚠️ <strong>Puede cancelar una orden buena</strong>: Si una se ejecuta, la otra desaparece</li>
+                            <li>⚠️ <strong>Compleja de entender</strong>: Requiere comprender TP y SL</li>
+                        </ul>
+                    </div>
+
+                    <div class="ejemplo-box">
+                        <strong>📊 EJEMPLO EN BINANCE:</strong>
+                        <br><br>
+                        Compras BTC a <strong>$50,000</strong>. Activas <strong>OCO</strong>.
+                        <br>
+                        👉 <strong>TAKE-PROFIT</strong>: $53,000 (ganancia 6%)
+                        <br>
+                        👉 <strong>STOP-LOSS</strong>: $49,000 (pérdida 2%)
+                        <br>
+                        👉 Si BTC sube a $53,000 → <strong>Se ejecuta TP</strong>, SL se cancela
+                        <br>
+                        👉 Si BTC baja a $49,000 → <strong>Se ejecuta SL</strong>, TP se cancela
+                        <br>
+                        ✅ ¡Ganas 6% o pierdes 2%! ¡Nunca más!
+                    </div>
+
+                    <div class="mentor-dice">
+                        "El OCO es tu <strong>piloto automático</strong> de protección.
+                        <br>
+                        <strong>Úsalo</strong> siempre que tengas una operación abierta."
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-secondary" onclick="irANivel(5)">⬅️</button>
+                <button class="btn btn-primary" onclick="irANivel(7)">⚡ Apalancamiento →</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 7: APALANCAMIENTO (TEORÍA COMPLETA)
+        ========================================== -->
+        <div class="section" id="section7" data-nivel="7" data-nombre="Apalancamiento y Margen">
+            <h2>⚡ Nivel 7: Apalancamiento y Margen</h2>
+            <div class="orden-card orden-riesgo">
+                <div class="orden-imagen">
+                    <svg width="260" height="260" viewBox="0 0 260 260">
+                        <rect x="10" y="10" width="240" height="240" rx="25" fill="#1a1a2e" stroke="#ff5252" stroke-width="3"/>
+                        <line x1="80" y1="190" x2="180" y2="60" stroke="#ff5252" stroke-width="4"/>
+                        <circle cx="130" cy="125" r="8" fill="#ffd700"/>
+                        <text x="130" y="140" text-anchor="middle" font-size="14" fill="#ffd700">⚡</text>
+                        <text x="130" y="165" text-anchor="middle" font-size="16" fill="#ff5252">10x</text>
+                        <text x="130" y="190" text-anchor="middle" font-size="12" fill="#b0b0d0">Apalancamiento</text>
+                        <text x="130" y="220" text-anchor="middle" font-size="16" fill="#ff5252" font-weight="bold">⚡ APALANCAMIENTO</text>
+                        <text x="130" y="245" text-anchor="middle" font-size="14" fill="#b0b0d0">Amplifica ganancias y pérdidas</text>
+                    </svg>
+                    <span class="etiqueta">⚡ Apalancamiento</span>
+                    <span class="descripcion-imagen">Amplifica ganancias y pérdidas</span>
+                </div>
+                <div class="orden-contenido">
+                    <h3>⚡ Apalancamiento y Margen</h3>
+
+                    <h4>¿Qué es?</h4>
+                    <p>El <strong>APALANCAMIENTO</strong> te permite <span class="highlight">operar con más dinero del que tienes</span>. Es como un <strong>préstamo</strong> que te da el exchange.</p>
+
+                    <h4>¿Para qué sirve?</h4>
+                    <ul class="lista-simple">
+                        <li>💰 Para <strong>amplificar tus ganancias</strong> potenciales</li>
+                        <li>📊 Para <strong>operar con más volumen</strong> del que tu capital permite</li>
+                        <li>⚡ Para <strong>aprovechar pequeños movimientos</strong> del mercado</li>
+                    </ul>
+
+                    <h4>¿Cómo funciona?</h4>
+                    <div class="ejemplo-box">
+                        <strong>EJEMPLO DE APALANCAMIENTO:</strong>
+                        <br><br>
+                        💰 Tienes <strong>$1,000</strong> en tu cuenta.
+                        <br>
+                        ⚡ Usas <strong>10x de apalancamiento</strong>.
+                        <br>
+                        📊 Operas con <strong>$10,000</strong>.
+                        <br>
+                        📈 BTC sube un <strong>5%</strong> → Tú ganas <strong>$500</strong> (50% de tu capital).
+                        <br>
+                        📉 BTC baja un <strong>5%</strong> → Tú pierdes <strong>$500</strong> (50% de tu capital).
+                        <br><br>
+                        <strong>✅ Con 10x, ganas o pierdes 10 veces más rápido.</strong>
+                    </div>
+
+                    <div class="ventajas-box">
+                        <div class="titulo">✅ Ventajas</div>
+                        <ul class="lista-simple">
+                            <li>⚡ <strong>Amplifica ganancias</strong>: Ganas más con movimientos pequeños</li>
+                            <li>💰 <strong>Mayor eficiencia</strong>: Usas menos capital para más exposición</li>
+                        </ul>
+                    </div>
+
+                    <div class="desventajas-box">
+                        <div class="titulo">⚠️ Desventajas</div>
+                        <ul class="lista-simple">
+                            <li>⚠️ <strong>Amplifica pérdidas</strong>: Puedes perder todo tu capital</li>
+                            <li>⚠️ <strong>Liquidación</strong>: La plataforma puede cerrar tu posición si pierdes demasiado</li>
+                            <li>⚠️ <strong>Más estrés</strong>: Las emociones se intensifican con el apalancamiento</li>
+                        </ul>
+                    </div>
+
+                    <div class="ejemplo-box-bajista">
+                        <strong>⚠️ EL PELIGRO DEL APALANCAMIENTO:</strong>
+                        <br><br>
+                        💰 Tienes <strong>$1,000</strong> en tu cuenta.
+                        <br>
+                        ⚡ Usas <strong>20x de apalancamiento</strong>.
+                        <br>
+                        📊 Operas con <strong>$20,000</strong>.
+                        <br>
+                        📉 BTC baja un <strong>5%</strong> → Tú pierdes <strong>$1,000</strong>.
+                        <br>
+                        💔 <strong>¡Has perdido TODO tu capital!</strong>
+                        <br><br>
+                        <strong>✅ El apalancamiento puede LIQUIDARTE en minutos.</strong>
+                    </div>
+
+                    <div class="concepto-clave">
+                        <p><strong>📌 APALANCAMIENTO RECOMENDADO:</strong></p>
+                        <ul class="lista-simple">
+                            <li><strong>⚡ Principiantes:</strong> <span class="highlight">2x - 5x</span></li>
+                            <li><strong>📊 Intermedios:</strong> 5x - 10x con Stop-Loss ajustado</li>
+                            <li><strong>⚠️ Expertos:</strong> 20x - 50x con gestión profesional</li>
+                            <li><strong>❌ NUNCA</strong> uses más de 10x sin experiencia</li>
+                        </ul>
+                    </div>
+
+                    <div class="mentor-dice">
+                        "El apalancamiento es como <strong>conducir a alta velocidad</strong>.
+                        <br>
+                        <strong>Usa</strong> apalancamiento bajo (2x-5x) hasta que tengas experiencia."
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-secondary" onclick="irANivel(6)">⬅️</button>
+                <button class="btn btn-primary" onclick="irANivel(8)">💰 Comisiones →</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 8: COMISIONES (TEORÍA COMPLETA)
+        ========================================== -->
+        <div class="section" id="section8" data-nivel="8" data-nombre="Comisiones y Tarifas">
+            <h2>💰 Nivel 8: Comisiones y Tarifas</h2>
+            <div class="orden-card orden-basica">
+                <div class="orden-imagen">
+                    <svg width="260" height="260" viewBox="0 0 260 260">
+                        <rect x="10" y="10" width="240" height="240" rx="25" fill="#1a1a2e" stroke="#2196f3" stroke-width="3"/>
+                        <circle cx="130" cy="90" r="40" fill="none" stroke="#ffd700" stroke-width="2"/>
+                        <text x="130" y="95" text-anchor="middle" font-size="20" fill="#ffd700">💰</text>
+                        <text x="130" y="140" text-anchor="middle" font-size="14" fill="#ffd700">0.1%</text>
+                        <text x="130" y="160" text-anchor="middle" font-size="12" fill="#b0b0d0">Comisión por operación</text>
+                        <text x="130" y="190" text-anchor="middle" font-size="14" fill="#00c853">25% descuento con BNB</text>
+                        <text x="130" y="220" text-anchor="middle" font-size="16" fill="#2196f3" font-weight="bold">💰 COMISIONES</text>
+                        <text x="130" y="245" text-anchor="middle" font-size="14" fill="#b0b0d0">Cada operación tiene un costo</text>
+                    </svg>
+                    <span class="etiqueta">💰 Comisiones</span>
+                    <span class="descripcion-imagen">El costo de cada operación</span>
+                </div>
+                <div class="orden-contenido">
+                    <h3>💰 Comisiones y Tarifas</h3>
+
+                    <h4>¿Qué son?</h4>
+                    <p>Las <strong>comisiones</strong> son el <span class="highlight">costo de cada operación</span>. En Binance, la comisión estándar es del <strong>0.1%</strong> por operación.</p>
+
+                    <h4>Tipos de Comisiones:</h4>
+                    <ul class="lista-simple">
+                        <li><strong>📈 MAKER:</strong> Creas liquidez (orden límite no ejecutada). <span class="highlight">Comisión más baja (0.075%)</span></li>
+                        <li><strong>📊 TAKER:</strong> Tomas liquidez (orden de mercado). <span class="highlight">Comisión más alta (0.1%)</span></li>
+                    </ul>
+
+                    <div class="ejemplo-box">
+                        <strong>EJEMPLO DE COMISIONES:</strong>
+                        <br><br>
+                        📊 Compras <strong>$10,000</strong> en BTC.
+                        <br>
+                        💰 Comisión sin BNB: <strong>$10</strong> (0.1%)
+                        <br>
+                        💰 Comisión con BNB: <strong>$7.50</strong> (0.075%)
+                        <br>
+                        📈 ¡Ahorras <strong>$2.50</strong> por operación!
+                        <br><br>
+                        <strong>✅ En 10 operaciones, ahorras $25.</strong>
+                    </div>
+
+                    <h4>💡 Cómo Reducir tus Comisiones:</h4>
+                    <ul class="lista-simple">
+                        <li>✅ <strong>Compra BNB</strong> para pagar comisiones con 25% de descuento</li>
+                        <li>✅ Usa <strong>órdenes límite</strong> (MAKER) en lugar de mercado (TAKER)</li>
+                        <li>✅ Aumenta tu <strong>volumen de trading</strong> para bajar las comisiones</li>
+                    </ul>
+
+                    <div class="comparacion-box">
+                        <div class="comparacion-item si">
+                            <div class="titulo">✅ Con BNB</div>
+                            <div class="texto">Pagas <strong>25% menos de comisiones</strong>. ¡Vale la pena!</div>
+                        </div>
+                        <div class="comparacion-item no">
+                            <div class="titulo">❌ Sin BNB</div>
+                            <div class="texto">Pagas la <strong>comisión completa</strong>. Con el tiempo, reduce tu rentabilidad.</div>
+                        </div>
+                    </div>
+
+                    <div class="mentor-dice">
+                        "Las comisiones son el <strong>costo de hacer trading</strong>.
+                        <br>
+                        <strong>Compra BNB</strong> para pagar tus comisiones con descuento."
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-secondary" onclick="irANivel(7)">⬅️</button>
+                <button class="btn btn-primary" onclick="irANivel(9)">⚖️ Relación Riesgo/Beneficio →</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 9: RELACIÓN RIESGO/BENEFICIO (TEORÍA COMPLETA)
+        ========================================== -->
+        <div class="section" id="section9" data-nivel="9" data-nombre="Relación Riesgo/Beneficio">
+            <h2>⚖️ Nivel 9: Relación Riesgo/Beneficio (R/R)</h2>
+            <div class="orden-card orden-ratio">
+                <div class="orden-imagen">
+                    <svg width="260" height="260" viewBox="0 0 260 260">
+                        <rect x="10" y="10" width="240" height="240" rx="25" fill="#1a1a2e" stroke="#ff9800" stroke-width="3"/>
+                        <!-- Balanza -->
+                        <line x1="130" y1="50" x2="130" y2="180" stroke="#ff9800" stroke-width="3"/>
+                        <line x1="60" y1="180" x2="200" y2="180" stroke="#ff9800" stroke-width="2"/>
+                        <!-- Plato izquierdo (riesgo) -->
+                        <path d="M40,180 L80,180 L70,200 L50,200 Z" fill="none" stroke="#ff5252" stroke-width="2"/>
+                        <text x="60" y="195" text-anchor="middle" font-size="12" fill="#ff5252">1</text>
+                        <!-- Plato derecho (beneficio) -->
+                        <path d="M180,180 L220,180 L210,200 L190,200 Z" fill="none" stroke="#00c853" stroke-width="2"/>
+                        <text x="200" y="195" text-anchor="middle" font-size="12" fill="#00c853">3</text>
+                        <text x="130" y="215" text-anchor="middle" font-size="16" fill="#ff9800" font-weight="bold">⚖️ 1:3</text>
+                        <text x="130" y="240" text-anchor="middle" font-size="14" fill="#b0b0d0">Riesgo:Beneficio</text>
+                    </svg>
+                    <span class="etiqueta">⚖️ Ratio</span>
+                    <span class="descripcion-imagen">Riesgo vs Beneficio</span>
+                </div>
+                <div class="orden-contenido">
+                    <h3>⚖️ Relación Riesgo/Beneficio (R/R)</h3>
+
+                    <h4>¿Qué es?</h4>
+                    <p>La <strong>Relación Riesgo/Beneficio (R/R)</strong> compara <span class="highlight">cuánto arriesgas</span> en una operación con <span class="highlight">cuánto puedes ganar</span>. Es la herramienta más importante para la gestión de riesgo.</p>
+
+                    <div class="concepto-clave">
+                        <p><strong>📐 FÓRMULA:</strong></p>
+                        <p style="font-size:24px; text-align:center;">
+                            <strong>R/R = (Entrada - Stop-Loss) / (Take-Profit - Entrada)</strong>
+                        </p>
+                    </div>
+
+                    <h4>¿Para qué sirve?</h4>
+                    <ul class="lista-simple">
+                        <li>📊 Para <strong>evaluar si una operación vale la pena</strong></li>
+                        <li>💰 Para <strong>saber cuánto arriesgas vs cuánto ganas</strong></li>
+                        <li>📈 Para <strong>ser rentable a largo plazo</strong></li>
+                        <li>🧠 Para <strong>tomar decisiones objetivas</strong></li>
+                    </ul>
+
+                    <h4>Interpretación:</h4>
+                    <ul class="lista-simple">
+                        <li><strong>R/R = 1:1</strong> → Arriesgas 1 para ganar 1 (necesitas acertar >50%)</li>
+                        <li><strong>R/R = 1:2</strong> → Arriesgas 1 para ganar 2 (necesitas acertar >33%)</li>
+                        <li><strong>R/R = 1:3</strong> → Arriesgas 1 para ganar 3 (necesitas acertar >25%)</li>
+                        <li><strong>R/R = 1:5</strong> → Arriesgas 1 para ganar 5 (necesitas acertar >17%)</li>
+                    </ul>
+
+                    <div class="ejemplo-box">
+                        <strong>📊 EJEMPLO PRÁCTICO:</strong>
+                        <br><br>
+                        📈 Compras BTC a <strong>$50,000</strong>.
+                        <br>
+                        🔴 Stop-Loss: <strong>$49,000</strong> (riesgo = $1,000)
+                        <br>
+                        🟢 Take-Profit: <strong>$53,000</strong> (beneficio = $3,000)
+                        <br><br>
+                        📐 <strong>R/R = 1,000 / 3,000 = 1:3</strong>
+                        <br>
+                        ✅ <strong>Excelente relación:</strong> Arriesgas 1 para ganar 3.
+                        <br>
+                        ✅ Necesitas acertar solo el <strong>25%</strong> de las operaciones para ser rentable.
+                    </div>
+
+                    <div class="concepto-clave">
+                        <p><strong>🎯 REGLA DE ORO:</strong></p>
+                        <p style="text-align:center; font-size:22px;">
+                            <span class="highlight">Busca SIEMPRE R/R de 1:2 o mejor</span>
+                        </p>
+                    </div>
+
+                    <div class="ejemplo-box-bajista">
+                        <strong>⚠️ ERROR COMÚN:</strong>
+                        <br><br>
+                        ❌ Muchos traders entran con <strong>R/R = 2:1</strong> (arriesgan 2 para ganar 1).
+                        <br>
+                        📊 Necesitan acertar <strong>más del 66%</strong> de las operaciones para ser rentables.
+                        <br>
+                        💔 Es casi imposible mantener ese porcentaje de aciertos.
+                        <br><br>
+                        <strong>✅ Busca siempre R/R de 1:2 o mejor.</strong>
+                    </div>
+
+                    <div class="mentor-dice">
+                        "La relación Riesgo/Beneficio es la <strong>clave de la rentabilidad</strong>.
+                        <br>
+                        <strong>Regla de oro:</strong> Busca siempre R/R de 1:2 o mejor."
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-secondary" onclick="irANivel(8)">⬅️</button>
+                <button class="btn btn-primary" onclick="irANivel(10)">🎯 Práctica Interactiva →</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 10: PRÁCTICA INTERACTIVA (6 EJERCICIOS)
+        ========================================== -->
+        <div class="section" id="section10" data-nivel="10" data-nombre="Práctica Interactiva">
+            <h2>🎯 Nivel 10: Práctica Interactiva - ¡Tú Colocas los Niveles!</h2>
+            <p>
+                <span class="highlight">Observa el gráfico</span>, <strong>elige la acción</strong> y
+                <strong>coloca los niveles</strong> (Entrada, Stop-Loss, Take-Profit).
+                <br>
+                <strong>¡La consola te dirá si lo hiciste bien!</strong>
+            </p>
+
+            <!-- PRÁCTICA 1: COMPRA EN SOPORTE -->
+            <div class="practica-container" id="practica1">
+                <h3 style="color:#00c853; margin-bottom:10px;">📈 Práctica 1: Compra en Soporte</h3>
+                <div class="contexto">
+                    <strong>Contexto:</strong> El precio ha bajado a un <strong>soporte clave</strong> en <strong>$50,000</strong>
+                    y ha formado un <strong>MARTILLO</strong> (vela de reversión alcista).
+                </div>
+                <div class="pista">💡 <strong>Pista:</strong> El soporte está en $50,000. Coloca tu entrada en el soporte, SL debajo y TP en la resistencia.</div>
+
+                <div class="grafico-practica">
+                    <svg width="500" height="200" viewBox="0 0 500 200">
+                        <rect x="0" y="0" width="500" height="200" fill="#1a1a2e" rx="10"/>
+                        <line x1="30" y1="150" x2="470" y2="150" stroke="#00c853" stroke-width="3" stroke-dasharray="8,4"/>
+                        <rect x="50" y="110" width="25" height="40" fill="#ff5252" stroke="#ff5252" stroke-width="1"/>
+                        <line x1="62" y1="95" x2="62" y2="110" stroke="#888" stroke-width="1"/>
+                        <line x1="62" y1="150" x2="62" y2="160" stroke="#888" stroke-width="1"/>
+                        <rect x="100" y="90" width="25" height="60" fill="#ff5252" stroke="#ff5252" stroke-width="1"/>
+                        <line x1="112" y1="75" x2="112" y2="90" stroke="#888" stroke-width="1"/>
+                        <line x1="112" y1="150" x2="112" y2="170" stroke="#888" stroke-width="1"/>
+                        <rect x="150" y="130" width="25" height="20" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <line x1="162" y1="115" x2="162" y2="130" stroke="#888" stroke-width="1"/>
+                        <line x1="162" y1="150" x2="162" y2="165" stroke="#00c853" stroke-width="3"/>
+                        <rect x="200" y="100" width="25" height="50" fill="#ff5252" stroke="#ff5252" stroke-width="1"/>
+                        <line x1="212" y1="85" x2="212" y2="100" stroke="#888" stroke-width="1"/>
+                        <line x1="212" y1="150" x2="212" y2="165" stroke="#888" stroke-width="1"/>
+                        <rect x="250" y="120" width="25" height="30" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <line x1="262" y1="105" x2="262" y2="120" stroke="#888" stroke-width="1"/>
+                        <line x1="262" y1="150" x2="262" y2="160" stroke="#00c853" stroke-width="3"/>
+                        <rect x="300" y="80" width="25" height="70" fill="#ff5252" stroke="#ff5252" stroke-width="1"/>
+                        <line x1="312" y1="65" x2="312" y2="80" stroke="#888" stroke-width="1"/>
+                        <line x1="312" y1="150" x2="312" y2="165" stroke="#888" stroke-width="1"/>
+                        <rect x="350" y="125" width="25" height="25" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <line x1="362" y1="110" x2="362" y2="125" stroke="#888" stroke-width="1"/>
+                        <line x1="362" y1="150" x2="362" y2="170" stroke="#00c853" stroke-width="3"/>
+                        <rect x="400" y="105" width="25" height="45" fill="#ff5252" stroke="#ff5252" stroke-width="1"/>
+                        <line x1="412" y1="90" x2="412" y2="105" stroke="#888" stroke-width="1"/>
+                        <line x1="412" y1="150" x2="412" y2="165" stroke="#888" stroke-width="1"/>
+                        <text x="250" y="190" text-anchor="middle" font-size="14" fill="#00c853" font-weight="bold">⬆ SOPORTE $50,000</text>
+                        <text x="362" y="105" text-anchor="middle" font-size="12" fill="#ffd700">⚡</text>
+                        <text x="362" y="95" text-anchor="middle" font-size="10" fill="#ffd700">MARTILLO</text>
+                    </svg>
+                </div>
+
+                <div class="panel-orden" id="panel1">
+                    <div class="fila"><span class="label">📈 Acción</span><span class="valor" id="accion1">-</span></div>
+                    <div class="fila"><span class="label">📍 Entrada</span><span class="valor" id="entrada1">-</span></div>
+                    <div class="fila"><span class="label">🔴 Stop-Loss</span><span class="valor rojo" id="sl1">-</span></div>
+                    <div class="fila"><span class="label">🟢 Take-Profit</span><span class="valor verde" id="tp1">-</span></div>
+                    <div class="fila"><span class="label">⚖️ R/R</span><span class="valor" id="rr1">-</span></div>
+                    <div class="barra-progreso"><div class="relleno alcista" id="barra1" style="width:0%;"></div></div>
+                </div>
+
+                <div class="opciones-practica">
+                    <button onclick="seleccionarAccion(1, 'compra')" id="p1_compra">📈 COMPRA</button>
+                    <button onclick="seleccionarAccion(1, 'venta')" id="p1_venta">📉 VENTA</button>
+                    <button onclick="seleccionarAccion(1, 'esperar')" id="p1_esperar">⏸️ ESPERAR</button>
+                </div>
+
+                <div class="input-group" id="inputs1">
+                    <div class="campo">
+                        <label>📍 Entrada ($)</label>
+                        <input type="number" id="entrada_input1" placeholder="Ej: 50000" step="10" disabled>
+                        <div class="precio-ayuda">Precio donde compras</div>
+                    </div>
+                    <div class="campo">
+                        <label>🔴 Stop-Loss ($)</label>
+                        <input type="number" id="sl_input1" placeholder="Ej: 49500" step="10" disabled>
+                        <div class="precio-ayuda">Debajo del soporte</div>
+                    </div>
+                    <div class="campo">
+                        <label>🟢 Take-Profit ($)</label>
+                        <input type="number" id="tp_input1" placeholder="Ej: 53000" step="10" disabled>
+                        <div class="precio-ayuda">En la resistencia</div>
+                    </div>
+                    <div class="campo" style="min-width:100px; flex:0;">
+                        <label>&nbsp;</label>
+                        <button class="btn-verificar" id="verificar1" onclick="verificarPractica(1)" disabled>✅ Verificar</button>
+                    </div>
+                </div>
+
+                <div class="feedback-practica" id="feedback1"></div>
+            </div>
+
+            <!-- PRÁCTICA 2: VENTA EN RESISTENCIA -->
+            <div class="practica-container" id="practica2">
+                <h3 style="color:#ff5252; margin-bottom:10px;">📉 Práctica 2: Venta en Resistencia</h3>
+                <div class="contexto">
+                    <strong>Contexto:</strong> El precio ha subido a una <strong>resistencia clave</strong> en <strong>$55,000</strong>
+                    y ha formado un <strong>HOMBRE COLGADO</strong> (vela de reversión bajista).
+                </div>
+                <div class="pista">💡 <strong>Pista:</strong> La resistencia está en $55,000. Coloca tu entrada en la resistencia, SL arriba y TP en el soporte.</div>
+
+                <div class="grafico-practica">
+                    <svg width="500" height="200" viewBox="0 0 500 200">
+                        <rect x="0" y="0" width="500" height="200" fill="#1a1a2e" rx="10"/>
+                        <line x1="30" y1="60" x2="470" y2="60" stroke="#ff5252" stroke-width="3" stroke-dasharray="8,4"/>
+                        <rect x="50" y="110" width="25" height="40" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <line x1="62" y1="95" x2="62" y2="110" stroke="#888" stroke-width="1"/>
+                        <line x1="62" y1="150" x2="62" y2="160" stroke="#888" stroke-width="1"/>
+                        <rect x="100" y="90" width="25" height="60" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <line x1="112" y1="75" x2="112" y2="90" stroke="#888" stroke-width="1"/>
+                        <line x1="112" y1="150" x2="112" y2="160" stroke="#888" stroke-width="1"/>
+                        <rect x="150" y="60" width="25" height="40" fill="#ff5252" stroke="#ff5252" stroke-width="1"/>
+                        <line x1="162" y1="45" x2="162" y2="60" stroke="#ff5252" stroke-width="3"/>
+                        <line x1="162" y1="100" x2="162" y2="110" stroke="#888" stroke-width="1"/>
+                        <rect x="200" y="80" width="25" height="50" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <line x1="212" y1="65" x2="212" y2="80" stroke="#888" stroke-width="1"/>
+                        <line x1="212" y1="130" x2="212" y2="145" stroke="#888" stroke-width="1"/>
+                        <rect x="250" y="50" width="25" height="70" fill="#ff5252" stroke="#ff5252" stroke-width="1"/>
+                        <line x1="262" y1="40" x2="262" y2="50" stroke="#888" stroke-width="1"/>
+                        <line x1="262" y1="120" x2="262" y2="140" stroke="#ff5252" stroke-width="3"/>
+                        <rect x="300" y="70" width="25" height="60" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <line x1="312" y1="55" x2="312" y2="70" stroke="#888" stroke-width="1"/>
+                        <line x1="312" y1="130" x2="312" y2="145" stroke="#888" stroke-width="1"/>
+                        <rect x="350" y="45" width="25" height="80" fill="#ff5252" stroke="#ff5252" stroke-width="1"/>
+                        <line x1="362" y1="35" x2="362" y2="45" stroke="#888" stroke-width="1"/>
+                        <line x1="362" y1="125" x2="362" y2="140" stroke="#888" stroke-width="1"/>
+                        <rect x="400" y="65" width="25" height="55" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <line x1="412" y1="50" x2="412" y2="65" stroke="#888" stroke-width="1"/>
+                        <line x1="412" y1="120" x2="412" y2="140" stroke="#888" stroke-width="1"/>
+                        <text x="250" y="30" text-anchor="middle" font-size="14" fill="#ff5252" font-weight="bold">⬇ RESISTENCIA $55,000</text>
+                        <text x="262" y="35" text-anchor="middle" font-size="12" fill="#ffd700">⚡</text>
+                        <text x="262" y="25" text-anchor="middle" font-size="10" fill="#ffd700">HOMBRE COLGADO</text>
+                    </svg>
+                </div>
+
+                <div class="panel-orden" id="panel2">
+                    <div class="fila"><span class="label">📈 Acción</span><span class="valor" id="accion2">-</span></div>
+                    <div class="fila"><span class="label">📍 Entrada</span><span class="valor" id="entrada2">-</span></div>
+                    <div class="fila"><span class="label">🔴 Stop-Loss</span><span class="valor rojo" id="sl2">-</span></div>
+                    <div class="fila"><span class="label">🟢 Take-Profit</span><span class="valor verde" id="tp2">-</span></div>
+                    <div class="fila"><span class="label">⚖️ R/R</span><span class="valor" id="rr2">-</span></div>
+                    <div class="barra-progreso"><div class="relleno bajista" id="barra2" style="width:0%;"></div></div>
+                </div>
+
+                <div class="opciones-practica">
+                    <button onclick="seleccionarAccion(2, 'compra')" id="p2_compra">📈 COMPRA</button>
+                    <button onclick="seleccionarAccion(2, 'venta')" id="p2_venta">📉 VENTA</button>
+                    <button onclick="seleccionarAccion(2, 'esperar')" id="p2_esperar">⏸️ ESPERAR</button>
+                </div>
+
+                <div class="input-group" id="inputs2">
+                    <div class="campo">
+                        <label>📍 Entrada ($)</label>
+                        <input type="number" id="entrada_input2" placeholder="Ej: 55000" step="10" disabled>
+                        <div class="precio-ayuda">Precio donde vendes</div>
+                    </div>
+                    <div class="campo">
+                        <label>🔴 Stop-Loss ($)</label>
+                        <input type="number" id="sl_input2" placeholder="Ej: 55500" step="10" disabled>
+                        <div class="precio-ayuda">Arriba de la resistencia</div>
+                    </div>
+                    <div class="campo">
+                        <label>🟢 Take-Profit ($)</label>
+                        <input type="number" id="tp_input2" placeholder="Ej: 51000" step="10" disabled>
+                        <div class="precio-ayuda">En el soporte</div>
+                    </div>
+                    <div class="campo" style="min-width:100px; flex:0;">
+                        <label>&nbsp;</label>
+                        <button class="btn-verificar" id="verificar2" onclick="verificarPractica(2)" disabled>✅ Verificar</button>
+                    </div>
+                </div>
+
+                <div class="feedback-practica" id="feedback2"></div>
+            </div>
+
+            <!-- PRÁCTICA 3: RUPTURA ALCISTA -->
+            <div class="practica-container" id="practica3">
+                <h3 style="color:#ffd700; margin-bottom:10px;">💥 Práctica 3: Ruptura Alcista</h3>
+                <div class="contexto">
+                    <strong>Contexto:</strong> El precio ha estado en un <strong>rango lateral</strong> entre $95 y $100.
+                    Ahora <strong>rompe la resistencia</strong> con una vela verde grande.
+                </div>
+                <div class="pista">💡 <strong>Pista:</strong> La ruptura es en $100. Coloca tu entrada en $102, SL debajo de $100 y TP en el siguiente objetivo.</div>
+
+                <div class="grafico-practica">
+                    <svg width="500" height="200" viewBox="0 0 500 200">
+                        <rect x="0" y="0" width="500" height="200" fill="#1a1a2e" rx="10"/>
+                        <line x1="30" y1="90" x2="470" y2="90" stroke="#ff5252" stroke-width="2" stroke-dasharray="6,4"/>
+                        <line x1="30" y1="130" x2="470" y2="130" stroke="#00c853" stroke-width="2" stroke-dasharray="6,4"/>
+                        <rect x="50" y="110" width="25" height="20" fill="#ff5252" stroke="#ff5252" stroke-width="1"/>
+                        <rect x="100" y="95" width="25" height="35" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <rect x="150" y="105" width="25" height="25" fill="#ff5252" stroke="#ff5252" stroke-width="1"/>
+                        <rect x="200" y="90" width="25" height="40" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <rect x="250" y="100" width="25" height="30" fill="#ff5252" stroke="#ff5252" stroke-width="1"/>
+                        <rect x="300" y="80" width="25" height="50" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <rect x="350" y="55" width="25" height="75" fill="#00c853" stroke="#00c853" stroke-width="2"/>
+                        <rect x="400" y="50" width="25" height="80" fill="#00c853" stroke="#00c853" stroke-width="2"/>
+                        <text x="350" y="45" text-anchor="middle" font-size="12" fill="#ffd700">💥 RUPTURA</text>
+                        <text x="100" y="85" text-anchor="middle" font-size="12" fill="#ff5252">⬇ RESISTENCIA $100</text>
+                        <text x="100" y="145" text-anchor="middle" font-size="12" fill="#00c853">⬆ SOPORTE $95</text>
+                    </svg>
+                </div>
+
+                <div class="panel-orden" id="panel3">
+                    <div class="fila"><span class="label">📈 Acción</span><span class="valor" id="accion3">-</span></div>
+                    <div class="fila"><span class="label">📍 Entrada</span><span class="valor" id="entrada3">-</span></div>
+                    <div class="fila"><span class="label">🔴 Stop-Loss</span><span class="valor rojo" id="sl3">-</span></div>
+                    <div class="fila"><span class="label">🟢 Take-Profit</span><span class="valor verde" id="tp3">-</span></div>
+                    <div class="fila"><span class="label">⚖️ R/R</span><span class="valor" id="rr3">-</span></div>
+                    <div class="barra-progreso"><div class="relleno alcista" id="barra3" style="width:0%;"></div></div>
+                </div>
+
+                <div class="opciones-practica">
+                    <button onclick="seleccionarAccion(3, 'compra')" id="p3_compra">📈 COMPRA</button>
+                    <button onclick="seleccionarAccion(3, 'venta')" id="p3_venta">📉 VENTA</button>
+                    <button onclick="seleccionarAccion(3, 'esperar')" id="p3_esperar">⏸️ ESPERAR</button>
+                </div>
+
+                <div class="input-group" id="inputs3">
+                    <div class="campo">
+                        <label>📍 Entrada ($)</label>
+                        <input type="number" id="entrada_input3" placeholder="Ej: 102" step="1" disabled>
+                        <div class="precio-ayuda">Precio actual tras ruptura</div>
+                    </div>
+                    <div class="campo">
+                        <label>🔴 Stop-Loss ($)</label>
+                        <input type="number" id="sl_input3" placeholder="Ej: 99" step="1" disabled>
+                        <div class="precio-ayuda">Debajo del nivel roto</div>
+                    </div>
+                    <div class="campo">
+                        <label>🟢 Take-Profit ($)</label>
+                        <input type="number" id="tp_input3" placeholder="Ej: 110" step="1" disabled>
+                        <div class="precio-ayuda">Siguiente objetivo</div>
+                    </div>
+                    <div class="campo" style="min-width:100px; flex:0;">
+                        <label>&nbsp;</label>
+                        <button class="btn-verificar" id="verificar3" onclick="verificarPractica(3)" disabled>✅ Verificar</button>
+                    </div>
+                </div>
+
+                <div class="feedback-practica" id="feedback3"></div>
+            </div>
+
+            <!-- PRÁCTICA 4: RUPTURA BAJISTA -->
+            <div class="practica-container" id="practica4">
+                <h3 style="color:#ff5252; margin-bottom:10px;">💥 Práctica 4: Ruptura Bajista</h3>
+                <div class="contexto">
+                    <strong>Contexto:</strong> El precio ha estado en un <strong>rango lateral</strong> entre $48 y $52.
+                    Ahora <strong>rompe el soporte</strong> con una vela roja grande.
+                </div>
+                <div class="pista">💡 <strong>Pista:</strong> La ruptura es en $48. Coloca tu entrada en $46, SL arriba de $48 y TP en el siguiente objetivo.</div>
+
+                <div class="grafico-practica">
+                    <svg width="500" height="200" viewBox="0 0 500 200">
+                        <rect x="0" y="0" width="500" height="200" fill="#1a1a2e" rx="10"/>
+                        <line x1="30" y1="90" x2="470" y2="90" stroke="#ff5252" stroke-width="2" stroke-dasharray="6,4"/>
+                        <line x1="30" y1="130" x2="470" y2="130" stroke="#00c853" stroke-width="2" stroke-dasharray="6,4"/>
+                        <rect x="50" y="110" width="25" height="20" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <rect x="100" y="105" width="25" height="25" fill="#ff5252" stroke="#ff5252" stroke-width="1"/>
+                        <rect x="150" y="95" width="25" height="35" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <rect x="200" y="110" width="25" height="20" fill="#ff5252" stroke="#ff5252" stroke-width="1"/>
+                        <rect x="250" y="90" width="25" height="40" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <rect x="300" y="100" width="25" height="30" fill="#ff5252" stroke="#ff5252" stroke-width="1"/>
+                        <rect x="350" y="120" width="25" height="75" fill="#ff5252" stroke="#ff5252" stroke-width="2"/>
+                        <rect x="400" y="130" width="25" height="80" fill="#ff5252" stroke="#ff5252" stroke-width="2"/>
+                        <text x="350" y="45" text-anchor="middle" font-size="12" fill="#ff5252">💥 RUPTURA BAJISTA</text>
+                        <text x="100" y="85" text-anchor="middle" font-size="12" fill="#ff5252">⬇ RESISTENCIA $52</text>
+                        <text x="100" y="145" text-anchor="middle" font-size="12" fill="#00c853">⬆ SOPORTE $48</text>
+                    </svg>
+                </div>
+
+                <div class="panel-orden" id="panel4">
+                    <div class="fila"><span class="label">📈 Acción</span><span class="valor" id="accion4">-</span></div>
+                    <div class="fila"><span class="label">📍 Entrada</span><span class="valor" id="entrada4">-</span></div>
+                    <div class="fila"><span class="label">🔴 Stop-Loss</span><span class="valor rojo" id="sl4">-</span></div>
+                    <div class="fila"><span class="label">🟢 Take-Profit</span><span class="valor verde" id="tp4">-</span></div>
+                    <div class="fila"><span class="label">⚖️ R/R</span><span class="valor" id="rr4">-</span></div>
+                    <div class="barra-progreso"><div class="relleno bajista" id="barra4" style="width:0%;"></div></div>
+                </div>
+
+                <div class="opciones-practica">
+                    <button onclick="seleccionarAccion(4, 'compra')" id="p4_compra">📈 COMPRA</button>
+                    <button onclick="seleccionarAccion(4, 'venta')" id="p4_venta">📉 VENTA</button>
+                    <button onclick="seleccionarAccion(4, 'esperar')" id="p4_esperar">⏸️ ESPERAR</button>
+                </div>
+
+                <div class="input-group" id="inputs4">
+                    <div class="campo">
+                        <label>📍 Entrada ($)</label>
+                        <input type="number" id="entrada_input4" placeholder="Ej: 46" step="1" disabled>
+                        <div class="precio-ayuda">Precio actual tras ruptura</div>
+                    </div>
+                    <div class="campo">
+                        <label>🔴 Stop-Loss ($)</label>
+                        <input type="number" id="sl_input4" placeholder="Ej: 49" step="1" disabled>
+                        <div class="precio-ayuda">Arriba del nivel roto</div>
+                    </div>
+                    <div class="campo">
+                        <label>🟢 Take-Profit ($)</label>
+                        <input type="number" id="tp_input4" placeholder="Ej: 40" step="1" disabled>
+                        <div class="precio-ayuda">Siguiente objetivo</div>
+                    </div>
+                    <div class="campo" style="min-width:100px; flex:0;">
+                        <label>&nbsp;</label>
+                        <button class="btn-verificar" id="verificar4" onclick="verificarPractica(4)" disabled>✅ Verificar</button>
+                    </div>
+                </div>
+
+                <div class="feedback-practica" id="feedback4"></div>
+            </div>
+
+            <!-- PRÁCTICA 5: PULLBACK ALCISTA -->
+            <div class="practica-container" id="practica5">
+                <h3 style="color:#2196f3; margin-bottom:10px;">🔄 Práctica 5: Pullback Alcista</h3>
+                <div class="contexto">
+                    <strong>Contexto:</strong> El mercado está en <strong>tendencia alcista</strong> (máximos y mínimos más altos).
+                    El precio ha subido de $100 a $120 y ahora <strong>retrocede al soporte</strong> en $110.
+                </div>
+                <div class="pista">💡 <strong>Pista:</strong> El soporte está en $110. Coloca tu entrada en $110, SL debajo y TP en el máximo anterior $120.</div>
+
+                <div class="grafico-practica">
+                    <svg width="500" height="200" viewBox="0 0 500 200">
+                        <rect x="0" y="0" width="500" height="200" fill="#1a1a2e" rx="10"/>
+                        <line x1="30" y1="160" x2="470" y2="50" stroke="#00c853" stroke-width="2" opacity="0.3"/>
+                        <line x1="30" y1="120" x2="470" y2="120" stroke="#00c853" stroke-width="2" stroke-dasharray="6,4"/>
+                        <rect x="50" y="140" width="25" height="30" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <rect x="100" y="130" width="25" height="20" fill="#ff5252" stroke="#ff5252" stroke-width="1"/>
+                        <rect x="150" y="110" width="25" height="40" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <rect x="200" y="120" width="25" height="30" fill="#ff5252" stroke="#ff5252" stroke-width="1"/>
+                        <rect x="250" y="100" width="25" height="50" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <rect x="300" y="110" width="25" height="40" fill="#ff5252" stroke="#ff5252" stroke-width="1"/>
+                        <rect x="350" y="90" width="25" height="60" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <rect x="400" y="80" width="25" height="70" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <rect x="450" y="70" width="25" height="80" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <text x="250" y="35" text-anchor="middle" font-size="12" fill="#00c853">📈 TENDENCIA ALCISTA</text>
+                        <text x="300" y="115" text-anchor="middle" font-size="12" fill="#00c853">⬆ SOPORTE $110</text>
+                        <text x="300" y="85" text-anchor="middle" font-size="11" fill="#ffd700">⬇ PULLBACK</text>
+                    </svg>
+                </div>
+
+                <div class="panel-orden" id="panel5">
+                    <div class="fila"><span class="label">📈 Acción</span><span class="valor" id="accion5">-</span></div>
+                    <div class="fila"><span class="label">📍 Entrada</span><span class="valor" id="entrada5">-</span></div>
+                    <div class="fila"><span class="label">🔴 Stop-Loss</span><span class="valor rojo" id="sl5">-</span></div>
+                    <div class="fila"><span class="label">🟢 Take-Profit</span><span class="valor verde" id="tp5">-</span></div>
+                    <div class="fila"><span class="label">⚖️ R/R</span><span class="valor" id="rr5">-</span></div>
+                    <div class="barra-progreso"><div class="relleno alcista" id="barra5" style="width:0%;"></div></div>
+                </div>
+
+                <div class="opciones-practica">
+                    <button onclick="seleccionarAccion(5, 'compra')" id="p5_compra">📈 COMPRA</button>
+                    <button onclick="seleccionarAccion(5, 'venta')" id="p5_venta">📉 VENTA</button>
+                    <button onclick="seleccionarAccion(5, 'esperar')" id="p5_esperar">⏸️ ESPERAR</button>
+                </div>
+
+                <div class="input-group" id="inputs5">
+                    <div class="campo">
+                        <label>📍 Entrada ($)</label>
+                        <input type="number" id="entrada_input5" placeholder="Ej: 110" step="1" disabled>
+                        <div class="precio-ayuda">Precio en el soporte</div>
+                    </div>
+                    <div class="campo">
+                        <label>🔴 Stop-Loss ($)</label>
+                        <input type="number" id="sl_input5" placeholder="Ej: 108" step="1" disabled>
+                        <div class="precio-ayuda">Debajo del soporte</div>
+                    </div>
+                    <div class="campo">
+                        <label>🟢 Take-Profit ($)</label>
+                        <input type="number" id="tp_input5" placeholder="Ej: 120" step="1" disabled>
+                        <div class="precio-ayuda">Máximo anterior</div>
+                    </div>
+                    <div class="campo" style="min-width:100px; flex:0;">
+                        <label>&nbsp;</label>
+                        <button class="btn-verificar" id="verificar5" onclick="verificarPractica(5)" disabled>✅ Verificar</button>
+                    </div>
+                </div>
+
+                <div class="feedback-practica" id="feedback5"></div>
+            </div>
+
+            <!-- PRÁCTICA 6: FIBONACCI 61.8% -->
+            <div class="practica-container" id="practica6">
+                <h3 style="color:#9c27b0; margin-bottom:10px;">📐 Práctica 6: Fibonacci 61.8%</h3>
+                <div class="contexto">
+                    <strong>Contexto:</strong> El precio sube de <strong>$100 a $200</strong> (movimiento de $100).
+                    Ahora <strong>retrocede al nivel de Fibonacci 61.8%</strong> en $138.20.
+                </div>
+                <div class="pista">💡 <strong>Pista:</strong> El nivel 61.8% está en $138.20. Coloca tu entrada en $138.20, SL debajo y TP cerca del máximo $190.</div>
+
+                <div class="grafico-practica">
+                    <svg width="500" height="200" viewBox="0 0 500 200">
+                        <rect x="0" y="0" width="500" height="200" fill="#1a1a2e" rx="10"/>
+                        <line x1="30" y1="180" x2="470" y2="30" stroke="#00c853" stroke-width="2" opacity="0.3"/>
+                        <line x1="30" y1="110" x2="470" y2="110" stroke="#9c27b0" stroke-width="2" stroke-dasharray="4,4"/>
+                        <text x="250" y="105" text-anchor="middle" font-size="12" fill="#9c27b0">⬇ 61.8% FIBONACCI ($138.20)</text>
+                        <rect x="50" y="160" width="25" height="30" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <rect x="100" y="150" width="25" height="20" fill="#ff5252" stroke="#ff5252" stroke-width="1"/>
+                        <rect x="150" y="130" width="25" height="40" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <rect x="200" y="140" width="25" height="30" fill="#ff5252" stroke="#ff5252" stroke-width="1"/>
+                        <rect x="250" y="120" width="25" height="50" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <rect x="300" y="130" width="25" height="40" fill="#ff5252" stroke="#ff5252" stroke-width="1"/>
+                        <rect x="350" y="110" width="25" height="50" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <rect x="400" y="100" width="25" height="60" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <rect x="450" y="80" width="25" height="70" fill="#00c853" stroke="#00c853" stroke-width="1"/>
+                        <text x="250" y="35" text-anchor="middle" font-size="12" fill="#00c853">📈 MOVIMIENTO $100 → $200</text>
+                        <text x="350" y="105" text-anchor="middle" font-size="11" fill="#9c27b0">⬇ ZONA DE ENTRADA</text>
+                    </svg>
+                </div>
+
+                <div class="panel-orden" id="panel6">
+                    <div class="fila"><span class="label">📈 Acción</span><span class="valor" id="accion6">-</span></div>
+                    <div class="fila"><span class="label">📍 Entrada</span><span class="valor" id="entrada6">-</span></div>
+                    <div class="fila"><span class="label">🔴 Stop-Loss</span><span class="valor rojo" id="sl6">-</span></div>
+                    <div class="fila"><span class="label">🟢 Take-Profit</span><span class="valor verde" id="tp6">-</span></div>
+                    <div class="fila"><span class="label">⚖️ R/R</span><span class="valor" id="rr6">-</span></div>
+                    <div class="barra-progreso"><div class="relleno alcista" id="barra6" style="width:0%;"></div></div>
+                </div>
+
+                <div class="opciones-practica">
+                    <button onclick="seleccionarAccion(6, 'compra')" id="p6_compra">📈 COMPRA</button>
+                    <button onclick="seleccionarAccion(6, 'venta')" id="p6_venta">📉 VENTA</button>
+                    <button onclick="seleccionarAccion(6, 'esperar')" id="p6_esperar">⏸️ ESPERAR</button>
+                </div>
+
+                <div class="input-group" id="inputs6">
+                    <div class="campo">
+                        <label>📍 Entrada ($)</label>
+                        <input type="number" id="entrada_input6" placeholder="Ej: 138" step="0.1" disabled>
+                        <div class="precio-ayuda">Nivel Fibonacci 61.8%</div>
+                    </div>
+                    <div class="campo">
+                        <label>🔴 Stop-Loss ($)</label>
+                        <input type="number" id="sl_input6" placeholder="Ej: 136" step="0.1" disabled>
+                        <div class="precio-ayuda">Debajo del nivel</div>
+                    </div>
+                    <div class="campo">
+                        <label>🟢 Take-Profit ($)</label>
+                        <input type="number" id="tp_input6" placeholder="Ej: 190" step="0.1" disabled>
+                        <div class="precio-ayuda">Cerca del máximo</div>
+                    </div>
+                    <div class="campo" style="min-width:100px; flex:0;">
+                        <label>&nbsp;</label>
+                        <button class="btn-verificar" id="verificar6" onclick="verificarPractica(6)" disabled>✅ Verificar</button>
+                    </div>
+                </div>
+
+                <div class="feedback-practica" id="feedback6"></div>
+            </div>
+
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-secondary" onclick="irANivel(9)">⬅️ Ratio</button>
+                <button class="btn btn-primary" onclick="irANivel(11)">🧪 Laboratorio →</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        SECCIÓN 11: LABORATORIO - 20 EJERCICIOS
+        ========================================== -->
+        <div class="section" id="section11" data-nivel="11" data-nombre="Laboratorio - 20 Ejercicios">
+            <h2>🧪 Nivel 11: Laboratorio - 20 Ejercicios</h2>
+            <p>
+                Pon a prueba tus conocimientos sobre <strong>Órdenes y Ejecución</strong> con estos 20 ejercicios.
+            </p>
+
+            <div class="quiz-container" id="quizContainer">
+                <div id="quizContent"></div>
+            </div>
+
+            <div class="btn-group text-center mt-20">
+                <button class="btn btn-secondary" onclick="irANivel(10)">⬅️ Práctica</button>
+                <button class="btn btn-outline" onclick="cargarQuiz()">🔄 Reiniciar 20 Ejercicios</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        FOOTER LEGAL
+        ========================================== -->
+        <div class="footer-legal">
+            <h3>✍️ YURBI GONZALEZ LOPEZ</h3>
+            <p><span class="badge-proteccion">🔒 CONTENIDO PROTEGIDO</span></p>
+            <p class="copyright">© 2026 - Todos los derechos reservados</p>
+            <p style="font-size:18px; color:#8888aa; margin-top:8px;">
+                Prohibida la reproducción total o parcial sin autorización expresa.
+                <br>
+                <span style="color:#ffd700;">📊 Master en Órdenes y Ejecución v4.0</span>
+            </p>
+            <p style="font-size:16px; color:#666688; margin-top:4px;">
+                Código registrado y protegido contra plagio digital
+            </p>
+        </div>
+    </div>
+
+    <!-- ==========================================
+    JAVASCRIPT COMPLETO
+    ========================================== -->
+    <script>
+        // ============================================
+        // 0. SISTEMA DE VOZ OPTIMIZADO
+        // ============================================
+        let synth = window.speechSynthesis;
+        let utterance = null;
+        let isSpeaking = false;
+        let vozInicializada = false;
+
+        function inicializarVoz() {
+            if (vozInicializada) return;
+            if (!window.speechSynthesis) {
+                console.warn('Web Speech API no soportada');
+                return;
+            }
+            try {
+                synth.getVoices();
+                const tempUtterance = new SpeechSynthesisUtterance(' ');
+                tempUtterance.volume = 0;
+                tempUtterance.rate = 0.1;
+                synth.speak(tempUtterance);
+                setTimeout(() => {
+                    synth.cancel();
+                    vozInicializada = true;
+                    console.log('✅ Sistema de voz inicializado');
+                }, 200);
+            } catch (e) {
+                console.warn('Error al inicializar voz:', e);
+                vozInicializada = true;
+            }
+        }
+
+        document.addEventListener('click', function initVozClick() {
+            inicializarVoz();
+            document.removeEventListener('click', initVozClick);
+        }, { once: true });
+
+        document.addEventListener('touchstart', function initVozTouch() {
+            inicializarVoz();
+            document.removeEventListener('touchstart', initVozTouch);
+        }, { once: true });
+
+        document.addEventListener('keydown', function initVozKey() {
+            inicializarVoz();
+            document.removeEventListener('keydown', initVozKey);
+        }, { once: true });
+
+        function hablarTexto(texto, callback) {
+            if (!window.speechSynthesis) {
+                if (callback) callback();
+                return;
+            }
+            if (!vozInicializada) inicializarVoz();
+
+            try {
+                if (synth.speaking) synth.cancel();
+            } catch (e) {
+                console.warn('Error al cancelar voz:', e);
+            }
+
+            let textoLimpio = texto.replace(/[📖🧠💡🎯🔊📊🟢🔴⏰🔄📌✅❌⬆⬇📐📜🎯💥🛡️❓😰💰📋⏳🔐📱⚡⚖️]/g, '');
+            textoLimpio = textoLimpio.replace(/\s+/g, ' ').trim();
+
+            if (textoLimpio.length === 0) {
+                if (callback) callback();
+                return;
+            }
+
+            try {
+                utterance = new SpeechSynthesisUtterance(textoLimpio);
+                utterance.lang = 'es-ES';
+                utterance.rate = 0.80;
+                utterance.pitch = 1.0;
+                utterance.volume = 1.0;
+
+                const voces = synth.getVoices();
+                const vozEsp = voces.find(v => v.lang.startsWith('es'));
+                if (vozEsp) utterance.voice = vozEsp;
+
+                utterance.onstart = function() {
+                    isSpeaking = true;
+                    const btn = document.getElementById('btnVoice');
+                    if (btn) {
+                        btn.classList.add('playing');
+                        btn.textContent = '🔊 Leyendo...';
+                    }
+                };
+
+                utterance.onend = function() {
+                    isSpeaking = false;
+                    const btn = document.getElementById('btnVoice');
+                    if (btn) {
+                        btn.classList.remove('playing');
+                        btn.textContent = '🔊 Escuchar Lección';
+                    }
+                    if (callback) callback();
+                };
+
+                utterance.onerror = function(e) {
+                    console.warn('Error en síntesis:', e);
+                    isSpeaking = false;
+                    const btn = document.getElementById('btnVoice');
+                    if (btn) {
+                        btn.classList.remove('playing');
+                        btn.textContent = '🔊 Escuchar Lección';
+                    }
+                    if (callback) callback();
+                };
+
+                synth.speak(utterance);
+            } catch (e) {
+                console.warn('Error al hablar:', e);
+                if (callback) callback();
+            }
+        }
+
+        function leerSeccion(nivel) {
+            const section = document.getElementById(`section${nivel}`);
+            if (!section) return;
+
+            const textoElementos = section.querySelectorAll('h2, h3, h4, p, li, .mentor-dice, .ejemplo-box, .ejemplo-box-bajista, .concepto-clave, .ventajas-box, .desventajas-box, .comparacion-box, .practica-container');
+            let textoCompleto = '';
+            textoElementos.forEach(el => {
+                const texto = el.textContent || '';
+                textoCompleto += texto + '. ';
+            });
+
+            if (textoCompleto.length > 0) {
+                hablarTexto(textoCompleto);
+            }
+        }
+
+        document.getElementById('btnVoice').addEventListener('click', function() {
+            const activeSection = document.querySelector('.section.active');
+            if (!activeSection) return;
+
+            if (isSpeaking) {
+                try {
+                    if (synth.speaking) synth.cancel();
+                } catch (e) {
+                    console.warn('Error al cancelar:', e);
+                }
+                isSpeaking = false;
+                this.classList.remove('playing');
+                this.textContent = '🔊 Escuchar Lección';
+                return;
+            }
+
+            const nivel = parseInt(activeSection.id.replace('section', ''));
+            if (!vozInicializada) inicializarVoz();
+            leerSeccion(nivel);
+        });
+
+        // ============================================
+        // 1. PRÁCTICAS INTERACTIVAS
+        // ============================================
+        let accionSeleccionada = { 1: null, 2: null, 3: null, 4: null, 5: null, 6: null };
+        let practicaCompletada = { 1: false, 2: false, 3: false, 4: false, 5: false, 6: false };
+
+        // VALORES CORRECTOS PARA CADA PRÁCTICA
+        const valoresCorrectos = {
+            1: { accion: 'compra', entrada: 50000, sl: 49500, tp: 53000, tolerancia: 100 },
+            2: { accion: 'venta', entrada: 55000, sl: 55500, tp: 51000, tolerancia: 100 },
+            3: { accion: 'compra', entrada: 102, sl: 99, tp: 110, tolerancia: 2 },
+            4: { accion: 'venta', entrada: 46, sl: 49, tp: 40, tolerancia: 2 },
+            5: { accion: 'compra', entrada: 110, sl: 108, tp: 120, tolerancia: 2 },
+            6: { accion: 'compra', entrada: 138.2, sl: 136, tp: 190, tolerancia: 2 }
+        };
+
+        function seleccionarAccion(practica, accion) {
+            if (practicaCompletada[practica]) return;
+
+            accionSeleccionada[practica] = accion;
+
+            const botones = document.querySelectorAll(`#practica${practica} .opciones-practica button`);
+            botones.forEach(b => b.classList.remove('seleccionado'));
+
+            const btnSeleccionado = document.getElementById(`p${practica}_${accion}`);
+            if (btnSeleccionado) btnSeleccionado.classList.add('seleccionado');
+
+            const inputs = document.querySelectorAll(`#inputs${practica} input`);
+            const verificarBtn = document.getElementById(`verificar${practica}`);
+
+            if (accion === 'esperar') {
+                inputs.forEach(inp => {
+                    inp.disabled = true;
+                    inp.value = '';
+                });
+                verificarBtn.disabled = true;
+                const feedback = document.getElementById(`feedback${practica}`);
+                feedback.className = 'feedback-practica mostrar acierto';
+                feedback.innerHTML = `
+                    ✅ Has decidido ESPERAR.
+                    <div class="explicacion">
+                        A veces la mejor acción es <strong>no hacer nada</strong>.
+                        La paciencia es parte del trading.
+                        <br><br>
+                        <span style="color:#888;">Pero... ¿por qué no intentas COMPRAR o VENDER para practicar?</span>
+                    </div>
+                `;
+                practicaCompletada[practica] = true;
+                botones.forEach(b => b.disabled = true);
+                return;
+            }
+
+            inputs.forEach(inp => {
+                inp.disabled = false;
+                inp.value = '';
+                inp.classList.remove('correcto', 'incorrecto');
+            });
+            verificarBtn.disabled = false;
+
+            const feedback = document.getElementById(`feedback${practica}`);
+            feedback.className = 'feedback-practica';
+            feedback.innerHTML = '';
+        }
+
+        function verificarPractica(num) {
+            if (practicaCompletada[num]) return;
+
+            const correcto = valoresCorrectos[num];
+            const accion = accionSeleccionada[num];
+
+            if (accion !== correcto.accion) {
+                const feedback = document.getElementById(`feedback${num}`);
+                feedback.className = 'feedback-practica mostrar fallo';
+                feedback.innerHTML = `
+                    ❌ Acción incorrecta.
+                    <div class="explicacion">
+                        <strong>La acción correcta es ${correcto.accion.toUpperCase()}.</strong>
+                        Revisa el gráfico y la vela de confirmación.
+                    </div>
+                `;
+                return;
+            }
+
+            const entrada = parseFloat(document.getElementById(`entrada_input${num}`).value);
+            const sl = parseFloat(document.getElementById(`sl_input${num}`).value);
+            const tp = parseFloat(document.getElementById(`tp_input${num}`).value);
+
+            const entradaOk = Math.abs(entrada - correcto.entrada) <= correcto.tolerancia;
+            const slOk = Math.abs(sl - correcto.sl) <= correcto.tolerancia;
+            const tpOk = Math.abs(tp - correcto.tp) <= correcto.tolerancia;
+
+            const entradaInput = document.getElementById(`entrada_input${num}`);
+            const slInput = document.getElementById(`sl_input${num}`);
+            const tpInput = document.getElementById(`tp_input${num}`);
+
+            entradaInput.classList.remove('correcto', 'incorrecto');
+            slInput.classList.remove('correcto', 'incorrecto');
+            tpInput.classList.remove('correcto', 'incorrecto');
+
+            if (entradaOk) entradaInput.classList.add('correcto');
+            else entradaInput.classList.add('incorrecto');
+
+            if (slOk) slInput.classList.add('correcto');
+            else slInput.classList.add('incorrecto');
+
+            if (tpOk) tpInput.classList.add('correcto');
+            else tpInput.classList.add('incorrecto');
+
+            document.querySelectorAll(`#inputs${num} input`).forEach(inp => inp.disabled = true);
+            document.getElementById(`verificar${num}`).disabled = true;
+            document.querySelectorAll(`#practica${num} .opciones-practica button`).forEach(b => b.disabled = true);
+
+            const feedback = document.getElementById(`feedback${num}`);
+            const todosOk = entradaOk && slOk && tpOk;
+
+            // Calcular R/R
+            const riesgo = Math.abs(entrada - sl);
+            const beneficio = Math.abs(tp - entrada);
+            const rr = (beneficio / riesgo).toFixed(2);
+
+            if (todosOk) {
+                feedback.className = 'feedback-practica mostrar acierto';
+                feedback.innerHTML = `
+                    ✅ ¡EXCELENTE! Has colocado todos los niveles correctamente.
+                    <div class="explicacion">
+                        <strong>Resumen de tu operación:</strong><br>
+                        📈 Acción: ${correcto.accion.toUpperCase()}<br>
+                        📍 Entrada: $${entrada}<br>
+                        🔴 Stop-Loss: $${sl}<br>
+                        🟢 Take-Profit: $${tp}<br>
+                        ⚖️ Relación R/R: 1:${rr}
+                        <br><br>
+                        🎯 ¡Has completado la práctica correctamente!
+                    </div>
+                `;
+                actualizarPanel(num, correcto.accion, entrada, sl, tp, rr);
+                practicaCompletada[num] = true;
+            } else {
+                let errores = [];
+                if (!entradaOk) errores.push('Entrada');
+                if (!slOk) errores.push('Stop-Loss');
+                if (!tpOk) errores.push('Take-Profit');
+
+                feedback.className = 'feedback-practica mostrar fallo';
+                feedback.innerHTML = `
+                    ❌ Los siguientes niveles no son correctos: <strong>${errores.join(', ')}</strong>
+                    <div class="explicacion">
+                        <strong>Valores correctos:</strong><br>
+                        📍 Entrada: $${correcto.entrada}<br>
+                        🔴 Stop-Loss: $${correcto.sl}<br>
+                        🟢 Take-Profit: $${correcto.tp}
+                        <br><br>
+                        💡 <span class="incorrecto-texto">Revisa el gráfico y vuelve a intentarlo.</span>
+                        <br>
+                        <button onclick="reiniciarPractica(${num})" style="margin-top:10px; padding:8px 20px; border:2px solid #ffd700; border-radius:30px; background:transparent; color:#ffd700; cursor:pointer; font-size:16px;">
+                            🔄 Reintentar
+                        </button>
+                    </div>
+                `;
+            }
+        }
+
+        function reiniciarPractica(num) {
+            practicaCompletada[num] = false;
+            accionSeleccionada[num] = null;
+
+            document.querySelectorAll(`#inputs${num} input`).forEach(inp => {
+                inp.disabled = true;
+                inp.value = '';
+                inp.classList.remove('correcto', 'incorrecto');
+            });
+            document.getElementById(`verificar${num}`).disabled = true;
+
+            document.querySelectorAll(`#practica${num} .opciones-practica button`).forEach(b => {
+                b.disabled = false;
+                b.classList.remove('seleccionado', 'correcto', 'incorrecto');
+            });
+
+            const feedback = document.getElementById(`feedback${num}`);
+            feedback.className = 'feedback-practica';
+            feedback.innerHTML = '';
+
+            document.getElementById(`accion${num}`).textContent = '-';
+            document.getElementById(`entrada${num}`).textContent = '-';
+            document.getElementById(`sl${num}`).textContent = '-';
+            document.getElementById(`tp${num}`).textContent = '-';
+            document.getElementById(`rr${num}`).textContent = '-';
+            document.getElementById(`barra${num}`).style.width = '0%';
+        }
+
+        function actualizarPanel(num, accion, entrada, sl, tp, rr) {
+            const accionLabel = accion === 'compra' ? '📈 COMPRA' : '📉 VENTA';
+            document.getElementById(`accion${num}`).textContent = accionLabel;
+            document.getElementById(`entrada${num}`).textContent = '$' + entrada;
+            document.getElementById(`sl${num}`).textContent = '$' + sl;
+            document.getElementById(`tp${num}`).textContent = '$' + tp;
+            document.getElementById(`rr${num}`).textContent = '1:' + rr;
+            document.getElementById(`barra${num}`).style.width = '100%';
+        }
+
+        // ============================================
+        // 2. DATOS DEL QUIZ - 20 EJERCICIOS
+        // ============================================
+        const ejercicios = [
+            // Órdenes de Mercado y Límite
+            { id: 1, pregunta: '¿Qué es una ORDEN DE MERCADO?', opciones: ['Compra/Venta al precio actual', 'Establecer un precio de entrada', 'Limitar pérdidas'], correcta: 0, explicacion: '✅ Orden de Mercado: Se ejecuta inmediatamente al precio actual.' },
+            { id: 2, pregunta: '¿Qué es una ORDEN LÍMITE?', opciones: ['Se ejecuta al precio actual', 'Se ejecuta al precio que tú estableces', 'No se ejecuta nunca'], correcta: 1, explicacion: '✅ Orden Límite: Se ejecuta al precio que tú estableces.' },
+            { id: 3, pregunta: '¿Cuándo debes usar una ORDEN DE MERCADO?', opciones: ['Cuando quieres un precio exacto', 'Cuando necesitas entrar o salir rápido', 'Cuando quieres esperar'], correcta: 1, explicacion: '✅ Orden de Mercado: Úsala cuando necesites entrar o salir rápido.' },
+            { id: 4, pregunta: '¿Cuándo debes usar una ORDEN LÍMITE?', opciones: ['Cuando quieres comprar barato o vender caro', 'Cuando necesitas entrar rápido', 'Cuando no te importa el precio'], correcta: 0, explicacion: '✅ Orden Límite: Úsala cuando quieras comprar barato o vender caro.' },
+            // Stop-Loss y Take-Profit
+            { id: 5, pregunta: '¿Qué hace el STOP-LOSS?', opciones: ['Asegura tus ganancias', 'Limita tus pérdidas automáticamente', 'No hace nada'], correcta: 1, explicacion: '✅ Stop-Loss: Limita tus pérdidas automáticamente.' },
+            { id: 6, pregunta: '¿Qué hace el TAKE-PROFIT?', opciones: ['Asegura tus ganancias', 'Limita tus pérdidas', 'No hace nada'], correcta: 0, explicacion: '✅ Take-Profit: Asegura tus ganancias automáticamente.' },
+            { id: 7, pregunta: '¿Dónde colocas el STOP-LOSS en una COMPRA?', opciones: ['Arriba del precio de entrada', 'Debajo del precio de entrada', 'En el precio de entrada'], correcta: 1, explicacion: '✅ Stop-Loss en COMPRA: Se coloca debajo del precio de entrada.' },
+            { id: 8, pregunta: '¿Dónde colocas el TAKE-PROFIT en una COMPRA?', opciones: ['Debajo del precio de entrada', 'Arriba del precio de entrada', 'En el precio de entrada'], correcta: 1, explicacion: '✅ Take-Profit en COMPRA: Se coloca arriba del precio de entrada.' },
+            // Stop-Limit y OCO
+            { id: 9, pregunta: '¿Qué es una orden STOP-LIMIT?', opciones: ['Se activa a un precio y se ejecuta a otro', 'Se ejecuta al precio actual', 'No se ejecuta nunca'], correcta: 0, explicacion: '✅ Stop-Limit: Se activa a un precio y se ejecuta a otro.' },
+            { id: 10, pregunta: '¿Qué significa OCO?', opciones: ['One Cancels Other', 'Only Crypto Orders', 'Open Close Order'], correcta: 0, explicacion: '✅ OCO: One Cancels Other. Una orden cancela a la otra.' },
+            { id: 11, pregunta: '¿Qué incluye una orden OCO?', opciones: ['Take-Profit y Stop-Loss', 'Solo Take-Profit', 'Solo Stop-Loss'], correcta: 0, explicacion: '✅ OCO: Incluye Take-Profit y Stop-Loss simultáneamente.' },
+            { id: 12, pregunta: '¿Qué ocurre en una orden OCO si se ejecuta el Take-Profit?', opciones: ['El Stop-Loss se cancela', 'El Stop-Loss se mantiene', 'Nada'], correcta: 0, explicacion: '✅ OCO: Si se ejecuta el TP, el SL se cancela automáticamente.' },
+            // Apalancamiento
+            { id: 13, pregunta: '¿Qué hace el APALANCAMIENTO?', opciones: ['Amplifica ganancias y pérdidas', 'Solo amplifica ganancias', 'No afecta el trading'], correcta: 0, explicacion: '✅ Apalancamiento: Amplifica tanto ganancias como pérdidas.' },
+            { id: 14, pregunta: '¿Cuál es el APALANCAMIENTO recomendado para PRINCIPIANTES?', opciones: ['2x-5x', '20x-50x', '100x'], correcta: 0, explicacion: '✅ 2x-5x: Apalancamiento recomendado para principiantes.' },
+            { id: 15, pregunta: '¿Qué es la LIQUIDACIÓN en el trading con apalancamiento?', opciones: ['Cuando la plataforma cierra tu posición por pérdidas', 'Cuando ganas mucho dinero', 'Cuando el precio sube'], correcta: 0, explicacion: '✅ Liquidación: La plataforma cierra tu posición si pierdes el dinero de tu garantía.' },
+            // Comisiones
+            { id: 16, pregunta: '¿Qué beneficio tiene usar BNB para pagar comisiones?', opciones: ['25% de descuento', 'No pagas comisiones', 'No tiene beneficio'], correcta: 0, explicacion: '✅ BNB: Usar Binance Coin da 25% de descuento en comisiones.' },
+            { id: 17, pregunta: '¿Qué es un MAKER en Binance?', opciones: ['Creas liquidez con orden límite', 'Tomas liquidez con orden de mercado', 'No hace nada'], correcta: 0, explicacion: '✅ MAKER: Creas liquidez con órdenes límite.' },
+            { id: 18, pregunta: '¿Qué es un TAKER en Binance?', opciones: ['Creas liquidez', 'Tomas liquidez con orden de mercado', 'No hace nada'], correcta: 1, explicacion: '✅ TAKER: Tomas liquidez con orden de mercado.' },
+            // Ratio y avanzadas
+            { id: 19, pregunta: '¿Qué significa una relación R/R de 1:3?', opciones: ['Arriesgas 1 para ganar 3', 'Arriesgas 3 para ganar 1', 'Arriesgas 1 y ganas 1'], correcta: 0, explicacion: '✅ R/R 1:3: Arriesgas 1 para ganar 3. Excelente relación.' },
+            { id: 20, pregunta: '¿Cuál es la REGLA DE ORO de la Relación Riesgo/Beneficio?', opciones: ['Buscar R/R de 1:2 o mejor', 'Buscar R/R de 2:1', 'No importa la R/R'], correcta: 0, explicacion: '✅ REGLA DE ORO: Busca siempre R/R de 1:2 o mejor.' }
+        ];
+
+        function generarEjercicios() {
+            const copia = [...ejercicios];
+            const seleccionados = [];
+            const cantidad = Math.min(20, copia.length);
+            for (let i = 0; i < cantidad; i++) {
+                const idx = Math.floor(Math.random() * copia.length);
+                seleccionados.push(copia[idx]);
+                copia.splice(idx, 1);
+            }
+            return seleccionados;
+        }
+
+        let casosActuales = [];
+        let casoActualIndex = 0;
+        let puntuacion = { correctos: 0, incorrectos: 0 };
+        let respondido = false;
+
+        function cargarQuiz() {
+            casosActuales = generarEjercicios();
+            casoActualIndex = 0;
+            puntuacion = { correctos: 0, incorrectos: 0 };
+            respondido = false;
+            mostrarCaso();
+        }
+
+        function mostrarCaso() {
+            if (!casosActuales.length || casoActualIndex >= casosActuales.length) {
+                const total = puntuacion.correctos + puntuacion.incorrectos;
+                const porcentaje = total > 0 ? Math.round((puntuacion.correctos / total) * 100) : 0;
+                let mensaje = '';
+                let emoji = '';
+
+                if (porcentaje >= 90) { mensaje = '¡Excelente! Dominas la ejecución de órdenes. 🏆';
+                    emoji = '📊'; } else if (porcentaje >= 70) { mensaje = '¡Muy bien! Tienes un buen entendimiento. 💪';
+                    emoji = '📈'; } else if (porcentaje >= 50) { mensaje = 'Vas por buen camino. 📚';
+                    emoji = '📖'; } else { mensaje = 'No te desanimes. Vuelve a leer y practica. 🎯';
+                    emoji = '🔄'; }
+
+                document.getElementById('quizContent').innerHTML = `
+                            <div class="text-center" style="padding: 30px;">
+                                <h3>🎉 ¡Has completado los 20 ejercicios!</h3>
+                                <div style="font-size: 60px; margin: 20px 0;">${emoji}</div>
+                                <p style="font-size: 24px;">
+                                    ✅ Correctos: <span style="color:#00c853; font-weight:700;">${puntuacion.correctos}</span>
+                                    &nbsp;|&nbsp;
+                                    ❌ Incorrectos: <span style="color:#ff5252; font-weight:700;">${puntuacion.incorrectos}</span>
+                                    &nbsp;|&nbsp;
+                                    🎯 Aciertos: <span style="color:#ffd700; font-weight:700;">${porcentaje}%</span>
+                                </p>
+                                <p style="font-size: 22px; color: #b0b0d0;">${mensaje}</p>
+                                <p style="font-size: 18px; color: #ffd700; margin-top:10px;">
+                                    📊 ¡Ya sabes cómo ejecutar órdenes en Binance!
+                                    <br>
+                                    <span style="color:#b0b0d0; font-size:16px;">
+                                        🎯 Has completado todas las consolas de la serie:
+                                        <br>
+                                        Fundamentos → Velas → Soportes → Estructura → Estrategias → Psicología → Seguridad → Órdenes
+                                    </span>
+                                </p>
+                                <button class="btn btn-primary" onclick="cargarQuiz()" style="margin-top:20px;">
+                                    🔄 Repetir 20 Ejercicios
+                                </button>
+                            </div>
+                        `;
+                actualizarProgreso();
+                return;
+            }
+
+            const ejercicio = casosActuales[casoActualIndex];
+            respondido = false;
+
+            let html = `
+                        <div class="text-center">
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+                                <span style="font-size:22px; font-weight:600; color:#ffd700;">
+                                    📝 Ejercicio ${casoActualIndex + 1} de 20
+                                </span>
+                                <span style="font-size:20px; color:#b0b0d0;">
+                                    ✅ ${puntuacion.correctos} | ❌ ${puntuacion.incorrectos}
+                                </span>
+                            </div>
+                            <p style="font-size:22px; color:#ffffff; margin-top:15px; font-weight:500;">
+                                ${ejercicio.pregunta}
+                            </p>
+                        </div>
+                        <div class="quiz-options" id="opcionesQuiz">
+                        `;
+
+            ejercicio.opciones.forEach((opcion, index) => {
+                html += `<button class="btn btn-secondary" onclick="responderPreguntaQuiz(${index})">${opcion}</button>`;
+            });
+
+            html += `
+                        </div>
+                        <div id="feedbackQuiz" class="feedback"></div>
+                        <div class="progreso-quiz">
+                            <span class="contador-preguntas">
+                                Pregunta <span>${casoActualIndex + 1}</span> de <span>20</span>
+                            </span>
+                            <span style="font-size:18px; color:#b0b0d0;">
+                                ⏳ ${20 - (casoActualIndex + 1)} restantes
+                            </span>
+                        </div>
+                    `;
+
+            document.getElementById('quizContent').innerHTML = html;
+            actualizarProgreso();
+        }
+
+        function responderPreguntaQuiz(elegida) {
+            if (respondido) return;
+            respondido = true;
+
+            const ejercicio = casosActuales[casoActualIndex];
+            const correcta = ejercicio.correcta;
+            const feedback = document.getElementById('feedbackQuiz');
+
+            if (elegida === correcta) {
+                feedback.className = 'feedback correct';
+                feedback.innerHTML = `✅ ¡Correcto! ${ejercicio.explicacion}`;
+                puntuacion.correctos++;
+            } else {
+                feedback.className = 'feedback incorrect';
+                const correctaText = ejercicio.opciones[correcta];
+                feedback.innerHTML = `❌ La respuesta correcta es: <strong>${correctaText}</strong>.<br><div class="explanation">📖 ${ejercicio.explicacion}</div>`;
+                puntuacion.incorrectos++;
+            }
+
+            document.querySelectorAll('#opcionesQuiz .btn').forEach(btn => {
+                btn.disabled = true;
+                btn.style.opacity = '0.5';
+            });
+
+            actualizarProgreso();
+
+            const container = document.getElementById('quizContent');
+            const btnSiguiente = document.createElement('div');
+            btnSiguiente.className = 'text-center mt-20';
+            btnSiguiente.innerHTML = `
+                        <button class="btn btn-primary" onclick="siguienteCaso()">
+                            ${casoActualIndex < casosActuales.length - 1 ? '➡️ Siguiente Pregunta' : '📊 Ver Resultados Finales'}
+                        </button>
+                    `;
+            container.appendChild(btnSiguiente);
+        }
+
+        function siguienteCaso() {
+            casoActualIndex++;
+            respondido = false;
+            mostrarCaso();
+        }
+
+        // ============================================
+        // 3. NAVEGACIÓN
+        // ============================================
+        function irANivel(nivel) {
+            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+            const target = document.getElementById(`section${nivel}`);
+            if (target) {
+                target.classList.add('active');
+                document.getElementById('nivelActualDisplay').textContent = nivel + 1;
+                document.getElementById('seccionNombre').textContent = target.dataset.nombre || 'Sección';
+                if (nivel === 11) cargarQuiz();
+                actualizarProgreso();
+
+                setTimeout(() => {
+                    leerSeccion(nivel);
+                }, 300);
+
+                document.querySelector('#app').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        function actualizarProgreso() {
+            const secciones = document.querySelectorAll('.section');
+            let indexActual = 0;
+            secciones.forEach((sec, idx) => {
+                if (sec.classList.contains('active')) indexActual = idx;
+            });
+            const progreso = ((indexActual) / (secciones.length - 1)) * 100;
+            document.getElementById('progressBar').style.width = `${Math.min(100, progreso)}%`;
+        }
+
+        // ============================================
+        // 4. INICIALIZACIÓN
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            irANivel(0);
+
+            if (window.speechSynthesis) {
+                window.speechSynthesis.getVoices();
+                window.speechSynthesis.onvoiceschanged = () => {
+                    window.speechSynthesis.getVoices();
+                };
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                const active = document.querySelector('.section.active');
+                if (active) {
+                    const nivel = parseInt(active.id.replace('section', ''));
+                    if (nivel > 0) { irANivel(nivel - 1);
+                        e.preventDefault(); }
+                }
+            }
+            if (e.key === 'ArrowRight') {
+                const active = document.querySelector('.section.active');
+                if (active) {
+                    const nivel = parseInt(active.id.replace('section', ''));
+                    const total = document.querySelectorAll('.section').length - 1;
+                    if (nivel < total) { irANivel(nivel + 1);
+                        e.preventDefault(); }
+                }
+            }
+            if (e.key === ' ' || e.key === 'Space') {
+                const btn = document.getElementById('btnVoice');
+                if (document.activeElement?.tagName !== 'BUTTON') {
+                    btn.click();
+                    e.preventDefault();
+                }
+            }
+        });
+
+        console.log('%c═══════════════════════════════════════════', 'color: #ffd700; font-size: 16px;');
+        console.log('%c📊 MASTER EN ÓRDENES Y EJECUCIÓN v4.0', 'color: #ffd700; font-size: 20px; font-weight: bold;');
+        console.log('%c✍️  Creado por: YURBI GONZALEZ LOPEZ', 'color: #00c853; font-size: 16px;');
+        console.log('%c© Todos los derechos reservados 2026', 'color: #ff5252; font-size: 14px;');
+        console.log('%c🎯 12 Niveles | 20 Ejercicios', 'color: #ffd700; font-size: 14px;');
+        console.log('%c📈 Mercado | Límite | Stop-Loss | Take-Profit | Stop-Limit | OCO', 'color: #2196f3; font-size: 13px;');
+        console.log('%c⚡ Apalancamiento | Comisiones | Ratio R/R', 'color: #9c27b0; font-size: 13px;');
+        console.log('%c🎯 6 PRÁCTICAS INTERACTIVAS con colocación de niveles', 'color: #ffd700; font-size: 13px;');
+        console.log('%c═══════════════════════════════════════════', 'color: #ffd700; font-size: 16px;');
+    </script>
+
+</body>
+</html>
